@@ -16,7 +16,7 @@
 
 ## About
 
-Devnito is a boutique engineering studio founded by **Junaid Qureshi** — senior full-stack engineer, solution architect, and Head of Engineering at Stay Gold (US). Every engagement is led personally by the founder — no hand-offs, no middlemen.
+Devnito - is a boutique engineering studio founded by **Junaid Qureshi** — senior full-stack engineer, solution architect, and Head of Engineering at Stay Gold (US). Every engagement is led personally by the founder — no hand-offs, no middlemen.
 
 This repository contains the source code for the Devnito website — a single-page, minimal, and premium landing page built to reflect the studio's engineering-first approach.
 
@@ -24,14 +24,14 @@ This repository contains the source code for the Devnito website — a single-pa
 
 ## Tech Stack
 
-| Layer | Technology |
-| --- | --- |
-| **Framework** | [Next.js 16](https://nextjs.org/) (App Router) |
-| **Language** | TypeScript |
-| **Styling** | Tailwind CSS v4 |
-| **Font** | Inter via `next/font` |
-| **Forms** | [Formspree](https://formspree.io/) |
-| **Deployment** | Vercel |
+| Layer          | Technology                                     |
+| -------------- | ---------------------------------------------- |
+| **Framework**  | [Next.js 16](https://nextjs.org/) (App Router) |
+| **Language**   | TypeScript                                     |
+| **Styling**    | Tailwind CSS v4                                |
+| **Font**       | Inter via `next/font`                          |
+| **Forms**      | [Formspree](https://formspree.io/)             |
+| **Deployment** | Vercel                                         |
 
 **No heavy dependencies.** No animation libraries, no headless UI kits, no CMS. The entire site ships minimal JavaScript with zero client-side routing.
 
@@ -103,16 +103,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All website copy is centralized in **`content/site.ts`**. Edit the exported objects and the site updates instantly:
 
-| Export | Controls |
-| --- | --- |
-| `siteConfig` | Site name, URL, email, social links, Formspree ID |
-| `founder` | Founder name, title, bio, credentials, photo |
-| `navLinks` | Navigation items |
-| `packages` | Service packages — cards & modal details |
-| `projects` | Case studies — cards, galleries & modal details |
-| `stats` | Proof strip numbers (engagements, rate, etc.) |
-| `testimonials` | Client quotes with avatars |
-| `videoTestimonials` | Video testimonial entries |
+| Export              | Controls                                          |
+| ------------------- | ------------------------------------------------- |
+| `siteConfig`        | Site name, URL, email, social links, Formspree ID |
+| `founder`           | Founder name, title, bio, credentials, photo      |
+| `navLinks`          | Navigation items                                  |
+| `packages`          | Service packages — cards & modal details          |
+| `projects`          | Case studies — cards, galleries & modal details   |
+| `stats`             | Proof strip numbers (engagements, rate, etc.)     |
+| `testimonials`      | Client quotes with avatars                        |
+| `videoTestimonials` | Video testimonial entries                         |
 
 <br />
 
@@ -126,6 +126,7 @@ npm start       # Start production server
 ```
 
 **Post-deploy checklist:**
+
 - [ ] Submit sitemap to [Google Search Console](https://search.google.com/search-console) (`https://devnito.com/sitemap.xml`)
 - [ ] Test OG image at [opengraph.xyz](https://www.opengraph.xyz)
 - [ ] Verify Formspree form receives submissions
