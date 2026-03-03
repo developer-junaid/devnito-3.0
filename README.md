@@ -1,24 +1,22 @@
 <p align="center">
-  <img src="public/logo.svg" alt="Devnito" width="80" />
+  <img src="public/logo.svg" alt="Junaid Qureshi" width="80" />
 </p>
 
-<h1 align="center">Devnito</h1>
+<h1 align="center">Junaid Qureshi</h1>
 
 <p align="center">
-  <strong>Founder-led engineering partner for product teams that need to scale.</strong>
+  <strong>Full-stack engineer & solution architect — personal portfolio.</strong>
 </p>
 
 <p align="center">
-  <a href="https://devnito.com">Live Site</a> · <a href="https://www.linkedin.com/in/developer-junaid/">LinkedIn</a>
+  <a href="https://junaidqureshi.com">Live Site</a> · <a href="https://www.linkedin.com/in/developer-junaid/">LinkedIn</a> · <a href="https://github.com/developerjunaid">GitHub</a>
 </p>
 
 <br />
 
 ## About
 
-Devnito - is a boutique engineering studio founded by **Junaid Qureshi** — senior full-stack engineer, solution architect, and Head of Engineering at Stay Gold (US). Every engagement is led personally by the founder — no hand-offs, no middlemen.
-
-This repository contains the source code for the Devnito website — a single-page, minimal, and premium landing page built to reflect the studio's engineering-first approach.
+This is the source code for **Junaid Qureshi**'s personal portfolio site — a single-page, minimal landing that showcases experience as a senior full-stack engineer, solution architect, and Head of Engineering at Stay Gold (US). The site highlights packages, selected work, proof, testimonials, and contact — all with a clean, portfolio-first approach.
 
 <br />
 
@@ -40,6 +38,7 @@ This repository contains the source code for the Devnito website — a single-pa
 ## Features
 
 - **Single-page architecture** — everything above the fold or one scroll away
+- **Personal hero** — photo, headline, short bio, credentials, and CTAs (Book a Call, View Work, LinkedIn, GitHub)
 - **Modal-driven detail** — packages and case studies expand into accessible modals (focus trap, keyboard nav, ARIA)
 - **CSS marquee testimonials** — smooth infinite scroll, pause on hover, zero JS animation overhead
 - **Dynamic OG image** — auto-generated at the edge via `opengraph-image.tsx`
@@ -57,30 +56,29 @@ devnito-3.0/
 ├── app/
 │   ├── layout.tsx              # Root layout, metadata, SEO, JSON-LD
 │   ├── page.tsx                # Single-page composition
-│   ├── globals.css             # Design tokens, animations, custom grid
-│   ├── opengraph-image.tsx     # Dynamic OG image (edge)
-│   ├── sitemap.ts              # Auto-generated sitemap.xml
-│   └── robots.ts               # Auto-generated robots.txt
+│   ├── globals.css              # Design tokens, animations, custom grid
+│   ├── opengraph-image.tsx      # Dynamic OG image (edge)
+│   ├── sitemap.ts               # Auto-generated sitemap.xml
+│   └── robots.ts                # Auto-generated robots.txt
 ├── components/
-│   ├── navbar.tsx              # Sticky nav with mobile menu
-│   ├── hero.tsx                # Hero with gradient text & scroll indicator
-│   ├── packages.tsx            # Service packages (3 cards → modals)
-│   ├── work.tsx                # Selected work showcase (alternating layout)
-│   ├── founder.tsx             # Meet the Founder section
-│   ├── proof-strip.tsx         # Stats strip (engagements, rate, delivery)
-│   ├── testimonials.tsx        # Marquee testimonial carousel
-│   ├── contact-cta.tsx         # Final CTA section
-│   ├── contact-form-modal.tsx  # Contact form (Formspree integration)
+│   ├── navbar.tsx               # Sticky nav with mobile menu
+│   ├── hero.tsx                 # Hero with photo, bio, credentials, CTAs
+│   ├── packages.tsx             # Service packages (3 cards → modals)
+│   ├── work.tsx                 # Selected work showcase (alternating layout)
+│   ├── proof-strip.tsx          # Stats strip (engagements, rate, delivery)
+│   ├── testimonials.tsx         # Marquee testimonial carousel
+│   ├── contact-cta.tsx          # Final CTA section
+│   ├── contact-form-modal.tsx   # Contact form (Formspree integration)
 │   ├── contact-form-provider.tsx # Global modal state (React Context)
-│   ├── footer.tsx              # Footer
+│   ├── footer.tsx               # Footer
 │   └── ui/
-│       └── modal.tsx           # Accessible modal primitive
+│       └── modal.tsx            # Accessible modal primitive
 ├── content/
-│   └── site.ts                 # All editable content in one place
+│   └── site.ts                  # All editable content in one place
 └── public/
-    ├── logo.svg                # Brand mark & favicon
-    ├── dp.jpg                  # Founder photo
-    └── ...                     # Project screenshots & assets
+    ├── logo.svg                 # Brand mark & favicon
+    ├── dp.jpg                   # Portfolio photo
+    └── ...                      # Project screenshots & assets
 ```
 
 <br />
@@ -103,16 +101,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All website copy is centralized in **`content/site.ts`**. Edit the exported objects and the site updates instantly:
 
-| Export              | Controls                                          |
-| ------------------- | ------------------------------------------------- |
-| `siteConfig`        | Site name, URL, email, social links, Formspree ID |
-| `founder`           | Founder name, title, bio, credentials, photo      |
-| `navLinks`          | Navigation items                                  |
-| `packages`          | Service packages — cards & modal details          |
-| `projects`          | Case studies — cards, galleries & modal details   |
-| `stats`             | Proof strip numbers (engagements, rate, etc.)     |
-| `testimonials`      | Client quotes with avatars                        |
-| `videoTestimonials` | Video testimonial entries                         |
+| Export       | Controls                                                       |
+| ------------ | -------------------------------------------------------------- |
+| `siteConfig` | Site name, URL, email, social links (LinkedIn, GitHub), Formspree ID |
+| `founder`    | Name, title, photo, hero headline, hero bio, full bio, credentials |
+| `navLinks`   | Navigation items                                               |
+| `packages`   | Service packages — cards & modal details                      |
+| `projects`   | Case studies — cards, galleries & modal details               |
+| `stats`      | Proof strip numbers (engagements, rate, etc.)                  |
+| `testimonials` | Client quotes with avatars                                  |
+| `videoTestimonials` | Video testimonial entries                                |
 
 <br />
 
@@ -127,7 +125,7 @@ npm start       # Start production server
 
 **Post-deploy checklist:**
 
-- [ ] Submit sitemap to [Google Search Console](https://search.google.com/search-console) (`https://devnito.com/sitemap.xml`)
+- [ ] Submit sitemap to [Google Search Console](https://search.google.com/search-console) (`https://junaidqureshi.com/sitemap.xml`)
 - [ ] Test OG image at [opengraph.xyz](https://www.opengraph.xyz)
 - [ ] Verify Formspree form receives submissions
 - [ ] Run [Lighthouse](https://pagespeed.web.dev/) audit
@@ -155,5 +153,5 @@ Private. All rights reserved.
 ---
 
 <p align="center">
-  Built by <a href="https://www.linkedin.com/in/developer-junaid/">Junaid Qureshi</a> · <a href="https://devnito.com">devnito.com</a>
+  Built by <a href="https://www.linkedin.com/in/developer-junaid/">Junaid Qureshi</a> · <a href="https://junaidqureshi.com">junaidqureshi.com</a>
 </p>
