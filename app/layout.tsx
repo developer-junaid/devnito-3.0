@@ -13,11 +13,11 @@ const siteUrl = "https://devnito.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Devnito — Founder-led Engineering Partner",
+    default: "Devnito — Founder-led Engineering Partner for Product Teams",
     template: "%s | Devnito",
   },
   description:
-    "Founder-led architecture, web & mobile engineering, and long-term partnership for product teams that need to scale.",
+    "Founder-led architecture, web & mobile engineering, and long-term product partnership — from MVP to scale. 70+ engagements, 100+ projects delivered worldwide.",
   keywords: [
     "founder-led engineering",
     "web development partner",
@@ -37,19 +37,28 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Devnito — Founder-led Engineering Partner",
+    title: "Devnito — Founder-led Engineering Partner for Product Teams",
     description:
-      "Architecture, web & mobile engineering, and long-term partnership for product teams that need to scale.",
+      "Founder-led architecture, web & mobile engineering, and long-term product partnership — from MVP to scale. 70+ engagements, 100+ projects delivered worldwide.",
     url: siteUrl,
     siteName: "Devnito",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Devnito — Founder-led Engineering Partner",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Devnito — Founder-led Engineering Partner",
+    title: "Devnito — Founder-led Engineering Partner for Product Teams",
     description:
-      "Architecture, web & mobile engineering, and long-term partnership for product teams that need to scale.",
+      "Founder-led architecture, web & mobile engineering, and long-term product partnership — from MVP to scale. 70+ engagements, 100+ projects delivered worldwide.",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/logo.svg",
