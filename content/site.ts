@@ -1,24 +1,32 @@
 export const siteConfig = {
-  name: "Devnito",
-  title: "Devnito — Founder-led engineering partner",
+  name: "Junaid Qureshi",
+  title: "Junaid Qureshi — Full-Stack Engineer & Solution Architect",
   description:
-    "Architecture, web & mobile engineering, and long-term partnership for product teams.",
-  url: "https://devnito.com",
+    "Architecture, web & mobile engineering, and long-term partnership for product teams. Founder-led delivery.",
+  url: "https://junaidqureshi.com",
   /** Get your free form ID at https://formspree.io — paste it here */
   formspreeId: "mnjbrwrz",
-  email: "contact@devnito.com",
+  email: "hello@junaidqureshi.com",
   social: {
     linkedin: "https://www.linkedin.com/in/developer-junaid/",
+    github: "https://github.com/developer-junaid",
     youtube: "https://youtube.com/@devnito",
-    website: "https://devnito.com",
+    website: "https://junaidqureshi.com",
   },
 };
 
 export const founder = {
   name: "Junaid Qureshi",
-  title: "Founder & CEO @ Devnito · Head of Engineering @ Stay Gold USA",
+  title:
+    "Head of Engineering @ Stay Gold USA · Full-Stack Engineer & Solution Architect",
   photo: "/dp.jpg",
-  bio: "I'm Junaid — a senior full-stack engineer and technical leader with 4+ years of hands-on experience across architecture, delivery, and team leadership. As Head of Engineering at Stay Gold (US) and Founder of Devnito, I've led everything from solution architecture and engineering strategy to shipping production-grade platforms. Every Devnito engagement is led by me personally — no hand-offs, no middlemen — just direct collaboration with someone who's been in the trenches building at scale.",
+  /** Short bio for hero (above the fold). Full bio used in "More about me" section. */
+  heroBio:
+    "I'm a senior full-stack engineer and technical leader with 4+ years of experience. As Head of Engineering at Stay Gold (US), I lead architecture, delivery, and team leadership — and every engagement is led by me personally, with no hand-offs.",
+  bio: "I'm Junaid — a senior full-stack engineer and technical leader with 4+ years of hands-on experience across architecture, delivery, and team leadership. As Head of Engineering at Stay Gold (US), I've led everything from solution architecture and engineering strategy to shipping production-grade platforms. Every engagement is led by me personally — no hand-offs, no middlemen — just direct collaboration with someone who's been in the trenches building at scale.",
+  /** Headline for hero (personal, outcome-focused). */
+  heroHeadline:
+    "Hi, I'm Junaid — your full-stack partner for shipping real products.",
   credentials: [
     "70+ Client Engagements",
     "Head of Engineering",

@@ -356,7 +356,7 @@ export function Work() {
         <div className="mb-12">
           <p className="mb-3 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
             <span className="section-dot" />
-            Our Work
+            Selected Work
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Selected work

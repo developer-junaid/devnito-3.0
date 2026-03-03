@@ -3,7 +3,6 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Packages } from "@/components/packages";
 import { Work } from "@/components/work";
-import { Founder } from "@/components/founder";
 import { ProofStrip } from "@/components/proof-strip";
 import { Testimonials } from "@/components/testimonials";
 import { ContactCTA } from "@/components/contact-cta";
@@ -17,7 +16,6 @@ export default function Home() {
         <Hero />
         <Packages />
         <Work />
-        <Founder />
         <ProofStrip />
         <Testimonials />
         <ContactCTA />

@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/content/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://devnito.com";
+  const baseUrl = siteConfig.url;
 
   return {
     rules: [

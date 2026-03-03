@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://devnito.com";
+  const baseUrl = siteConfig.url;
 
   return [
     {

@@ -171,7 +171,7 @@ export function Testimonials() {
           Client Testimonials &amp; Reviews
         </p>
         <h2 className="mb-12 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          What our clients say
+          What clients say
         </h2>
       </div>
 

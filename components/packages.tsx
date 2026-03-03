@@ -181,7 +181,7 @@ export function Packages() {
         </div>
 
         <p className="mt-8 text-center text-sm text-muted">
-          Need something custom? We can scope it in a quick call.
+          Need something custom? I can scope it in a quick call.
         </p>
       </div>
 

@@ -91,7 +91,7 @@ export function ContactFormModal({ open, onClose }: ContactFormModalProps) {
             Thanks! We&apos;ll be in touch.
           </h3>
           <p className="mx-auto mt-2 max-w-sm text-sm text-muted">
-            We&apos;ve received your details and will get back to you within 24
+            I&apos;ve received your details and will get back to you within 24
             hours to set up a call.
           </p>
           <button
@@ -107,7 +107,7 @@ export function ContactFormModal({ open, onClose }: ContactFormModalProps) {
             Book a Call
           </h2>
           <p className="mb-6 text-sm text-muted">
-            Tell us a bit about your project and we&apos;ll set up a call.
+            Tell me a bit about your project and I&apos;ll set up a call.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">

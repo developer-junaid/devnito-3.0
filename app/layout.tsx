@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { siteConfig } from "@/content/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,16 +10,19 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://devnito.com";
+const siteUrl = siteConfig.url;
+const siteName = siteConfig.name;
+const siteTitle = siteConfig.title;
+const siteDescription =
+  "Founder-led architecture, web & mobile engineering, and long-term product partnership — from MVP to scale. 70+ engagements, 100+ projects delivered worldwide.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Devnito — Founder-led Engineering Partner for Product Teams",
-    template: "%s | Devnito",
+    default: siteTitle,
+    template: `%s | ${siteName}`,
   },
-  description:
-    "Founder-led architecture, web & mobile engineering, and long-term product partnership — from MVP to scale. 70+ engagements, 100+ projects delivered worldwide.",
+  description: siteDescription,
   keywords: [
     "founder-led engineering",
     "web development partner",
@@ -29,20 +33,19 @@ export const metadata: Metadata = {
     "full-stack engineering",
     "fractional CTO",
     "engineering partner",
-    "Devnito",
+    "Junaid Qureshi",
   ],
   authors: [{ name: "Junaid Qureshi", url: siteUrl }],
-  creator: "Devnito",
-  publisher: "Devnito",
+  creator: siteName,
+  publisher: siteName,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Devnito — Founder-led Engineering Partner for Product Teams",
-    description:
-      "Founder-led architecture, web & mobile engineering, and long-term product partnership — from MVP to scale. 70+ engagements, 100+ projects delivered worldwide.",
+    title: siteTitle,
+    description: siteDescription,
     url: siteUrl,
-    siteName: "Devnito",
+    siteName,
     locale: "en_US",
     type: "website",
     images: [
@@ -50,15 +53,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Devnito — Founder-led Engineering Partner",
+        alt: siteTitle,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Devnito — Founder-led Engineering Partner for Product Teams",
-    description:
-      "Founder-led architecture, web & mobile engineering, and long-term product partnership — from MVP to scale. 70+ engagements, 100+ projects delivered worldwide.",
+    title: siteTitle,
+    description: siteDescription,
     images: ["/og-image.png"],
   },
   icons: {
@@ -81,16 +83,15 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Devnito",
+  name: siteName,
   url: siteUrl,
   logo: `${siteUrl}/logo.svg`,
-  description:
-    "Founder-led architecture, web & mobile engineering, and long-term partnership for product teams that need to scale.",
+  description: siteConfig.description,
   founder: {
     "@type": "Person",
     name: "Junaid Qureshi",
-    jobTitle: "Founder & CEO",
-    url: "https://www.linkedin.com/in/developer-junaid/",
+    jobTitle: "Full-Stack Engineer & Solution Architect",
+    url: siteConfig.social.linkedin,
   },
   areaServed: "Worldwide",
   serviceType: [
@@ -100,7 +101,7 @@ const jsonLd = {
     "Full-Stack Engineering",
   ],
   priceRange: "$60/hr",
-  sameAs: ["https://www.linkedin.com/in/developer-junaid/"],
+  sameAs: [siteConfig.social.linkedin],
 };
 
 export default function RootLayout({
