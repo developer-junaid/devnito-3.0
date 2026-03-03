@@ -55,7 +55,7 @@ function PackageModalContent({
 }) {
   return (
     <div className="pr-4">
-      <div className="mb-2 flex items-center gap-3">
+      <div className="mb-2 flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-3">
         <h2 className="text-2xl font-bold text-foreground">{pkg.title}</h2>
         <span className="rounded-full bg-[var(--gradient-start)]/10 px-3 py-1 text-xs font-medium text-[var(--gradient-start)]">
           {pkg.tag}
@@ -79,7 +79,10 @@ function PackageModalContent({
           </h4>
           <ul className="space-y-1.5">
             {pkg.modal.deliverables.map((d) => (
-              <li key={d} className="flex items-start gap-2 text-sm text-foreground">
+              <li
+                key={d}
+                className="flex items-start gap-2 text-sm text-foreground"
+              >
                 <span className="mt-1 block h-2 w-2 flex-shrink-0 rounded-full bg-[var(--brand-gradient)]" />
                 {d}
               </li>
@@ -140,9 +143,18 @@ export function Packages() {
   }
 
   return (
-    <section id="packages" className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28">
+    <section
+      id="packages"
+      className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28"
+    >
       <div className="pointer-events-none absolute bottom-16 -right-10 -z-10 w-[300px] max-w-[380px] rotate-12 opacity-[0.10] select-none sm:w-[380px]">
-        <Image src="/logo.svg" alt="" width={380} height={270} className="h-auto w-full" />
+        <Image
+          src="/logo.svg"
+          alt=""
+          width={380}
+          height={270}
+          className="h-auto w-full"
+        />
       </div>
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-12 max-w-xl">
@@ -179,7 +191,10 @@ export function Packages() {
         title={activePackage?.title}
       >
         {activePackage && (
-          <PackageModalContent pkg={activePackage} onBookCall={handleBookCall} />
+          <PackageModalContent
+            pkg={activePackage}
+            onBookCall={handleBookCall}
+          />
         )}
       </Modal>
     </section>
