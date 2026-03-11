@@ -13,17 +13,23 @@ export function ContactCTA() {
         <div className="relative overflow-hidden rounded-3xl border border-card-border bg-card p-8 text-center shadow-[var(--card-shadow)] sm:p-14">
           <div className="pointer-events-none absolute inset-0 -z-0 bg-gradient-to-br from-[var(--gradient-start)]/[0.03] via-transparent to-[var(--gradient-end)]/[0.03]" />
           <div className="pointer-events-none absolute -bottom-8 -right-8 -z-0 w-[200px] max-w-[260px] -rotate-6 opacity-[0.12] select-none sm:w-[260px]">
-            <Image src="/logo.svg" alt="" width={260} height={185} className="h-auto w-full" />
+            <Image
+              src="/logo.svg"
+              alt=""
+              width={260}
+              height={185}
+              className="h-auto w-full"
+            />
           </div>
 
           <div className="relative z-10">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Let&apos;s build something that scales.
+              Ready to scale your engineering?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-muted">
-              If you&apos;re a founder or product team looking for a partner who
-              can lead and deliver, I&apos;d love to hear what you&apos;re
-              building.
+              I&apos;m currently accepting one new partnership for Q2 2026. If
+              you&apos;re looking for a Fractional CTO to lead your strategy and
+              execution, let&apos;s see if we&apos;re a fit.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
