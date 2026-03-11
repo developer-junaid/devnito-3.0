@@ -15,12 +15,12 @@
       }
     </style>
     <linearGradient id="linear-gradient" x1="299.9" y1="570.85" x2="592.65" y2="186.98" gradientTransform="translate(-36.33 31.99) rotate(1.38) skewX(2.77)" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#77ccf3"/>
-      <stop offset=".1" stop-color="#74c3eb"/>
-      <stop offset=".26" stop-color="#6cacd8"/>
-      <stop offset=".47" stop-color="#6086b9"/>
-      <stop offset=".7" stop-color="#4f528e"/>
-      <stop offset=".74" stop-color="#4c4886"/>
+      <stop offset="0" stop-color="#ccff00"/>
+      <stop offset=".1" stop-color="#b8e600"/>
+      <stop offset=".26" stop-color="#7cff7c"/>
+      <stop offset=".47" stop-color="#00ff88"/>
+      <stop offset=".7" stop-color="#a855f7"/>
+      <stop offset=".74" stop-color="#a855f7"/>
     </linearGradient>
     <linearGradient id="linear-gradient-2" x1="687.94" y1="565.26" x2="122.31" y2="-74.8" gradientTransform="matrix(1,0,0,1,0,0)" xlink:href="#linear-gradient"/>
   </defs>

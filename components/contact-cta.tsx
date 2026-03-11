@@ -17,7 +17,7 @@ export function ContactCTA() {
           </div>
 
           <div className="relative z-10">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Let&apos;s build something that scales.
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-muted">
@@ -35,7 +35,7 @@ export function ContactCTA() {
               </button>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-gray-50"
+                className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-white/5"
               >
                 Email
               </a>

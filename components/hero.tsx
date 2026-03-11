@@ -9,12 +9,12 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden px-5 pt-32 pb-20 sm:px-8 sm:pt-40 sm:pb-28">
-      <div className="pointer-events-none absolute top-20 left-1/2 -z-10 h-[500px] w-[600px] -translate-x-1/2 gradient-blur rounded-full opacity-80" />
+      <div className="pointer-events-none absolute top-40 left-1/2 -z-10 h-[400px] w-[500px] -translate-x-1/2 gradient-blur rounded-full opacity-50" />
 
       <div className="mx-auto max-w-[1200px]">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
           {/* Photo */}
-          <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-2xl bg-gray-100 sm:h-[320px] lg:h-[380px] lg:w-[380px] lg:rounded-3xl">
+          <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-2xl bg-white/5 sm:h-[320px] lg:h-[380px] lg:w-[380px] lg:rounded-3xl">
             <Image
               src={founder.photo}
               alt={founder.name}
@@ -26,21 +26,23 @@ export function Hero() {
           </div>
 
           {/* Content */}
-          <div className="min-w-0 flex-1">
-            <h1 className="animate-slide-up text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <div className="relative z-10 min-w-0 flex-1">
+            <h1 className="font-heading animate-slide-up text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               {founder.heroHeadline}
             </h1>
 
-            <p
-              className="animate-slide-up mt-2 text-base font-medium sm:text-lg [animation-delay:50ms]"
-              style={{
-                background: "linear-gradient(135deg, #4c4886, #6086b9, #77ccf3)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              {founder.title}
+            <p className="animate-slide-up mt-2 text-base font-medium sm:text-lg [animation-delay:50ms]">
+              <span
+                className="bg-clip-text"
+                style={{
+                  background: "var(--brand-gradient)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                {founder.title}
+              </span>
             </p>
 
             <p className="animate-slide-up mt-5 max-w-xl text-[15px] leading-relaxed text-muted [animation-delay:100ms] sm:text-base">
@@ -51,7 +53,7 @@ export function Hero() {
               {founder.credentials.map((cred) => (
                 <span
                   key={cred}
-                  className="rounded-full bg-gray-100 px-3.5 py-1.5 text-xs font-medium text-foreground/80"
+                  className="rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium text-foreground/80"
                 >
                   {cred}
                 </span>
@@ -67,7 +69,7 @@ export function Hero() {
               </button>
               <a
                 href="#work"
-                className="inline-flex justify-center rounded-full border border-border px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-gray-50"
+                className="inline-flex justify-center rounded-full border border-border px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-white/5"
               >
                 View My Work
               </a>

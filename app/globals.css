@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
+/* The Lab — Minimalist Dark Mode (Terminal / Blueprint aesthetic) */
 :root {
-  --background: #fafaf8;
-  --foreground: #1a1a1a;
-  --muted: #6b6b6b;
-  --border: #e5e5e3;
-  --accent: #1a1a1a;
-  --accent-foreground: #fafaf8;
-  --card: #ffffff;
-  --card-border: #ebebea;
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  --overlay: rgba(0, 0, 0, 0.4);
-  --gradient-start: #4c4886;
-  --gradient-mid: #6086b9;
-  --gradient-end: #77ccf3;
+  --background: #0a0a0a;
+  --foreground: #e8e8e8;
+  --muted: #8b8b8b;
+  --border: #252525;
+  --accent: #ccff00;
+  --accent-foreground: #0a0a0a;
+  --card: #141414;
+  --card-border: #252525;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --overlay: rgba(0, 0, 0, 0.7);
+  --gradient-start: #ccff00;
+  --gradient-mid: #00ff88;
+  --gradient-end: #a855f7;
   --brand-gradient: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
 }
 
@@ -27,6 +28,7 @@
   --color-card: var(--card);
   --color-card-border: var(--card-border);
   --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
@@ -39,12 +41,12 @@ body {
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 ::selection {
   background: var(--gradient-start);
-  color: white;
+  color: var(--accent-foreground);
 }
 
 @keyframes fade-in {
@@ -97,16 +99,16 @@ html {
 @utility gradient-blur {
   background: linear-gradient(
     135deg,
-    rgba(76, 72, 134, 0.08) 0%,
-    rgba(96, 134, 185, 0.06) 50%,
-    rgba(119, 204, 243, 0.08) 100%
+    rgba(204, 255, 0, 0.06) 0%,
+    rgba(0, 255, 136, 0.04) 50%,
+    rgba(168, 85, 247, 0.06) 100%
   );
   filter: blur(60px);
 }
 
 @utility btn-gradient {
   background: var(--brand-gradient);
-  color: white;
+  color: var(--accent-foreground);
 }
 
 @utility section-dot {
@@ -117,6 +119,10 @@ html {
   background: var(--brand-gradient);
   margin-right: 10px;
   vertical-align: middle;
+}
+
+.font-heading {
+  font-family: var(--font-mono), ui-monospace, monospace;
 }
 
 .scrollbar-hide {

@@ -71,7 +71,7 @@ export function Modal({ open, onClose, children, title }: ModalProps) {
   return (
     <div
       ref={overlayRef}
-      className="animate-overlay-in fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/40 p-4 pt-[5vh] pb-[5vh] sm:items-center sm:pt-0 sm:pb-0"
+      className="animate-overlay-in fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-4 pt-[5vh] pb-[5vh] sm:items-center sm:pt-0 sm:pb-0"
       onClick={(e) => {
         if (e.target === overlayRef.current) onClose();
       }}
@@ -82,14 +82,14 @@ export function Modal({ open, onClose, children, title }: ModalProps) {
       <div
         ref={contentRef}
         className={clsx(
-          "animate-modal-in relative w-full max-w-2xl rounded-2xl bg-white p-4 shadow-xl sm:p-8",
+          "animate-modal-in relative w-full max-w-2xl rounded-2xl bg-card border border-border p-4 shadow-xl sm:p-8",
           "my-auto"
         )}
       >
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-gray-100 hover:text-foreground"
+          className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-white/10 hover:text-foreground"
         >
           <svg
             width="16"

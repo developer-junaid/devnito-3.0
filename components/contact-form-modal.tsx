@@ -82,12 +82,12 @@ export function ContactFormModal({ open, onClose }: ContactFormModalProps) {
     <Modal open={open} onClose={handleClose} title="Book a Call">
       {status === "success" ? (
         <div className="py-8 text-center">
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/20">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 14l6 6L22 8" />
             </svg>
           </div>
-          <h3 className="text-xl font-bold text-foreground">
+          <h3 className="font-heading text-xl font-bold text-foreground">
             Thanks! We&apos;ll be in touch.
           </h3>
           <p className="mx-auto mt-2 max-w-sm text-sm text-muted">
@@ -103,7 +103,7 @@ export function ContactFormModal({ open, onClose }: ContactFormModalProps) {
         </div>
       ) : (
         <div>
-          <h2 className="mb-1 text-xl font-bold text-foreground">
+          <h2 className="font-heading mb-1 text-xl font-bold text-foreground">
             Book a Call
           </h2>
           <p className="mb-6 text-sm text-muted">
@@ -181,7 +181,7 @@ export function ContactFormModal({ open, onClose }: ContactFormModalProps) {
             </div>
 
             {status === "error" && (
-              <p className="rounded-lg bg-red-50 px-4 py-2.5 text-sm text-red-600">
+              <p className="rounded-lg bg-red-500/20 px-4 py-2.5 text-sm text-red-400">
                 {errorMsg}
               </p>
             )}

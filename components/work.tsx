@@ -22,7 +22,7 @@ function ProjectShowcase({
     >
       <div className={`flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
         {/* Image */}
-        <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 lg:aspect-auto lg:w-[55%]">
+        <div className="relative aspect-[16/10] w-full overflow-hidden bg-white/5 lg:aspect-auto lg:w-[55%]">
           {project.image ? (
             <Image
               src={project.image}
@@ -50,14 +50,14 @@ function ProjectShowcase({
               {project.industry}
             </p>
             {project.status && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
+              <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-400">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-500" />
                 {project.status}
               </span>
             )}
           </div>
 
-          <h3 className="mb-3 text-xl font-bold text-foreground sm:text-2xl lg:text-[1.65rem]">
+          <h3 className="font-heading mb-3 text-xl font-bold text-foreground sm:text-2xl lg:text-[1.65rem]">
             {project.name}
           </h3>
 
@@ -69,7 +69,7 @@ function ProjectShowcase({
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted"
+                className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-muted"
               >
                 {tag}
               </span>
@@ -114,7 +114,7 @@ function ImageGallery({
     <>
       <div className="relative -mx-4 mb-5 sm:mb-6">
         <div
-          className={`relative overflow-hidden rounded-xl bg-gray-50 sm:rounded-2xl ${
+          className={`relative overflow-hidden rounded-xl bg-white/5 sm:rounded-2xl ${
             current.mobile
               ? "aspect-[9/14] mx-auto max-w-[280px] sm:max-w-[320px]"
               : "aspect-[16/9]"
@@ -186,7 +186,7 @@ function ImageGallery({
                 className={`h-1.5 rounded-full transition-all ${
                   i === idx
                     ? "w-6 bg-[var(--gradient-start)]"
-                    : "w-1.5 bg-gray-300 hover:bg-gray-400"
+                    : "w-1.5 bg-white/20 hover:bg-white/30"
                 }`}
               />
             ))}
@@ -221,20 +221,20 @@ function ProjectModalContent({
           {project.industry}
         </p>
         {project.status && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
+          <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-400">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-500" />
             {project.status}
           </span>
         )}
       </div>
-      <h2 className="mb-2 text-xl font-bold text-foreground sm:text-2xl">
+      <h2 className="font-heading mb-2 text-xl font-bold text-foreground sm:text-2xl">
         {project.name}
       </h2>
       <div className="mb-5 flex flex-wrap items-center gap-1.5 sm:mb-6 sm:gap-2">
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-gray-100 px-2.5 py-0.5 text-[11px] font-medium text-muted sm:px-3 sm:py-1 sm:text-xs"
+            className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] font-medium text-muted sm:px-3 sm:py-1 sm:text-xs"
           >
             {tag}
           </span>
@@ -317,7 +317,7 @@ function ProjectModalContent({
             {project.modal.stack.map((s) => (
               <span
                 key={s}
-                className="rounded-full bg-gray-100 px-2.5 py-0.5 text-[11px] font-medium text-muted sm:px-3 sm:py-1 sm:text-xs"
+                className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] font-medium text-muted sm:px-3 sm:py-1 sm:text-xs"
               >
                 {s}
               </span>
@@ -358,7 +358,7 @@ export function Work() {
             <span className="section-dot" />
             Selected Work
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Selected work
           </h2>
         </div>

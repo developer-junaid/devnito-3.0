@@ -30,7 +30,7 @@ function VideoCard({ item }: { item: VideoTestimonialItem }) {
 
   return (
     <div className="flex w-[220px] flex-shrink-0 flex-col sm:w-[240px]">
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-gray-100">
+      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-white/5">
         {hasVideo ? (
           <video
             ref={videoRef}
@@ -170,7 +170,7 @@ export function Testimonials() {
           <span className="section-dot" />
           Client Testimonials &amp; Reviews
         </p>
-        <h2 className="mb-12 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="font-heading mb-12 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           What clients say
         </h2>
       </div>

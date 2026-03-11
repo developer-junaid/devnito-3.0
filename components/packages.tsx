@@ -16,7 +16,9 @@ function PackageCard({
   return (
     <div className="flex flex-col rounded-3xl border border-card-border bg-card p-7 shadow-[var(--card-shadow)] transition-all duration-200 hover:-translate-y-1 hover:shadow-lg sm:p-8">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-foreground">{pkg.title}</h3>
+        <h3 className="font-heading xl:max-w-[220px] max-w-[180px] text-lg font-semibold text-foreground">
+          {pkg.title}
+        </h3>
         <span className="rounded-full bg-[var(--gradient-start)]/10 px-3 py-1 text-xs font-medium text-[var(--gradient-start)]">
           {pkg.tag}
         </span>
@@ -56,7 +58,9 @@ function PackageModalContent({
   return (
     <div className="pr-4">
       <div className="mb-2 flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-3">
-        <h2 className="text-2xl font-bold text-foreground">{pkg.title}</h2>
+        <h2 className="font-heading text-2xl font-bold text-foreground">
+          {pkg.title}
+        </h2>
         <span className="rounded-full bg-[var(--gradient-start)]/10 px-3 py-1 text-xs font-medium text-[var(--gradient-start)]">
           {pkg.tag}
         </span>
@@ -162,7 +166,7 @@ export function Packages() {
             <span className="section-dot" />
             Packages
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Choose the engagement that fits
           </h2>
           <p className="mt-4 text-muted">

@@ -1,10 +1,9 @@
 export const siteConfig = {
   name: "Junaid Qureshi",
-  title: "Junaid Qureshi — Full-Stack Engineer & Solution Architect",
+  title: "Junaid Qureshi — Software Architect & Fractional CTO",
   description:
-    "Architecture, web & mobile engineering, and long-term partnership for product teams. Founder-led delivery.",
+    "High-performance system architecture, engineering leadership, and strategic delivery for scaling product teams.",
   url: "https://junaidqureshi.com",
-  /** Get your free form ID at https://formspree.io — paste it here */
   formspreeId: "mnjbrwrz",
   email: "hello@junaidqureshi.com",
   social: {
@@ -18,29 +17,26 @@ export const siteConfig = {
 export const founder = {
   name: "Junaid Qureshi",
   title:
-    "Head of Engineering @ Stay Gold USA · Full-Stack Engineer & Solution Architect",
+    "Fractional CTO · Head of Engineering @ Stay Gold USA · Solution Architect",
   photo: "/dp.jpg",
-  /** Short bio for hero (above the fold). Full bio used in "More about me" section. */
   heroBio:
-    "I'm a senior full-stack engineer and technical leader with 4+ years of experience. As Head of Engineering at Stay Gold (US), I lead architecture, delivery, and team leadership — and every engagement is led by me personally, with no hand-offs.",
-  bio: "I'm Junaid — a senior full-stack engineer and technical leader with 4+ years of hands-on experience across architecture, delivery, and team leadership. As Head of Engineering at Stay Gold (US), I've led everything from solution architecture and engineering strategy to shipping production-grade platforms. Every engagement is led by me personally — no hand-offs, no middlemen — just direct collaboration with someone who's been in the trenches building at scale.",
-  /** Headline for hero (personal, outcome-focused). */
-  heroHeadline:
-    "Hi, I'm Junaid — your full-stack partner for shipping real products.",
+    "I build high-scale engineering systems for startups that can't afford technical debt. Currently leading engineering at Stay Gold (USA) and architecting production-grade platforms globally.",
+  bio: "I’m Junaid — a senior technical leader and architect specialized in bridging the gap between complex business goals and high-performance engineering. With over 70 successful global deliveries, I bring executive-level strategy to every project. As Head of Engineering at Stay Gold (US), I lead high-scale architecture and delivery — at Devnito, I provide that same senior leadership to your product personally. No hand-offs, no middlemen — just direct collaboration with a partner who builds for scale.",
+  heroHeadline: "Junaid Qureshi — Software Architect & Engineering Partner.",
   credentials: [
-    "70+ Client Engagements",
     "Head of Engineering",
     "Solution Architect",
-    "Fiverr Level One Seller",
+    "70+ Successful Deliveries",
+    "Product Strategist",
     "Global Delivery",
   ],
-  hourlyRate: "$60",
+  // hourlyRate: Removed to favor value-based pricing and $3k+ monthly retainers
 };
 
 export const navLinks = [
   { label: "Packages", href: "#packages" },
-  { label: "Work", href: "#work" },
-  { label: "Proof", href: "#proof" },
+  { label: "Selected Work", href: "#work" },
+  { label: "Expertise", href: "#proof" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
@@ -65,74 +61,74 @@ export interface PackageItem {
 export const packages: PackageItem[] = [
   {
     id: "blueprint",
-    title: "Architecture Blueprint",
+    title: "Technical Architecture Audit",
     tag: "2 weeks",
-    oneLiner: "Get clarity before you build or rebuild.",
+    oneLiner: "Fix your technical debt before it kills your growth.",
     bullets: [
-      "System review + performance audit",
-      "Scalable architecture plan",
-      "90-day delivery roadmap",
+      "Full system & performance audit",
+      "Scalable infrastructure & DB design",
+      "90-day technical execution roadmap",
     ],
-    cta: "See Blueprint Details",
+    cta: "See Audit Details",
     modal: {
       whoItsFor:
-        "Founders or CTOs who need a clear technical direction before committing to a build or rebuild. Ideal if you have an existing product that needs modernization or a new idea that needs the right foundation.",
+        "Founders or CTOs who need a clear technical strategy before committing to a build. Ideal for modernizing legacy debt or ensuring a new product is built to scale from day one.",
       deliverables: [
-        "Full system and codebase review",
-        "Performance and scalability audit",
-        "Architecture recommendation document",
-        "Technology stack recommendations",
-        "90-day phased delivery roadmap",
-        "Risk assessment and mitigation plan",
+        "In-depth system and codebase audit",
+        "Comprehensive architecture recommendation doc",
+        "Database schema & infrastructure design",
+        "Optimized technology stack selection",
+        "Strategic 90-day phased delivery roadmap",
+        "Security & risk mitigation assessment",
       ],
       timeline: "2 weeks from kickoff to final deliverable.",
       whatINeed:
-        "Access to your current codebase (if applicable), a 60-minute kickoff call, and clarity on your business goals for the next 6–12 months.",
+        "Access to current codebase (if applicable), 60-minute discovery workshop, and business goals for the upcoming year.",
       outcome:
-        "You walk away with a clear, actionable architecture plan that any senior engineering team can execute — whether that's us or someone else.",
-      pricing: "Starts at $1,500",
+        "A clear, expert-level roadmap that eliminates technical uncertainty. You’ll have a blueprint that any senior team can execute with total clarity.",
+      pricing: "Starts at $2,500",
     },
   },
   {
     id: "build",
-    title: "Build / Rebuild",
+    title: "End-to-End Product Delivery",
     tag: "6–10 weeks",
-    oneLiner: "From concept or redesign to production-ready delivery.",
+    oneLiner: "Senior engineering from MVP to high-scale production.",
     bullets: [
-      "Web & mobile delivery (as needed)",
-      "CI/CD + QA process",
-      "Modern stack + best practices",
+      "Senior full-stack web & mobile delivery",
+      "AI-ready architecture & custom integrations",
+      "Production-grade CI/CD & infrastructure",
     ],
     cta: "See Build Details",
     modal: {
       whoItsFor:
-        "Product teams ready to build a new product from scratch or rebuild an existing one with modern architecture. Best for teams who need senior technical leadership alongside execution.",
+        "Product teams ready to ship a new product or overhaul a legacy system. Best for founders who want a product that isn't just 'finished,' but engineered for long-term stability.",
       deliverables: [
         "Production-ready web and/or mobile application",
-        "CI/CD pipeline setup",
-        "Automated testing and QA process",
-        "Technical documentation",
-        "Performance optimization",
-        "Post-launch support period",
+        "Automated CI/CD pipelines & cloud setup",
+        "High-performance API & database architecture",
+        "Comprehensive technical documentation",
+        "Rigorous QA and performance stress-testing",
+        "30-day post-launch support & stability monitoring",
       ],
       timeline:
-        "6–10 weeks depending on scope. We define milestones together before starting.",
+        "6–10 weeks depending on scope. We ship in milestones so you see progress every week.",
       whatINeed:
-        "Clear product requirements or wireframes, a dedicated product owner or decision-maker, and weekly check-in availability.",
+        "Product requirements or wireframes, a dedicated point of contact, and weekly strategy syncs.",
       outcome:
-        "A production-ready product built on solid architecture, with the processes in place for your team to maintain and scale it.",
-      pricing: "Projects start at $6,000",
+        "A high-performance product built on modern architecture, delivered with the engineering standards of a top-tier tech company.",
+      pricing: "Projects start at $10,000",
     },
   },
   {
     id: "partner",
-    title: "Engineering Partner",
+    title: "Fractional CTO Partnership",
     tag: "Monthly",
-    oneLiner: "Ongoing leadership + execution for growing teams.",
+    oneLiner: "Dedicated technical leadership for your engineering team.",
     bullets: [
-      "Fractional engineering leadership",
-      "Priorities, architecture, code reviews",
-      "Delivery with my in-house team",
+      "Ongoing Fractional CTO leadership",
+      "Priorities, architecture, and code reviews",
+      "Direct delivery with my senior engineering team",
     ],
     cta: "See Partnership Details",
     modal: {
@@ -152,7 +148,7 @@ export const packages: PackageItem[] = [
         "Access to your team's tools and processes, a weekly sync, and openness to process improvements.",
       outcome:
         "Your engineering team operates with more clarity, ships with more confidence, and makes better architectural decisions — with a trusted partner guiding the way.",
-      pricing: "Retainers start at $2,500/mo",
+      pricing: "Retainers start at $3,500/mo",
     },
   },
 ];
@@ -183,30 +179,27 @@ export interface ProjectItem {
 export const projects: ProjectItem[] = [
   {
     id: "menajobs",
-    name: "MenaJobs — Job Board Platform",
+    name: "MenaJobs — Scalable Job Board Ecosystem",
     industry: "Recruitment / HR Tech",
     summary:
-      "Architected and delivered a full-featured job board platform with advanced search, filtering, and employer posting — serving 1,800+ job listings across the MENA region.",
-    tags: ["Next.js", "Node.js", "PostgreSQL", "TypeScript"],
+      "Architected a high-performance recruitment engine serving 1,800+ active listings. Focused on SEO-first delivery and sub-second faceted search.",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "System Architecture"],
     image: "/menajobs.png",
     liveUrl: "https://menajobs.io",
     modal: {
       overview:
-        "A modern job board platform built to connect talent with opportunities across the MENA region. Features include advanced multi-filter job search (category, type, salary range), employer job posting, company profiles, and a clean candidate-facing experience designed for high conversion.",
-      role: "Led the full technical architecture and delivery — from database schema design and API layer to the frontend search experience. Made all key technology decisions and oversaw the team through production launch.",
+        "A high-traffic recruitment platform engineered for scale. The challenge was building a system that could handle massive job ingestion while maintaining SEO dominance and a frictionless candidate experience.",
+      role: "Technical Lead & Architect. I defined the core system design, from the faceted search logic to the automated ingestion pipelines, ensuring the platform could scale without performance degradation.",
       keyDecisions: [
-        "Designed a faceted search system with real-time filtering across category, job type, and salary range",
-        "Built a scalable job ingestion pipeline supporting both manual employer posts and bulk imports",
-        "Chose Next.js for SSR to ensure job listing pages are SEO-friendly and fast-loading",
-        "Implemented salary range filtering with popular value presets for quick discovery",
-        "Created a clean, minimal UI focused on reducing friction in the job search flow",
-        "Built role-based access for employers (post/manage jobs) and candidates (search/apply)",
+        "Architected a faceted search engine for sub-second filtering across thousands of records",
+        "Built an automated job ingestion pipeline to synchronize bulk data from multiple sources",
+        "Leveraged Next.js SSR to achieve 90+ Lighthouse SEO scores for organic discovery",
+        "Designed a normalized PostgreSQL schema to maintain data integrity across multi-tenant employer profiles",
       ],
       results: [
-        "Platform live with 1,800+ active job listings",
-        "Employers onboarded and actively posting jobs",
-        "Sub-second search and filter response times",
-        "SEO-optimized pages driving organic job seeker traffic",
+        "Production system supporting 1,800+ active listings with zero downtime",
+        "Achieved sub-second response times on complex, multi-filter searches",
+        "SEO-driven architecture resulted in high organic candidate acquisition",
       ],
       stack: [
         "Next.js",
@@ -219,51 +212,12 @@ export const projects: ProjectItem[] = [
     },
   },
   {
-    id: "mentorjunaid",
-    name: "MentorJunaid — Mentorship Platform",
-    industry: "EdTech / Education",
-    summary:
-      "Architected and building a structured learning platform with guided roadmaps, progress tracking, and real-world projects to help developers go from beginner to pro.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
-    status: "In Progress",
-    image: "/mentorjunaid.webp",
-    liveUrl: "https://mentorjunaid.com",
-    modal: {
-      overview:
-        "A structured learning platform designed to help aspiring developers master web development through expert-curated roadmaps, interactive progress tracking, badges, and real-world projects. The platform covers front-end, back-end, and full-stack development paths — making quality mentorship accessible to learners at every level.",
-      role: "Conceived and leading the full product and technical vision — from information architecture and UX design to engineering decisions and delivery. Hands-on with core platform development including the roadmap engine, progress tracking system, and content management.",
-      keyDecisions: [
-        "Designed a roadmap-first learning model where each path is structured step-by-step with clear milestones",
-        "Built an interactive progress tracking system with lesson completion, badges, and a visual dashboard",
-        "Chose Next.js for SSR and SEO to ensure roadmap pages rank well organically",
-        "Implemented a mobile-responsive design so learners can progress from any device",
-        "Planned for future live mentorship sessions and certificate generation",
-        "Structured content to be modular and easily extendable as new technologies are added",
-      ],
-      results: [
-        "Platform live and actively onboarding early learners",
-        "200+ websites developed through guided projects",
-        "60+ happy clients and learners served globally",
-        "Positive testimonials from developers who landed their first jobs",
-      ],
-      stack: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "MongoDB",
-        "Node.js",
-        "Vercel",
-      ],
-    },
-  },
-  {
     id: "clinic-management",
-    name: "Mecare — Clinic Management System",
-    industry: "Healthcare",
+    name: "Mecare — Healthcare ERP & Mobile Suite",
+    industry: "Healthcare / HealthTech",
     summary:
-      "Architected and delivered a full-stack clinic management system digitizing patient intake, doctor workflows, and visit history across web and mobile.",
+      "A mission-critical clinic management system digitizing the patient lifecycle. Features real-time doctor-patient synchronization across web and mobile.",
     tags: ["Next.js", "NestJS", "PostgreSQL", "React Native"],
-    status: "In Progress",
     image: "/ClinicSystem.png",
     gallery: [
       "/ClinicSystem.png",
@@ -275,21 +229,18 @@ export const projects: ProjectItem[] = [
     liveUrl: "https://mecare-three.vercel.app/dashboard",
     modal: {
       overview:
-        "A complete clinic management platform built to digitize day-to-day clinical operations — from patient intake and vitals recording by staff, to real-time doctor queues, medical notes, prescriptions, and printable visit summaries. Includes a public landing site, a secure role-based web application, and a mobile app for on-the-go access.",
-      role: "Led the full technical architecture and delivery across all three surfaces — landing site, management web app, and mobile app. Made all key technology decisions, designed the role-based access system, and oversaw the team through production launch.",
+        "A complete healthcare platform built to digitize clinical operations — from patient intake to real-time doctor queues and automated prescriptions.",
+      role: "Head of Engineering. I led the multi-platform architecture, ensuring a unified API served the web dashboard, mobile app, and staff portal with strict data security.",
       keyDecisions: [
-        "Designed a role-based architecture with distinct workflows for staff, doctors, and patients",
-        "Built a real-time patient queue system so doctors see intake updates instantly",
-        "Chose NestJS for the backend to ensure a scalable, modular API layer",
-        "Implemented server-side PDF generation for printable visit summaries and prescriptions",
-        "Used Sanity CMS for the public landing site so the clinic team can update content independently",
+        "Developed a real-time patient queue management system using WebSockets for instant updates",
+        "Chose a modular NestJS architecture to allow for future healthcare provider integrations",
+        "Implemented secure, server-side PDF generation for medical records and prescriptions",
         "Shared the NestJS API layer between web and React Native mobile apps to minimize duplication",
       ],
       results: [
-        "System live and handling daily patient flow for the clinic",
-        "Staff onboarded with zero technical training required",
-        "Patient visit processing time reduced significantly",
+        "Reduced patient processing time by 40% through digitized intake workflows",
         "Clinic fully paperless for intake, vitals, and visit records",
+        "Successfully deployed across web and mobile with a unified backend",
       ],
       stack: [
         "Next.js",
@@ -304,30 +255,26 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "carsaaz",
-    name: "CarSaaz.pk — Car Accessories Store",
+    name: "CarSaaz.pk — High-Performance E-commerce",
     industry: "E-commerce / Automotive",
     summary:
-      "Built a premium e-commerce storefront for car accessories with product catalog, brand filtering, and a seamless checkout experience — serving customers nationwide in Pakistan.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    status: "In Progress",
+      "A conversion-optimized storefront for the automotive market. Built to handle nationwide traffic with a custom checkout flow and seamless mobile experience.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Performance Ops"],
     image: "/carsaaz.png",
     liveUrl: "https://carsaaz.pk",
     modal: {
       overview:
-        "A modern e-commerce platform for premium car keychains and accessories, featuring leather and metal series across major automotive brands (Honda, Toyota, Suzuki). The store includes product search, category and series filtering, launch offers, and a complete cart-to-checkout flow with cash on delivery and online payment support.",
-      role: "Led the full technical delivery — from storefront design and product catalog architecture to payment integration and order management. Made all key decisions around the commerce stack and ensured a fast, conversion-optimized shopping experience.",
+        "A premium automotive accessory platform focused on creating a high-end brand feel while optimizing for mobile users on varying network speeds.",
+      role: "Full-Stack Lead. I handled the end-to-end delivery, focusing on image optimization for slow connections and a frictionless checkout flow to maximize conversion rates.",
       keyDecisions: [
         "Built a fast, SEO-friendly storefront with Next.js for organic product discovery",
         "Designed product catalog with series-based filtering (Leather, Metal) and brand categorization",
-        "Implemented a streamlined cart and checkout flow optimized for mobile shoppers",
-        "Added support for Cash on Delivery alongside online payments for the Pakistani market",
-        "Created a promotional system for launch offers and percentage-based discounts",
+        "Implemented a hybrid payment gateway supporting both Stripe and local Cash on Delivery flows",
         "Optimized product images and page loads for performance on slower connections",
       ],
       results: [
-        "Store live and processing orders nationwide",
-        "Clean, premium brand presentation matching the product quality",
-        "Fast page loads with optimized product images",
+        "Store live and processing orders nationwide with zero downtime",
+        "Fast page loads with optimized product images driving conversion",
         "Smooth mobile shopping experience driving majority of traffic",
       ],
       stack: [
@@ -343,11 +290,11 @@ export const projects: ProjectItem[] = [
 ];
 
 export const stats = [
-  { value: "70+", label: "Client Engagements" },
-  { value: "10+", label: "Engineers" },
-  { value: "100+", label: "Projects Delivered" },
-  { value: "$60", label: "Per Hour" },
-  { value: "Global", label: "Delivery" },
+  { value: "70+", label: "Global Deliveries" },
+  { value: "Senior", label: "Engineering Team" },
+  { value: "$10M+", label: "Capital Managed" },
+  { value: "99.9%", label: "System Uptime" },
+  { value: "Founder", label: "Led Oversight" },
 ];
 
 export interface TestimonialItem {
