@@ -20,7 +20,9 @@ function ProjectShowcase({
       onClick={onOpen}
       className="group block w-full overflow-hidden rounded-3xl border border-card-border bg-card text-left shadow-[var(--card-shadow)] transition-all duration-300 hover:shadow-xl"
     >
-      <div className={`flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
+      <div
+        className={`flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+      >
         {/* Image */}
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 lg:aspect-auto lg:w-[55%]">
           {project.image ? (
@@ -78,7 +80,17 @@ function ProjectShowcase({
 
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--gradient-start)] transition-colors group-hover:text-[var(--gradient-mid)]">
             View case study
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform group-hover:translate-x-1"
+            >
               <path d="M6 4l4 4-4 4" />
             </svg>
           </span>
