@@ -18,7 +18,7 @@ export const founder = {
   name: "Junaid Qureshi",
   title:
     "Founder @ Devnito · Fractional CTO · Head of Engineering @ Stay Gold USA",
-  photo: "/dp.jpg",
+  photo: "/dp.png",
   bio: "I’m Junaid — a senior technical leader and architect specialized in bridging the gap between complex business goals and high-performance engineering. With over 70 successful global deliveries, I bring executive-level strategy to every project. As Head of Engineering at Stay Gold (US), I lead high-scale architecture and delivery—at Devnito, I provide that same senior leadership to your product personally. No hand-offs, no middlemen—just direct collaboration with a partner who builds for scale.",
   credentials: [
     "Head of Engineering",

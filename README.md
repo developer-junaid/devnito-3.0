@@ -79,7 +79,7 @@ devnito-3.0/
 │   └── site.ts                 # All editable content in one place
 └── public/
     ├── logo.svg                # Brand mark & favicon
-    ├── dp.jpg                  # Founder photo
+    ├── dp.png                  # Founder photo
     └── ...                     # Project screenshots & assets
 ```
 
