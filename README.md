@@ -77,7 +77,7 @@ devnito-3.0/
 │   └── site.ts                  # All editable content in one place
 └── public/
     ├── logo.svg                 # Brand mark & favicon
-    ├── dp.jpg                   # Portfolio photo
+    ├── dp.png                   # Portfolio photo
     └── ...                      # Project screenshots & assets
 ```
 
@@ -101,16 +101,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All website copy is centralized in **`content/site.ts`**. Edit the exported objects and the site updates instantly:
 
-| Export       | Controls                                                       |
-| ------------ | -------------------------------------------------------------- |
-| `siteConfig` | Site name, URL, email, social links (LinkedIn, GitHub), Formspree ID |
-| `founder`    | Name, title, photo, hero headline, hero bio, full bio, credentials |
-| `navLinks`   | Navigation items                                               |
-| `packages`   | Service packages — cards & modal details                      |
-| `projects`   | Case studies — cards, galleries & modal details               |
-| `stats`      | Proof strip numbers (engagements, rate, etc.)                  |
-| `testimonials` | Client quotes with avatars                                  |
-| `videoTestimonials` | Video testimonial entries                                |
+| Export              | Controls                                                             |
+| ------------------- | -------------------------------------------------------------------- |
+| `siteConfig`        | Site name, URL, email, social links (LinkedIn, GitHub), Formspree ID |
+| `founder`           | Name, title, photo, hero headline, hero bio, full bio, credentials   |
+| `navLinks`          | Navigation items                                                     |
+| `packages`          | Service packages — cards & modal details                             |
+| `projects`          | Case studies — cards, galleries & modal details                      |
+| `stats`             | Proof strip numbers (engagements, rate, etc.)                        |
+| `testimonials`      | Client quotes with avatars                                           |
+| `videoTestimonials` | Video testimonial entries                                            |
 
 <br />
 
