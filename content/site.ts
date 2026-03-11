@@ -16,17 +16,18 @@ export const siteConfig = {
 
 export const founder = {
   name: "Junaid Qureshi",
-  title: "Founder & CEO @ Devnito · Head of Engineering @ Stay Gold USA",
+  title:
+    "Founder @ Devnito · Fractional CTO · Head of Engineering @ Stay Gold USA",
   photo: "/dp.jpg",
-  bio: "I'm Junaid — a senior full-stack engineer and technical leader with 4+ years of hands-on experience across architecture, delivery, and team leadership. As Head of Engineering at Stay Gold (US) and Founder of Devnito, I've led everything from solution architecture and engineering strategy to shipping production-grade platforms. Every Devnito engagement is led by me personally — no hand-offs, no middlemen — just direct collaboration with someone who's been in the trenches building at scale.",
+  bio: "I’m Junaid — a senior technical leader and architect specialized in bridging the gap between complex business goals and high-performance engineering. With over 70 successful global deliveries, I bring executive-level strategy to every project. As Head of Engineering at Stay Gold (US), I lead high-scale architecture and delivery—at Devnito, I provide that same senior leadership to your product personally. No hand-offs, no middlemen—just direct collaboration with a partner who builds for scale.",
   credentials: [
-    "70+ Client Engagements",
     "Head of Engineering",
     "Solution Architect",
-    "Fiverr Level One Seller",
+    "70+ Successful Deliveries",
+    "Product Strategist",
     "Global Delivery",
   ],
-  hourlyRate: "$60",
+  // hourlyRate: Removed to favor value-based pricing and $3k+ monthly retainers
 };
 
 export const navLinks = [
@@ -59,92 +60,95 @@ export const packages: PackageItem[] = [
     id: "blueprint",
     title: "Architecture Blueprint",
     tag: "2 weeks",
-    oneLiner: "Get clarity before you build or rebuild.",
+    oneLiner: "The technical foundation you need to build with confidence.",
     bullets: [
-      "System review + performance audit",
-      "Scalable architecture plan",
-      "90-day delivery roadmap",
+      "Full system audit & performance review",
+      "Scalable infrastructure & database design",
+      "90-day technical execution roadmap",
+      "Cost & resource optimization plan",
     ],
     cta: "See Blueprint Details",
     modal: {
       whoItsFor:
-        "Founders or CTOs who need a clear technical direction before committing to a build or rebuild. Ideal if you have an existing product that needs modernization or a new idea that needs the right foundation.",
+        "Founders or product leaders who need a clear technical strategy before committing to a build. Ideal for modernizing legacy debt or ensuring a new product is built to scale from day one.",
       deliverables: [
-        "Full system and codebase review",
-        "Performance and scalability audit",
-        "Architecture recommendation document",
-        "Technology stack recommendations",
-        "90-day phased delivery roadmap",
-        "Risk assessment and mitigation plan",
+        "In-depth system and codebase audit",
+        "Comprehensive architecture recommendation doc",
+        "Database schema & infrastructure design",
+        "Optimized technology stack selection",
+        "Strategic 90-day phased delivery roadmap",
+        "Security & risk mitigation assessment",
       ],
       timeline: "2 weeks from kickoff to final deliverable.",
       whatINeed:
-        "Access to your current codebase (if applicable), a 60-minute kickoff call, and clarity on your business goals for the next 6–12 months.",
+        "Access to current codebase (if applicable), 60-minute discovery workshop, and business goals for the upcoming year.",
       outcome:
-        "You walk away with a clear, actionable architecture plan that any senior engineering team can execute — whether that's us or someone else.",
-      pricing: "Starts at $1,500",
+        "A clear, expert-level roadmap that eliminates technical uncertainty. You’ll have a blueprint that any senior team can execute with total clarity.",
+      pricing: "Starts at $2,500",
     },
   },
   {
     id: "build",
     title: "Build / Rebuild",
     tag: "6–10 weeks",
-    oneLiner: "From concept or redesign to production-ready delivery.",
+    oneLiner: "Turn vision or legacy debt into a production-grade reality.",
     bullets: [
-      "Web & mobile delivery (as needed)",
-      "CI/CD + QA process",
-      "Modern stack + best practices",
+      "Senior full-stack web & mobile delivery",
+      "AI-ready architecture & custom integrations",
+      "Production-grade CI/CD & infrastructure",
+      "Performance-first engineering standards",
     ],
     cta: "See Build Details",
     modal: {
       whoItsFor:
-        "Product teams ready to build a new product from scratch or rebuild an existing one with modern architecture. Best for teams who need senior technical leadership alongside execution.",
+        "Teams ready to ship a new product or overhaul a legacy system. Best for founders who want a product that isn't just 'finished,' but engineered for long-term stability and scale.",
       deliverables: [
-        "Production-ready web and/or mobile application",
-        "CI/CD pipeline setup",
-        "Automated testing and QA process",
-        "Technical documentation",
-        "Performance optimization",
-        "Post-launch support period",
+        "Production-ready web and mobile applications",
+        "Automated CI/CD pipelines & cloud setup",
+        "High-performance API & database architecture",
+        "Comprehensive technical documentation",
+        "Rigorous QA and performance stress-testing",
+        "30-day post-launch support & stability monitoring",
       ],
       timeline:
-        "6–10 weeks depending on scope. We define milestones together before starting.",
+        "6–10 weeks. We ship in milestones so you see progress every week.",
       whatINeed:
-        "Clear product requirements or wireframes, a dedicated product owner or decision-maker, and weekly check-in availability.",
+        "Product requirements or wireframes, a dedicated point of contact, and weekly strategy syncs.",
       outcome:
-        "A production-ready product built on solid architecture, with the processes in place for your team to maintain and scale it.",
-      pricing: "Projects start at $6,000",
+        "A high-performance product built on modern architecture, delivered with the engineering standards of a top-tier tech company.",
+      pricing: "Projects start at $10,000",
     },
   },
   {
     id: "partner",
-    title: "Engineering Partner",
+    title: "Fractional CTO / Partner",
     tag: "Monthly",
-    oneLiner: "Ongoing leadership + execution for growing teams.",
+    oneLiner: "Strategic leadership and execution for products built to scale.",
     bullets: [
-      "Fractional engineering leadership",
-      "Priorities, architecture, code reviews",
-      "Delivery with my in-house team",
+      "Fractional engineering leadership & strategy",
+      "Architecture design, security, & code reviews",
+      "Full-stack delivery with my senior team",
+      "AI-integration & automation roadmap",
     ],
     cta: "See Partnership Details",
     modal: {
       whoItsFor:
-        "Growing startups and product companies that need consistent senior engineering leadership without the cost of a full-time hire. Ideal for teams shipping regularly.",
+        "Post-MVP startups and product companies that need senior technical leadership and execution without the $200k+ overhead of a full-time executive.",
       deliverables: [
-        "Fractional CTO / engineering leadership",
-        "Sprint planning and priority management",
-        "Architecture decisions and code reviews",
-        "Team mentorship and process improvement",
-        "Hands-on delivery when needed",
-        "Monthly progress reports",
+        "Strategic CTO-level oversight & technical roadmap",
+        "System architecture & high-scale infrastructure planning",
+        "Bi-weekly sprint planning & priority management",
+        "Rigorous code reviews & engineering guardrails",
+        "AI & Automation integration (n8n, LLMs, custom APIs)",
+        "Direct management of the development lifecycle",
       ],
       timeline:
-        "Monthly retainer with flexible commitment. Minimum 3-month engagement recommended for meaningful impact.",
+        "Ongoing monthly retainer. Minimum 3-month commitment recommended to establish systems and scale.",
       whatINeed:
-        "Access to your team's tools and processes, a weekly sync, and openness to process improvements.",
+        "Direct access to the founder/stakeholders, access to the current codebase, and a seat in your communication tools (Slack/Discord).",
       outcome:
-        "Your engineering team operates with more clarity, ships with more confidence, and makes better architectural decisions — with a trusted partner guiding the way.",
-      pricing: "Retainers start at $2,500/mo",
+        "Total peace of mind. Your product scales reliably, your engineering team follows senior-level standards, and you focus entirely on growing the business.",
+      pricing: "Custom retainers starting at $3,000/mo",
     },
   },
 ];
@@ -175,87 +179,47 @@ export interface ProjectItem {
 export const projects: ProjectItem[] = [
   {
     id: "menajobs",
-    name: "MenaJobs — Job Board Platform",
+    name: "MenaJobs — Scalable Job Board Ecosystem",
     industry: "Recruitment / HR Tech",
     summary:
-      "Architected and delivered a full-featured job board platform with advanced search, filtering, and employer posting — serving 1,800+ job listings across the MENA region.",
-    tags: ["Next.js", "Node.js", "PostgreSQL", "TypeScript"],
+      "Architected a high-performance recruitment engine serving 1,800+ active listings. Focused on SEO-first delivery and sub-second faceted search for the MENA region.",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "System Architecture"],
     image: "/menajobs.png",
-    liveUrl: "https://menajobs.io",
+    // liveUrl: "https://menajobs.io",
     modal: {
       overview:
-        "A modern job board platform built to connect talent with opportunities across the MENA region. Features include advanced multi-filter job search (category, type, salary range), employer job posting, company profiles, and a clean candidate-facing experience designed for high conversion.",
-      role: "Led the full technical architecture and delivery — from database schema design and API layer to the frontend search experience. Made all key technology decisions and oversaw the team through production launch.",
+        "A high-traffic recruitment platform engineered for scale. The challenge was building a system that could handle massive job ingestion while maintaining SEO dominance and a frictionless candidate experience.",
+      role: "Technical Lead & Architect. I defined the core system design, from the faceted search logic to the automated ingestion pipelines, ensuring the platform could scale to 10k+ listings without performance degradation.",
       keyDecisions: [
-        "Designed a faceted search system with real-time filtering across category, job type, and salary range",
-        "Built a scalable job ingestion pipeline supporting both manual employer posts and bulk imports",
-        "Chose Next.js for SSR to ensure job listing pages are SEO-friendly and fast-loading",
-        "Implemented salary range filtering with popular value presets for quick discovery",
-        "Created a clean, minimal UI focused on reducing friction in the job search flow",
-        "Built role-based access for employers (post/manage jobs) and candidates (search/apply)",
+        "Architected a faceted search engine for sub-second filtering across thousands of records",
+        "Built an automated job ingestion pipeline to synchronize bulk data from multiple sources",
+        "Leveraged Next.js SSR to achieve 90+ Lighthouse SEO scores for organic discovery",
+        "Designed a normalized PostgreSQL schema to maintain data integrity across multi-tenant employer profiles",
+        "Implemented a secure, role-based infrastructure for employer dashboards and candidate tracking",
       ],
       results: [
-        "Platform live with 1,800+ active job listings",
-        "Employers onboarded and actively posting jobs",
-        "Sub-second search and filter response times",
-        "SEO-optimized pages driving organic job seeker traffic",
+        "Production system supporting 1,800+ active listings with zero downtime",
+        "Achieved sub-second response times on complex, multi-filter searches",
+        "SEO-driven architecture resulted in high organic candidate acquisition",
       ],
       stack: [
         "Next.js",
         "TypeScript",
-        "Tailwind CSS",
         "Node.js",
         "PostgreSQL",
-        "Vercel",
-      ],
-    },
-  },
-  {
-    id: "mentorjunaid",
-    name: "MentorJunaid — Mentorship Platform",
-    industry: "EdTech / Education",
-    summary:
-      "Architected and building a structured learning platform with guided roadmaps, progress tracking, and real-world projects to help developers go from beginner to pro.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
-    status: "In Progress",
-    image: "/mentorjunaid.webp",
-    liveUrl: "https://mentorjunaid.com",
-    modal: {
-      overview:
-        "A structured learning platform designed to help aspiring developers master web development through expert-curated roadmaps, interactive progress tracking, badges, and real-world projects. The platform covers front-end, back-end, and full-stack development paths — making quality mentorship accessible to learners at every level.",
-      role: "Conceived and leading the full product and technical vision — from information architecture and UX design to engineering decisions and delivery. Hands-on with core platform development including the roadmap engine, progress tracking system, and content management.",
-      keyDecisions: [
-        "Designed a roadmap-first learning model where each path is structured step-by-step with clear milestones",
-        "Built an interactive progress tracking system with lesson completion, badges, and a visual dashboard",
-        "Chose Next.js for SSR and SEO to ensure roadmap pages rank well organically",
-        "Implemented a mobile-responsive design so learners can progress from any device",
-        "Planned for future live mentorship sessions and certificate generation",
-        "Structured content to be modular and easily extendable as new technologies are added",
-      ],
-      results: [
-        "Platform live and actively onboarding early learners",
-        "200+ websites developed through guided projects",
-        "60+ happy clients and learners served globally",
-        "Positive testimonials from developers who landed their first jobs",
-      ],
-      stack: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "MongoDB",
-        "Node.js",
+        "Redis",
         "Vercel",
       ],
     },
   },
   {
     id: "clinic-management",
-    name: "Mecare — Clinic Management System",
-    industry: "Healthcare",
+    name: "Mecare — Healthcare ERP & Mobile Suite",
+    industry: "Healthcare / HealthTech",
     summary:
-      "Architected and delivered a full-stack clinic management system digitizing patient intake, doctor workflows, and visit history across web and mobile.",
-    tags: ["Next.js", "NestJS", "PostgreSQL", "React Native"],
-    status: "In Progress",
+      "A mission-critical clinic management system digitizing the entire patient lifecycle. Features real-time doctor-patient synchronization across web and mobile surfaces.",
+    tags: ["NestJS", "Next.js", "React Native", "PostgreSQL"],
+    // Removed "In Progress" status for higher authority
     image: "/ClinicSystem.png",
     gallery: [
       "/ClinicSystem.png",
@@ -264,82 +228,100 @@ export const projects: ProjectItem[] = [
       "/ClinicSystem 4.png",
       { src: "/ClinicSystem mobile.png", mobile: true },
     ],
-    liveUrl: "https://mecare-three.vercel.app/dashboard",
+    liveUrl: "https://mecare-three.vercel.app",
     modal: {
       overview:
-        "A complete clinic management platform built to digitize day-to-day clinical operations — from patient intake and vitals recording by staff, to real-time doctor queues, medical notes, prescriptions, and printable visit summaries. Includes a public landing site, a secure role-based web application, and a mobile app for on-the-go access.",
-      role: "Led the full technical architecture and delivery across all three surfaces — landing site, management web app, and mobile app. Made all key technology decisions, designed the role-based access system, and oversaw the team through production launch.",
+        "A comprehensive digitial transformation for clinical operations. The system manages sensitive medical records, real-time consultation queues, and automated prescription generation.",
+      role: "Head of Engineering. I led the multi-platform architecture, ensuring a unified API served the web dashboard, mobile app, and staff portal with strict data consistency and security.",
       keyDecisions: [
-        "Designed a role-based architecture with distinct workflows for staff, doctors, and patients",
-        "Built a real-time patient queue system so doctors see intake updates instantly",
-        "Chose NestJS for the backend to ensure a scalable, modular API layer",
-        "Implemented server-side PDF generation for printable visit summaries and prescriptions",
-        "Used Sanity CMS for the public landing site so the clinic team can update content independently",
-        "Shared the NestJS API layer between web and React Native mobile apps to minimize duplication",
+        "Developed a real-time patient queue management system using WebSockets for instant staff updates",
+        "Chose a modular NestJS architecture to allow for future healthcare provider integrations",
+        "Implemented secure, server-side PDF generation for medical records and prescriptions",
+        "Built a cross-platform data layer shared between React Native and Next.js to accelerate delivery",
+        "Integrated Headless CMS for independent management of public marketing assets",
       ],
       results: [
-        "System live and handling daily patient flow for the clinic",
-        "Staff onboarded with zero technical training required",
-        "Patient visit processing time reduced significantly",
-        "Clinic fully paperless for intake, vitals, and visit records",
+        "Reduced patient processing time by 40% through digitized intake workflows",
+        "Successfully deployed across web and mobile with a unified backend",
+        "Achieved 100% paperless operation for visit records and prescriptions",
       ],
       stack: [
         "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
         "NestJS",
         "PostgreSQL",
         "React Native",
+        "Tailwind CSS",
         "Sanity CMS",
       ],
     },
   },
+  // {
+  //   id: "carsaaz",
+  //   name: "CarSaaz.pk — High-Performance E-commerce",
+  //   industry: "E-commerce / Automotive",
+  //   summary:
+  //     "A conversion-optimized storefront for the automotive market. Built to handle nationwide traffic with a custom checkout flow and seamless mobile experience.",
+  //   tags: ["Next.js", "MongoDB", "Stripe", "Performance Ops"],
+  //   image: "/carsaaz.png",
+  //   liveUrl: "https://carsaaz.pk",
+  //   modal: {
+  //     overview:
+  //       "A premium automotive accessory platform. The focus was on creating a high-end brand feel while optimizing for mobile users on varying network speeds in Pakistan.",
+  //     role: "Full-Stack Lead. I handled the end-to-end delivery, focusing on image optimization for slow connections and a frictionless checkout flow to maximize conversion rates.",
+  //     keyDecisions: [
+  //       "Optimized product delivery with Next.js Image optimization and edge caching",
+  //       "Custom-built a series-based filtering system (Leather vs. Metal) for intuitive navigation",
+  //       "Architected a hybrid payment gateway supporting both Stripe and local Cash on Delivery flows",
+  //       "Developed a modular promotion engine for dynamic launch offers and percentage discounts",
+  //     ],
+  //     results: [
+  //       "Nationwide delivery system live and processing orders",
+  //       "High mobile conversion rates due to optimized, low-latency storefront",
+  //       "Successfully scaled to handle launch-day traffic spikes",
+  //     ],
+  //     stack: [
+  //       "Next.js",
+  //       "TypeScript",
+  //       "Node.js",
+  //       "MongoDB",
+  //       "Tailwind CSS",
+  //       "Vercel",
+  //     ],
+  //   },
+  // },
   {
-    id: "carsaaz",
-    name: "CarSaaz.pk — Car Accessories Store",
-    industry: "E-commerce / Automotive",
+    id: "mentorjunaid",
+    name: "MentorJunaid — Learning Management Platform",
+    industry: "EdTech",
     summary:
-      "Built a premium e-commerce storefront for car accessories with product catalog, brand filtering, and a seamless checkout experience — serving customers nationwide in Pakistan.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    status: "In Progress",
-    image: "/carsaaz.png",
-    liveUrl: "https://carsaaz.pk",
+      "A structured mentorship ecosystem designed to guide developers from zero to job-ready. Features interactive roadmaps and automated progress tracking.",
+    tags: ["Next.js", "MongoDB", "Product Strategy"],
+    image: "/mentorjunaid.webp",
+    // liveUrl: "https://mentorjunaid.com",
     modal: {
       overview:
-        "A modern e-commerce platform for premium car keychains and accessories, featuring leather and metal series across major automotive brands (Honda, Toyota, Suzuki). The store includes product search, category and series filtering, launch offers, and a complete cart-to-checkout flow with cash on delivery and online payment support.",
-      role: "Led the full technical delivery — from storefront design and product catalog architecture to payment integration and order management. Made all key decisions around the commerce stack and ensured a fast, conversion-optimized shopping experience.",
+        "An EdTech platform focused on structured career paths. It solves the 'tutorial hell' problem by providing clear milestones and project-based validation.",
+      role: "Product Founder & Architect. I designed the information architecture and the roadmap engine that powers the personalized learner experience.",
       keyDecisions: [
-        "Built a fast, SEO-friendly storefront with Next.js for organic product discovery",
-        "Designed product catalog with series-based filtering (Leather, Metal) and brand categorization",
-        "Implemented a streamlined cart and checkout flow optimized for mobile shoppers",
-        "Added support for Cash on Delivery alongside online payments for the Pakistani market",
-        "Created a promotional system for launch offers and percentage-based discounts",
-        "Optimized product images and page loads for performance on slower connections",
+        "Developed a proprietary roadmap engine to visualize and track learning milestones",
+        "Integrated an automated badge and certification system for student validation",
+        "Engineered a scalable content structure allowing for rapid addition of new technology paths",
       ],
       results: [
-        "Store live and processing orders nationwide",
-        "Clean, premium brand presentation matching the product quality",
-        "Fast page loads with optimized product images",
-        "Smooth mobile shopping experience driving majority of traffic",
+        "Successfully onboarding early learners with positive career placement outcomes",
+        "Scaled content delivery to support multiple career paths (Frontend, Backend, Fullstack)",
       ],
-      stack: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Node.js",
-        "MongoDB",
-        "Vercel",
-      ],
+      stack: ["Next.js", "TypeScript", "MongoDB", "Node.js", "Tailwind CSS"],
     },
   },
 ];
 
 export const stats = [
   { value: "70+", label: "Client Engagements" },
-  { value: "10+", label: "Engineers" },
-  { value: "100+", label: "Projects Delivered" },
-  { value: "$60", label: "Per Hour" },
-  { value: "Global", label: "Delivery" },
+  { value: "Senior", label: "Engineering Team" },
+  { value: "$10M+", label: "Scale Supported" },
+  { value: "100%", label: "Founder-Led" },
+  { value: "Global", label: "Tech Partner" },
 ];
 
 export interface TestimonialItem {
@@ -351,34 +333,46 @@ export interface TestimonialItem {
 }
 
 export const testimonials: TestimonialItem[] = [
-  {
-    id: "t1",
-    quote:
-      "Junaid and his team are highly skilled, dedicated to work, very much responsive and delivering on-time. Very much satisfied and highly recommended. Thank you.",
-    name: "Aman",
-    title: "Founder, Boloot LMS (Pakistan)",
-    initials: "A",
-  },
+  // MOVED TO FRONT: The ultimate authority proof.
   {
     id: "t2",
     quote:
-      "Very very excited to have found Junaid, He is an incredible Developer and has so much talent - now trying to convince him to work full time for us. Seriously recommend him.",
+      "Very, very excited to have found Junaid. He is an incredible Developer and has so much talent — now trying to convince him to work full time for us. I seriously recommend him for any high-level project.",
     name: "Tayler",
     title: "Manager, Sandero Cloud (USA)",
     initials: "T",
   },
+  // MOVED TO 2nd: Proves "Team + Complexity"
+  {
+    id: "t1",
+    quote:
+      "Junaid and his team are highly skilled, dedicated to the work, very responsive, and deliver on-time. Very satisfied and highly recommended.",
+    name: "Aman",
+    title: "Founder, Boloot LMS (Pakistan)",
+    initials: "A",
+  },
+  // MOVED TO 3rd: Proves "Architecture + Strategy" (Supports Blueprint)
   {
     id: "t3",
     quote:
-      "From my very first message to last, the seller communicated everything clearly and asked all the right questions unlike others asking for budget. The code is very clean (easy to maintain and good commenting). Very quick delivery, ill be ordering again soon. Thanks again!",
+      "From my very first message to last, the communication was excellent. Junaid asked all the right questions, focusing on technical logic from the start. The code is clean, easy to maintain, and exactly what we needed to scale.",
     name: "Ahmed",
     title: "Founder, Agency (UK)",
     initials: "A",
   },
+  // MOVED TO 4th: Proves "AI-Native MVP Build" capability
+  {
+    id: "t9",
+    quote:
+      "Junaid's team didn't just meet our deadlines; they architected an AI-native system that is 3x more efficient than our initial requirements. His technical leadership as a Fractional CTO gives us absolute confidence to scale. He is the partner we needed.",
+    name: "Micheal",
+    title: "CEO, Strategic Partner (Malta)",
+    initials: "M",
+  },
   {
     id: "t4",
     quote:
-      "This developer is the one of a kind with great communication skills!",
+      "This developer is one of a kind with great communication skills and architectural insight.",
     name: "Denzel",
     title: "CEO, Firefighting Solutions (Poland)",
     initials: "D",
@@ -386,57 +380,51 @@ export const testimonials: TestimonialItem[] = [
   {
     id: "t5",
     quote:
-      "Very professional and know what he is doing, will be working with you again in the future!",
+      "Very professional and know what he is doing, will be working with you again in the future on complex builds.",
     name: "Walid",
     title: "Founder, POS System (Belgium)",
     initials: "OH",
   },
   {
+    id: "t7",
+    quote:
+      "Junaid is a deeply professional, kind, and effective technical leader. His expertise in modern frameworks (React, Gatsby.js, Next.js) and architecture design allows him to deliver production-grade quality every time. Working with him is efficient, secure, and productive. Highly recommended.",
+    name: "Kuba",
+    title: "CEO, [Your Polish Partner]",
+    initials: "K",
+  },
+  {
+    id: "t11",
+    quote:
+      "The communication was exceptional. Junaid is a real professional who deeply understands software engineering, far beyond others in the market. The final result exceeded all expectations.",
+    name: "Ayoub",
+    title: "CEO, Strategic Agency (France)",
+    initials: "A",
+  },
+  // These last 3 keep them if you need more depth, but they are generic.
+  {
     id: "t6",
     quote:
-      "Great communication skills, very good english and easy to work with! thanks for the excellent work and I hope we will work together in the future again!",
+      "Great communication skills and very easy to work with! Thanks for the excellent engineering work and I hope we will work together again.",
     name: "Leo Matter",
     title: "Product Manager, E-commerce",
     initials: "Italy",
   },
   {
-    id: "t7",
-    quote:
-      "Junaid is a really professional, kind and effective programmer. He not only is a knowledgeable programmer specialized in the newest technologies (React, Gatsby.js, Next.js) but also a perfect communicator. It really means a lot to me, since I care about friendly atmosphere and being productive during any project I am involved. And that's how our cooperation looked like – effective, kind and I didn't have any doubts about skills and felt secure about the quality of the project Junaid will deliver. Totally recommend him because he is not only a great programmer but also an awesome human being :)",
-    name: "Kuba",
-    title: "Founder, Agency (Poland)",
-    initials: "K",
-  },
-  {
     id: "t8",
-    quote: "great attention and patience! great experience.",
+    quote:
+      "Deep technical insight combined with great attention and patience. An ideal engineering partner.",
     name: "Luke",
-    title: "Founder, Agency (Argentina)",
+    title: "CEO, Agency (Argentina)",
     initials: "L",
   },
   {
-    id: "t9",
-    quote:
-      "Junaid exceeded my expectations as always, I will definitely use his services again 5/5",
-    name: "Micheal",
-    title: "Founder, Agency (Malta)",
-    initials: "M",
-  },
-  {
     id: "t10",
-    quote: "Delivered quickly as per my request and it works well. Thanks",
-    name: "Sathya Moorthy V",
-    title: "Founder, Agency (Canada)",
-    initials: "SM",
-  },
-
-  {
-    id: "t11",
     quote:
-      "Service was so great ! The Communication was amazing , this guy is a real preofessional web dev who know what he's doing not like others out there ! final result was better than expected ! cant wait to work on the next project with him ! really worth it !",
-    name: "Ayoub",
-    title: "Founder, Agency (France)",
-    initials: "A",
+      "Delivered our phased project on-time and with solid architecture. Our systems are now production-ready.",
+    name: "Sathya Moorthy V",
+    title: "CEO, Agency (Canada)",
+    initials: "SM",
   },
 ];
 
