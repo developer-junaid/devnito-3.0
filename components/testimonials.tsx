@@ -143,7 +143,7 @@ function Marquee({
   return (
     <div className="group relative overflow-hidden">
       <div
-        className="marquee-track flex w-max gap-5"
+        className="marquee-track flex w-max gap-5 group-hover:[animation-play-state:paused]"
         style={{
           animationDuration: `${duration}s`,
           animationDirection: direction === "right" ? "reverse" : "normal",
