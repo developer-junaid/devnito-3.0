@@ -27,9 +27,9 @@ export function ContactCTA() {
               Ready to scale your engineering?
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-muted">
-              I&apos;m currently accepting one new partnership for Q2 2026. If
-              you&apos;re looking for a Fractional CTO to lead your strategy and
-              execution, let&apos;s see if we&apos;re a fit.
+              We&apos;re currently accepting one new partnership for Q2 2026. If
+              you need a founder-led engineering team to own your product from
+              architecture to production, let&apos;s see if we&apos;re a fit.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -48,7 +48,7 @@ export function ContactCTA() {
             </div>
 
             <p className="mt-8 text-sm text-muted">
-              Based in Pakistan&ensp;·&ensp;Working globally
+              Based in UAE&ensp;·&ensp;Working globally
             </p>
           </div>
         </div>

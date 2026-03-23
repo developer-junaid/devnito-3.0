@@ -34,7 +34,7 @@ export function Founder() {
             <div className="flex w-full flex-col justify-center p-8 sm:p-12 lg:w-[58%] lg:p-16">
               <p className="mb-4 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
                 <span className="section-dot" />
-                Meet the Founder
+                Meet the Founder & Team Lead
               </p>
 
               <h2 className="mb-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">

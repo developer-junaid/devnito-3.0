@@ -24,11 +24,11 @@ export function Hero() {
         <div className="max-w-3xl">
           <p className="animate-fade-in mb-5 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
             <span className="section-dot" />
-            Fractional CTO & Engineering Partner
+            Founder-Led Engineering Team
           </p>
 
           <h1 className="animate-slide-up text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-[56px]">
-            Strategic Engineering for Products built to{" "}
+            We design, build, and scale{" "}
             <span
               style={{
                 background:
@@ -38,13 +38,18 @@ export function Hero() {
                 backgroundClip: "text",
               }}
             >
-              scale.
+              production-grade products.
             </span>
           </h1>
 
           <p className="animate-slide-up mt-6 max-w-2xl text-lg leading-relaxed text-muted [animation-delay:100ms]">
-            I lead your technical strategy and execution so you can focus on
-            growth. — with clear communication and senior technical leadership.
+            From architecture to full-stack delivery — led by senior engineers,
+            built for real-world scale.
+          </p>
+
+          <p className="animate-slide-up mt-3 max-w-2xl text-[15px] font-medium text-foreground/70 [animation-delay:150ms]">
+            Founder-led team delivering full-stack systems — not just strategy
+            decks.
           </p>
 
           <div className="animate-slide-up mt-10 flex flex-col gap-4 sm:flex-row sm:items-center [animation-delay:200ms]">

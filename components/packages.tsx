@@ -166,7 +166,8 @@ export function Packages() {
             Choose the engagement that fits
           </h2>
           <p className="mt-4 text-muted">
-            Clear scopes, senior oversight, and delivery you can trust.
+            Senior full-stack team (not juniors, not freelancers). Clear scopes
+            and delivery you can trust.
           </p>
         </div>
 
@@ -180,9 +181,51 @@ export function Packages() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-muted">
-          Need something custom? We can scope it in a quick call.
-        </p>
+        <div className="mt-10 rounded-3xl border border-card-border bg-card p-7 shadow-[var(--card-shadow)] sm:p-10">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <div className="mb-3 flex items-center gap-3">
+                <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                  Custom Work
+                </h3>
+                <span className="rounded-full bg-[var(--gradient-start)]/10 px-3 py-1 text-xs font-medium text-[var(--gradient-start)]">
+                  Scoped
+                </span>
+              </div>
+              <p className="mb-4 text-[15px] leading-relaxed text-muted">
+                Not every project fits into a fixed scope. For focused builds,
+                feature development, or iterative improvements — we take on a
+                limited number of custom engagements.
+              </p>
+              <div className="mb-5 flex flex-wrap gap-2">
+                {["Complexity", "Performance requirements", "Long-term scalability"].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground/70"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <p className="text-sm leading-relaxed text-muted/80 italic">
+                Most full product builds fall within our standard engagement
+                range, while smaller scoped work is evaluated individually.
+              </p>
+            </div>
+
+            <div className="flex flex-shrink-0 flex-col items-start gap-3 lg:items-center">
+              <button
+                onClick={openContactForm}
+                className="btn-gradient inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-opacity hover:opacity-90"
+              >
+                Request a Custom Scope
+              </button>
+              <span className="text-xs text-muted">
+                Every project is scoped individually
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <Modal

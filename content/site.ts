@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Devnito",
   title: "Devnito — Founder-led engineering partner",
   description:
-    "Architecture, web & mobile engineering, and long-term partnership for product teams.",
+    "We design, build, and scale production-grade products. Founder-led engineering team for startups and product companies.",
   url: "https://devnito.com",
   /** Get your free form ID at https://formspree.io — paste it here */
   formspreeId: "mnjbrwrz",
@@ -19,12 +19,12 @@ export const founder = {
   title:
     "Founder @ Devnito · Fractional CTO · Head of Engineering @ Stay Gold USA",
   photo: "/dp.png",
-  bio: "I’m Junaid — a senior technical leader and architect specialized in bridging the gap between complex business goals and high-performance engineering. With over 70 successful global deliveries, I bring executive-level strategy to every project. As Head of Engineering at Stay Gold (US), I lead high-scale architecture and delivery—at Devnito, I provide that same senior leadership to your product personally. No hand-offs, no middlemen—just direct collaboration with a partner who builds for scale.",
+  bio: "I’m Junaid — I lead a senior engineering team that designs and builds scalable systems end-to-end. With over 70 successful global deliveries, I bring executive-level strategy paired with hands-on execution to every project. As Head of Engineering at Stay Gold (US), I lead high-scale architecture and delivery — at Devnito, I provide that same senior leadership and a dedicated team to your product. No outsourcing layers, no junior hand-offs — direct collaboration with senior engineers who build for scale.",
   credentials: [
     "Head of Engineering",
     "Solution Architect",
+    "Senior Full-Stack Team",
     "70+ Successful Deliveries",
-    "Product Strategist",
     "Global Delivery",
   ],
   // hourlyRate: Removed to favor value-based pricing and $3k+ monthly retainers
@@ -91,7 +91,7 @@ export const packages: PackageItem[] = [
     id: "build",
     title: "Build / Rebuild",
     tag: "6–10 weeks",
-    oneLiner: "Turn vision or legacy debt into a production-grade reality.",
+    oneLiner: "We take ownership of your product — from architecture to production.",
     bullets: [
       "Senior full-stack web & mobile delivery",
       "AI-ready architecture & custom integrations",
@@ -115,8 +115,8 @@ export const packages: PackageItem[] = [
       whatINeed:
         "Product requirements or wireframes, a dedicated point of contact, and weekly strategy syncs.",
       outcome:
-        "A high-performance product built on modern architecture, delivered with the engineering standards of a top-tier tech company.",
-      pricing: "Projects start at $10,000",
+        "A high-performance product built on modern architecture, delivered end-to-end by our senior engineering team with the standards of a top-tier tech company.",
+      pricing: "Production-grade builds start at $10,000+",
     },
   },
   {

@@ -6,6 +6,7 @@ import { Work } from "@/components/work";
 import { Founder } from "@/components/founder";
 import { ProofStrip } from "@/components/proof-strip";
 import { Testimonials } from "@/components/testimonials";
+import { NotFor } from "@/components/not-for";
 import { ContactCTA } from "@/components/contact-cta";
 import { Footer } from "@/components/footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Founder />
         <ProofStrip />
         <Testimonials />
+        <NotFor />
         <ContactCTA />
       </main>
       <Footer />
