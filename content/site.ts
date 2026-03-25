@@ -91,7 +91,8 @@ export const packages: PackageItem[] = [
     id: "build",
     title: "Build / Rebuild",
     tag: "6–10 weeks",
-    oneLiner: "We take ownership of your product — from architecture to production.",
+    oneLiner:
+      "We take ownership of your product — from architecture to production.",
     bullets: [
       "Senior full-stack web & mobile delivery",
       "AI-ready architecture & custom integrations",
@@ -333,6 +334,22 @@ export interface TestimonialItem {
 }
 
 export const testimonials: TestimonialItem[] = [
+  {
+    id: "t00",
+    quote:
+      "Scalable, high-performance systems with strong attention to detail. Code consistently matches design with minimal QA needed.",
+    name: "Drew Sima",
+    title: "Co-founder, Bread and Butter Designs (USA)",
+    initials: "D",
+  },
+  {
+    id: "t01",
+    quote:
+      "Incredibly reliable team. Great communication, easy to work with, and everything is handled with precision and intention.",
+    name: "Kelsey Denison",
+    title: "Owner, Graphic Design Agency (USA)",
+    initials: "K",
+  },
   // MOVED TO FRONT: The ultimate authority proof.
   {
     id: "t2",
