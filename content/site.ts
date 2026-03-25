@@ -430,77 +430,22 @@ export const testimonials: TestimonialItem[] = [
 
 export interface VideoTestimonialItem {
   id: string;
-  name: string;
+  youtubeId: string;
   title: string;
-  company: string;
-  initials: string;
-  /** Path to video file in /public (e.g. "/testimonials/alex.mp4") */
-  videoUrl?: string;
+  label: string;
 }
 
 export const videoTestimonials: VideoTestimonialItem[] = [
   {
     id: "vt1",
-    name: "Alex R.",
-    title: "Product Lead",
-    company: "SaaS Company",
-    initials: "AR",
-    videoUrl: "/testimonials/alex.mp4",
+    youtubeId: "drdJtIfbm-g",
+    title: "Product Design to Development Collaboration",
+    label: "Client Testimonial",
   },
   {
     id: "vt2",
-    name: "Sarah M.",
-    title: "Founder",
-    company: "Startup",
-    initials: "SM",
-    videoUrl: "/testimonials/sarah.mp4",
-  },
-  {
-    id: "vt3",
-    name: "David K.",
-    title: "Project Manager",
-    company: "Agency",
-    initials: "DK",
-    videoUrl: "/testimonials/david.mp4",
-  },
-  {
-    id: "vt4",
-    name: "Maria L.",
-    title: "CTO",
-    company: "Fintech Startup",
-    initials: "ML",
-    videoUrl: "/testimonials/maria.mp4",
-  },
-  {
-    id: "vt5",
-    name: "Omar H.",
-    title: "VP Engineering",
-    company: "HealthTech",
-    initials: "OH",
-    videoUrl: "/testimonials/alex.mp4",
-  },
-  {
-    id: "vt6",
-    name: "Lisa T.",
-    title: "Product Manager",
-    company: "E-commerce",
-    initials: "LT",
-    videoUrl: "/testimonials/sarah.mp4",
-  },
-  {
-    id: "vt7",
-    name: "Ryan P.",
-    title: "Co-Founder",
-    company: "EdTech Startup",
-    initials: "RP",
-    videoUrl: "/testimonials/david.mp4",
-  },
-  {
-    id: "vt8",
-    name: "Nina W.",
-    title: "Engineering Lead",
-    company: "Media Company",
-    initials: "NW",
-    videoUrl: "/testimonials/maria.mp4",
+    youtubeId: "ew2Q1K_yZ6Q",
+    title: "Long-Term Engineering Partnership (5+ Years, 10+ Projects)",
+    label: "Client Testimonial",
   },
 ];
