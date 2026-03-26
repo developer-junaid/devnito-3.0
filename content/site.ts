@@ -330,7 +330,7 @@ export interface TestimonialItem {
   quote: string;
   name: string;
   title: string;
-  initials: string;
+  avatar?: string;
 }
 
 export const testimonials: TestimonialItem[] = [
@@ -352,12 +352,27 @@ export const testimonials: TestimonialItem[] = [
   },
   // MOVED TO FRONT: The ultimate authority proof.
   {
+    id: "t00",
+    quote:
+      "Scalable, high-performance systems with strong attention to detail. Code consistently matches design with minimal QA needed.",
+    name: "Drew Sima",
+    title: "Co-founder, Bread and Butter Designs (USA)",
+    avatar: "/testimonials/drew.png",
+  },
+  {
+    id: "t01",
+    quote:
+      "Incredibly reliable team. Great communication, easy to work with, and everything is handled with precision and intention.",
+    name: "Kelsey Glassman",
+    title: "Owner, Graphic Design Agency (USA)",
+    avatar: "/testimonials/kelsey.png",
+  },
+  {
     id: "t2",
     quote:
       "Very, very excited to have found Junaid. He is an incredible Developer and has so much talent — now trying to convince him to work full time for us. I seriously recommend him for any high-level project.",
     name: "Tayler",
     title: "Manager, Sandero Cloud (USA)",
-    initials: "T",
   },
   // MOVED TO 2nd: Proves "Team + Complexity"
   {
@@ -366,7 +381,6 @@ export const testimonials: TestimonialItem[] = [
       "Junaid and his team are highly skilled, dedicated to the work, very responsive, and deliver on-time. Very satisfied and highly recommended.",
     name: "Aman",
     title: "Founder, Boloot LMS (Pakistan)",
-    initials: "A",
   },
   // MOVED TO 3rd: Proves "Architecture + Strategy" (Supports Blueprint)
   {
@@ -375,7 +389,6 @@ export const testimonials: TestimonialItem[] = [
       "From my very first message to last, the communication was excellent. Junaid asked all the right questions, focusing on technical logic from the start. The code is clean, easy to maintain, and exactly what we needed to scale.",
     name: "Ahmed",
     title: "Founder, Agency (UK)",
-    initials: "A",
   },
   // MOVED TO 4th: Proves "AI-Native MVP Build" capability
   {
@@ -384,7 +397,6 @@ export const testimonials: TestimonialItem[] = [
       "Junaid's team didn't just meet our deadlines; they architected an AI-native system that is 3x more efficient than our initial requirements. His technical leadership as a Fractional CTO gives us absolute confidence to scale. He is the partner we needed.",
     name: "Micheal",
     title: "CEO, Strategic Partner (Malta)",
-    initials: "M",
   },
   {
     id: "t4",
@@ -392,7 +404,6 @@ export const testimonials: TestimonialItem[] = [
       "This developer is one of a kind with great communication skills and architectural insight.",
     name: "Denzel",
     title: "CEO, Firefighting Solutions (Poland)",
-    initials: "D",
   },
   {
     id: "t5",
@@ -400,7 +411,6 @@ export const testimonials: TestimonialItem[] = [
       "Very professional and know what he is doing, will be working with you again in the future on complex builds.",
     name: "Walid",
     title: "Founder, POS System (Belgium)",
-    initials: "OH",
   },
   {
     id: "t7",
@@ -408,7 +418,6 @@ export const testimonials: TestimonialItem[] = [
       "Junaid is a deeply professional, kind, and effective technical leader. His expertise in modern frameworks (React, Gatsby.js, Next.js) and architecture design allows him to deliver production-grade quality every time. Working with him is efficient, secure, and productive. Highly recommended.",
     name: "Kuba",
     title: "CEO, [Your Polish Partner]",
-    initials: "K",
   },
   {
     id: "t11",
@@ -416,7 +425,6 @@ export const testimonials: TestimonialItem[] = [
       "The communication was exceptional. Junaid is a real professional who deeply understands software engineering, far beyond others in the market. The final result exceeded all expectations.",
     name: "Ayoub",
     title: "CEO, Strategic Agency (France)",
-    initials: "A",
   },
   // These last 3 keep them if you need more depth, but they are generic.
   {
@@ -425,7 +433,6 @@ export const testimonials: TestimonialItem[] = [
       "Great communication skills and very easy to work with! Thanks for the excellent engineering work and I hope we will work together again.",
     name: "Leo Matter",
     title: "Product Manager, E-commerce",
-    initials: "Italy",
   },
   {
     id: "t8",
@@ -433,7 +440,6 @@ export const testimonials: TestimonialItem[] = [
       "Deep technical insight combined with great attention and patience. An ideal engineering partner.",
     name: "Luke",
     title: "CEO, Agency (Argentina)",
-    initials: "L",
   },
   {
     id: "t10",
@@ -441,83 +447,27 @@ export const testimonials: TestimonialItem[] = [
       "Delivered our phased project on-time and with solid architecture. Our systems are now production-ready.",
     name: "Sathya Moorthy V",
     title: "CEO, Agency (Canada)",
-    initials: "SM",
   },
 ];
 
 export interface VideoTestimonialItem {
   id: string;
-  name: string;
+  youtubeId: string;
   title: string;
-  company: string;
-  initials: string;
-  /** Path to video file in /public (e.g. "/testimonials/alex.mp4") */
-  videoUrl?: string;
+  label: string;
 }
 
 export const videoTestimonials: VideoTestimonialItem[] = [
   {
     id: "vt1",
-    name: "Alex R.",
-    title: "Product Lead",
-    company: "SaaS Company",
-    initials: "AR",
-    videoUrl: "/testimonials/alex.mp4",
+    youtubeId: "drdJtIfbm-g",
+    title: "Product Design to Development Collaboration",
+    label: "Client Testimonial",
   },
   {
     id: "vt2",
-    name: "Sarah M.",
-    title: "Founder",
-    company: "Startup",
-    initials: "SM",
-    videoUrl: "/testimonials/sarah.mp4",
-  },
-  {
-    id: "vt3",
-    name: "David K.",
-    title: "Project Manager",
-    company: "Agency",
-    initials: "DK",
-    videoUrl: "/testimonials/david.mp4",
-  },
-  {
-    id: "vt4",
-    name: "Maria L.",
-    title: "CTO",
-    company: "Fintech Startup",
-    initials: "ML",
-    videoUrl: "/testimonials/maria.mp4",
-  },
-  {
-    id: "vt5",
-    name: "Omar H.",
-    title: "VP Engineering",
-    company: "HealthTech",
-    initials: "OH",
-    videoUrl: "/testimonials/alex.mp4",
-  },
-  {
-    id: "vt6",
-    name: "Lisa T.",
-    title: "Product Manager",
-    company: "E-commerce",
-    initials: "LT",
-    videoUrl: "/testimonials/sarah.mp4",
-  },
-  {
-    id: "vt7",
-    name: "Ryan P.",
-    title: "Co-Founder",
-    company: "EdTech Startup",
-    initials: "RP",
-    videoUrl: "/testimonials/david.mp4",
-  },
-  {
-    id: "vt8",
-    name: "Nina W.",
-    title: "Engineering Lead",
-    company: "Media Company",
-    initials: "NW",
-    videoUrl: "/testimonials/maria.mp4",
+    youtubeId: "ew2Q1K_yZ6Q",
+    title: "Long-Term Engineering Partnership (5+ Years, 10+ Projects)",
+    label: "Client Testimonial",
   },
 ];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import {
   testimonials,
@@ -11,74 +11,112 @@ import {
 import { Modal } from "@/components/ui/modal";
 
 function VideoCard({ item }: { item: VideoTestimonialItem }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-
-  const hasVideo = !!item.videoUrl;
-
-  function togglePlay(e: React.MouseEvent) {
-    e.stopPropagation();
-    if (!videoRef.current) return;
-    if (playing) {
-      videoRef.current.pause();
-      setPlaying(false);
-    } else {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  }
+  const thumbnail = `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`;
 
   return (
-    <div className="flex w-[220px] flex-shrink-0 flex-col sm:w-[240px]">
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-gray-100">
-        {hasVideo ? (
-          <video
-            ref={videoRef}
-            src={item.videoUrl}
-            preload="metadata"
-            className="absolute inset-0 h-full w-full object-cover"
-            playsInline
-            onEnded={() => setPlaying(false)}
+    <div className="group w-full max-w-[560px]">
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-card-border bg-card shadow-[var(--card-shadow)]">
+        {playing ? (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+            title={item.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[var(--gradient-start)]/10 via-[var(--gradient-mid)]/8 to-[var(--gradient-end)]/10">
-            <span className="text-4xl font-bold text-[var(--gradient-start)]/20">
-              {item.initials}
-            </span>
-          </div>
+          <button
+            onClick={() => setPlaying(true)}
+            aria-label={`Play: ${item.title}`}
+            className="block h-full w-full"
+          >
+            <Image
+              src={thumbnail}
+              alt={item.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              sizes="(max-width: 640px) 100vw, 560px"
+            />
+
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 via-black/35 to-transparent" />
+
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span
+                className="flex h-14 w-14 items-center justify-center rounded-full text-white shadow-xl backdrop-blur-sm transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16"
+                style={{ background: "var(--brand-gradient)" }}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="translate-x-px"
+                >
+                  <path d="M5 3v14l12-7z" />
+                </svg>
+              </span>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-0 px-5 pb-5">
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-white/60 sm:text-[11px]">
+                {item.label}
+              </p>
+              <p className="mt-1 text-sm font-semibold leading-snug text-white sm:text-base">
+                {item.title}
+              </p>
+            </div>
+          </button>
         )}
-
-        <button
-          onClick={hasVideo ? togglePlay : undefined}
-          aria-label={playing ? "Pause video" : "Play video"}
-          className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-full text-white shadow-lg transition-transform hover:scale-105"
-          style={{ background: "var(--brand-gradient)" }}
-          disabled={!hasVideo}
-        >
-          {playing ? (
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-              <rect x="2" y="1" width="3.5" height="12" rx="1" />
-              <rect x="8.5" y="1" width="3.5" height="12" rx="1" />
-            </svg>
-          ) : (
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-              <path d="M3 1.5v11l9-5.5z" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      <div className="mt-3 px-0.5">
-        <p className="text-sm font-semibold text-foreground">{item.name}</p>
-        <p className="text-xs text-muted">
-          {item.title}, {item.company}
-        </p>
       </div>
     </div>
   );
 }
 
 const QUOTE_CHAR_LIMIT = 180;
+
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function Avatar({
+  name,
+  avatar,
+  size = 40,
+}: {
+  name: string;
+  avatar?: string;
+  size?: number;
+}) {
+  if (avatar) {
+    return (
+      <Image
+        src={avatar}
+        alt={name}
+        width={size * 2}
+        height={size * 2}
+        quality={90}
+        className="shrink-0 rounded-full object-cover"
+        style={{ width: size, height: size }}
+      />
+    );
+  }
+  return (
+    <div
+      className="flex shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
+      style={{
+        background: "var(--brand-gradient)",
+        width: size,
+        height: size,
+      }}
+    >
+      {getInitials(name)}
+    </div>
+  );
+}
 
 function QuoteCard({
   item,
@@ -116,11 +154,12 @@ function QuoteCard({
       </blockquote>
 
       <figcaption className="flex items-center gap-3">
-        <div
-          className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
-          style={{ background: "var(--brand-gradient)" }}
-        >
-          {item.initials}
+        <div className="relative">
+          <Avatar name={item.name} avatar={item.avatar} />
+          <span
+            className="absolute -right-0.5 bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
+            style={{ background: "#4ade80" }}
+          />
         </div>
         <div>
           <p className="text-sm font-medium text-foreground">{item.name}</p>
@@ -161,9 +200,18 @@ export function Testimonials() {
     useState<TestimonialItem | null>(null);
 
   return (
-    <section id="testimonials" className="relative overflow-hidden py-20 sm:py-28">
+    <section
+      id="testimonials"
+      className="relative overflow-hidden py-20 sm:py-28"
+    >
       <div className="pointer-events-none absolute -top-6 -left-10 -z-10 w-[240px] max-w-[300px] -rotate-12 opacity-[0.08] select-none sm:w-[300px]">
-        <Image src="/logo.svg" alt="" width={300} height={215} className="h-auto w-full" />
+        <Image
+          src="/logo.svg"
+          alt=""
+          width={300}
+          height={215}
+          className="h-auto w-full"
+        />
       </div>
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <p className="mb-3 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
@@ -175,18 +223,14 @@ export function Testimonials() {
         </h2>
       </div>
 
-      {/* Video testimonials marquee — moves left */}
-      {/* Uncomment when you have real video testimonials:
-      <div className="mb-14">
-        <Marquee direction="left" duration={50}>
-          {videoTestimonials.map((vt) => (
-            <VideoCard key={vt.id} item={vt} />
-          ))}
-        </Marquee>
+      {/* Video testimonials */}
+      <div className="mx-auto mb-16 grid max-w-[1200px] gap-5 px-5 sm:grid-cols-2 sm:gap-6 sm:px-8">
+        {videoTestimonials.map((vt) => (
+          <VideoCard key={vt.id} item={vt} />
+        ))}
       </div>
-      */}
 
-      {/* Written testimonials marquee — moves right */}
+      {/* Written testimonials marquee */}
       <Marquee direction="right" duration={60}>
         {testimonials.map((t) => (
           <QuoteCard
@@ -211,19 +255,22 @@ export function Testimonials() {
               {activeTestimonial.quote}
             </p>
             <div className="flex items-center gap-3">
-              <div
-                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white"
-                style={{ background: "var(--brand-gradient)" }}
-              >
-                {activeTestimonial.initials}
+              <div className="relative">
+                <Avatar
+                  name={activeTestimonial.name}
+                  avatar={activeTestimonial.avatar}
+                  size={48}
+                />
+                <span
+                  className="absolute -right-0.5 -bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
+                  style={{ background: "#4ade80" }}
+                />
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">
                   {activeTestimonial.name}
                 </p>
-                <p className="text-sm text-muted">
-                  {activeTestimonial.title}
-                </p>
+                <p className="text-sm text-muted">{activeTestimonial.title}</p>
               </div>
             </div>
           </div>
