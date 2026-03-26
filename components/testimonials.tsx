@@ -76,6 +76,48 @@ function VideoCard({ item }: { item: VideoTestimonialItem }) {
 
 const QUOTE_CHAR_LIMIT = 180;
 
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function Avatar({
+  name,
+  avatar,
+  size = 40,
+}: {
+  name: string;
+  avatar?: string;
+  size?: number;
+}) {
+  if (avatar) {
+    return (
+      <Image
+        src={avatar}
+        alt={name}
+        width={size * 2}
+        height={size * 2}
+        quality={90}
+        className="shrink-0 rounded-full object-cover"
+        style={{ width: size, height: size }}
+      />
+    );
+  }
+  return (
+    <div
+      className="flex shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
+      style={{
+        background: "var(--brand-gradient)",
+        width: size,
+        height: size,
+      }}
+    >
+      {getInitials(name)}
+    </div>
+  );
+}
+
 function QuoteCard({
   item,
   onReadMore,
@@ -112,11 +154,12 @@ function QuoteCard({
       </blockquote>
 
       <figcaption className="flex items-center gap-3">
-        <div
-          className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
-          style={{ background: "var(--brand-gradient)" }}
-        >
-          {item.initials}
+        <div className="relative">
+          <Avatar name={item.name} avatar={item.avatar} />
+          <span
+            className="absolute -right-0.5 bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
+            style={{ background: "#4ade80" }}
+          />
         </div>
         <div>
           <p className="text-sm font-medium text-foreground">{item.name}</p>
@@ -157,9 +200,18 @@ export function Testimonials() {
     useState<TestimonialItem | null>(null);
 
   return (
-    <section id="testimonials" className="relative overflow-hidden py-20 sm:py-28">
+    <section
+      id="testimonials"
+      className="relative overflow-hidden py-20 sm:py-28"
+    >
       <div className="pointer-events-none absolute -top-6 -left-10 -z-10 w-[240px] max-w-[300px] -rotate-12 opacity-[0.08] select-none sm:w-[300px]">
-        <Image src="/logo.svg" alt="" width={300} height={215} className="h-auto w-full" />
+        <Image
+          src="/logo.svg"
+          alt=""
+          width={300}
+          height={215}
+          className="h-auto w-full"
+        />
       </div>
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <p className="mb-3 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
@@ -203,19 +255,22 @@ export function Testimonials() {
               {activeTestimonial.quote}
             </p>
             <div className="flex items-center gap-3">
-              <div
-                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white"
-                style={{ background: "var(--brand-gradient)" }}
-              >
-                {activeTestimonial.initials}
+              <div className="relative">
+                <Avatar
+                  name={activeTestimonial.name}
+                  avatar={activeTestimonial.avatar}
+                  size={48}
+                />
+                <span
+                  className="absolute -right-0.5 -bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
+                  style={{ background: "#4ade80" }}
+                />
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">
                   {activeTestimonial.name}
                 </p>
-                <p className="text-sm text-muted">
-                  {activeTestimonial.title}
-                </p>
+                <p className="text-sm text-muted">{activeTestimonial.title}</p>
               </div>
             </div>
           </div>
