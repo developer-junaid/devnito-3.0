@@ -179,24 +179,168 @@ export interface ProjectItem {
 
 export const projects: ProjectItem[] = [
   {
+    id: "venture-operations-platform",
+    name: "Confidential Venture Operations Platform",
+    industry: "Venture Capital / Investment Operations",
+    summary:
+      "A venture operations platform for managing companies, contacts, documents, notes, pipeline activity, and portfolio visibility in a single unified system.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Storybook"],
+    image: "/venture-operations-platform.png",
+    modal: {
+      overview:
+        "A comprehensive venture operations and portfolio management platform built to replace fragmented tools with a centralized system for managing companies, relationships, documents, internal notes, and investment workflows. The product combines CRM-like capabilities with pipeline tracking and portfolio visibility, all within a scalable, modern frontend architecture.",
+      role: "Frontend Lead. I worked across both the existing system and the next-generation frontend foundation, focusing on scalability, UI consistency, and improving complex operational workflows across companies, contacts, documents, and portfolio views.",
+      keyDecisions: [
+        "Refactored UI into reusable, modular components to support long-term scalability",
+        "Structured consistent patterns across list, table, Kanban, and detail-based views",
+        "Introduced Tailwind CSS and Storybook to establish a scalable design system workflow",
+        "Improved information architecture for complex venture workflows including companies, contacts, and documents",
+      ],
+      results: [
+        "Improved UI consistency across multiple product modules",
+        "Enabled faster feature development through reusable component architecture",
+        "Reduced operational complexity with clearer and more structured UX patterns",
+        "Established a strong foundation for scaling the product frontend",
+      ],
+      stack: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Storybook",
+        "Component-Driven Architecture",
+      ],
+    },
+  },
+  {
+    id: "ai-companion-mobile-app",
+    name: "Confidential AI Companion App",
+    industry: "AI / Consumer Mobile",
+    summary:
+      "An AI companion mobile app focused on conversation, relationship intelligence, and real-time interaction flows, optimized for performance and polished mobile UX.",
+    tags: ["React Native", "Expo", "Reanimated", "AI UX"],
+    image: "/ai-companion-mobile-app.png",
+    modal: {
+      overview:
+        "A mobile AI companion app designed to help users stay connected, get suggestions, and interact through intelligent conversation flows. The product combined AI-driven messaging, contact-aware experiences, and highly interactive mobile UI patterns to create a polished, production-ready experience.",
+      role: "Frontend Engineer. I focused on mobile UX, AI chat interaction flows, bottom sheet experiences, and frontend performance optimization to help prepare the app for a high-visibility release.",
+      keyDecisions: [
+        "Upgraded the React Native and Expo stack to improve compatibility, development speed, and long-term maintainability",
+        "Built and refined interactive AI chat and bottom sheet flows with smooth gestures, animations, and snap-point behavior",
+        "Improved messaging, notifications, contact, and profile experiences to feel polished and responsive across the app",
+        "Refactored frontend structure to reduce friction for future AI and backend integrations",
+      ],
+      results: [
+        "Delivered a smoother and more production-ready AI companion experience on mobile",
+        "Improved responsiveness and perceived performance across chat, feed, and interactive screens",
+        "Strengthened the frontend foundation for future feature expansion and release readiness",
+      ],
+      stack: [
+        "React Native",
+        "Expo",
+        "NativeWind",
+        "Gluestack",
+        "React Navigation",
+        "Reanimated",
+        "Gesture Handler",
+        "REST APIs",
+      ],
+    },
+  },
+  {
+    id: "clinic-management",
+    name: "Mecare \u2014 Healthcare ERP & Mobile Suite",
+    industry: "Healthcare / HealthTech",
+    summary:
+      "A mission-critical clinic management system digitizing the patient lifecycle. Features real-time doctor-patient synchronization across web and mobile.",
+    tags: ["Next.js", "NestJS", "PostgreSQL", "React Native"],
+    image: "/ClinicSystem.png",
+    gallery: [
+      "/ClinicSystem.png",
+      "/ClinicSystem 2.png",
+      "/ClinicSystem 3.png",
+      "/ClinicSystem 4.png",
+      { src: "/ClinicSystem mobile.png", mobile: true },
+    ],
+    // liveUrl: "https://mecare-three.vercel.app/dashboard",
+    modal: {
+      overview:
+        "A complete healthcare platform built to digitize clinical operations \u2014 from patient intake to real-time doctor queues and automated prescriptions.",
+      role: "Head of Engineering. I led the multi-platform architecture, ensuring a unified API served the web dashboard, mobile app, and staff portal with strict data security.",
+      keyDecisions: [
+        "Developed a real-time patient queue management system using WebSockets for instant updates",
+        "Chose a modular NestJS architecture to allow for future healthcare provider integrations",
+        "Implemented secure, server-side PDF generation for medical records and prescriptions",
+        "Shared the NestJS API layer between web and React Native mobile apps to minimize duplication",
+      ],
+      results: [
+        "Reduced patient processing time by 40% through digitized intake workflows",
+        "Clinic fully paperless for intake, vitals, and visit records",
+        "Successfully deployed across web and mobile with a unified backend",
+      ],
+      stack: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "NestJS",
+        "PostgreSQL",
+        "React Native",
+        "Sanity CMS",
+      ],
+    },
+  },
+  {
+    id: "record-commerce-operations-platform",
+    name: "Record Commerce & Operations Platform",
+    industry: "E-commerce / Operations Tech",
+    summary:
+      "A production-grade platform combining e-commerce, structured submissions, and logistics workflows to manage the end-to-end lifecycle of physical record-based services.",
+    tags: ["Next.js", "TypeScript", "Node.js", "Stripe", "AWS"],
+    image: "/record-commerce-operations-platform.png",
+    modal: {
+      overview:
+        "A full-stack platform built for a specialized record-based service business, enabling users to submit physical items (e.g. vinyl, CDs) through structured workflows. The system extends beyond traditional e-commerce by integrating submission flows, dynamic pricing, lifecycle tracking, and internal operational processes such as processing, labeling, packaging, and shipping. It connects customer-facing experiences with complex backend logistics in a unified system.",
+      role: "Full Stack Engineer (Frontend-focused). I worked on core product workflows including submission systems, cart and checkout logic, and lifecycle tracking interfaces, ensuring consistency between user-facing experiences and internal operational systems.",
+      keyDecisions: [
+        "Designed a submission-first architecture instead of a traditional SKU-based e-commerce model",
+        "Implemented dynamic pricing logic combining services, shipping, and add-ons within a unified checkout flow",
+        "Built structured workflows connecting submissions, orders, and internal lifecycle states",
+        "Aligned frontend architecture with backend and operational systems to maintain data consistency across the platform",
+      ],
+      results: [
+        "Delivered a stable, production-ready platform for a complex service-based business",
+        "Unified fragmented workflows into a single system covering submission, payment, processing, and fulfillment",
+        "Improved transparency for users while enabling efficient internal operations",
+        "Established a scalable foundation for future growth, automation, and feature expansion",
+      ],
+      stack: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Stripe",
+        "AWS S3",
+        "Sanity CMS",
+        "Tailwind CSS",
+      ],
+    },
+  },
+  {
     id: "menajobs",
-    name: "MenaJobs — Scalable Job Board Ecosystem",
+    name: "MenaJobs \u2014 Scalable Job Board Ecosystem",
     industry: "Recruitment / HR Tech",
     summary:
-      "Architected a high-performance recruitment engine serving 1,800+ active listings. Focused on SEO-first delivery and sub-second faceted search for the MENA region.",
+      "Architected a high-performance recruitment engine serving 1,800+ active listings. Focused on SEO-first delivery and sub-second faceted search.",
     tags: ["Next.js", "Node.js", "PostgreSQL", "System Architecture"],
     image: "/menajobs.png",
     // liveUrl: "https://menajobs.io",
     modal: {
       overview:
         "A high-traffic recruitment platform engineered for scale. The challenge was building a system that could handle massive job ingestion while maintaining SEO dominance and a frictionless candidate experience.",
-      role: "Technical Lead & Architect. I defined the core system design, from the faceted search logic to the automated ingestion pipelines, ensuring the platform could scale to 10k+ listings without performance degradation.",
+      role: "Technical Lead & Architect. I defined the core system design, from the faceted search logic to the automated ingestion pipelines, ensuring the platform could scale without performance degradation.",
       keyDecisions: [
         "Architected a faceted search engine for sub-second filtering across thousands of records",
         "Built an automated job ingestion pipeline to synchronize bulk data from multiple sources",
         "Leveraged Next.js SSR to achieve 90+ Lighthouse SEO scores for organic discovery",
         "Designed a normalized PostgreSQL schema to maintain data integrity across multi-tenant employer profiles",
-        "Implemented a secure, role-based infrastructure for employer dashboards and candidate tracking",
       ],
       results: [
         "Production system supporting 1,800+ active listings with zero downtime",
@@ -206,115 +350,83 @@ export const projects: ProjectItem[] = [
       stack: [
         "Next.js",
         "TypeScript",
+        "Tailwind CSS",
         "Node.js",
         "PostgreSQL",
-        "Redis",
         "Vercel",
-      ],
-    },
-  },
-  {
-    id: "clinic-management",
-    name: "Mecare — Healthcare ERP & Mobile Suite",
-    industry: "Healthcare / HealthTech",
-    summary:
-      "A mission-critical clinic management system digitizing the entire patient lifecycle. Features real-time doctor-patient synchronization across web and mobile surfaces.",
-    tags: ["NestJS", "Next.js", "React Native", "PostgreSQL"],
-    // Removed "In Progress" status for higher authority
-    image: "/ClinicSystem.png",
-    gallery: [
-      "/ClinicSystem.png",
-      "/ClinicSystem 2.png",
-      "/ClinicSystem 3.png",
-      "/ClinicSystem 4.png",
-      { src: "/ClinicSystem mobile.png", mobile: true },
-    ],
-    // liveUrl: "https://mecare-three.vercel.app",
-    modal: {
-      overview:
-        "A comprehensive digitial transformation for clinical operations. The system manages sensitive medical records, real-time consultation queues, and automated prescription generation.",
-      role: "Head of Engineering. I led the multi-platform architecture, ensuring a unified API served the web dashboard, mobile app, and staff portal with strict data consistency and security.",
-      keyDecisions: [
-        "Developed a real-time patient queue management system using WebSockets for instant staff updates",
-        "Chose a modular NestJS architecture to allow for future healthcare provider integrations",
-        "Implemented secure, server-side PDF generation for medical records and prescriptions",
-        "Built a cross-platform data layer shared between React Native and Next.js to accelerate delivery",
-        "Integrated Headless CMS for independent management of public marketing assets",
-      ],
-      results: [
-        "Reduced patient processing time by 40% through digitized intake workflows",
-        "Successfully deployed across web and mobile with a unified backend",
-        "Achieved 100% paperless operation for visit records and prescriptions",
-      ],
-      stack: [
-        "Next.js",
-        "NestJS",
-        "PostgreSQL",
-        "React Native",
-        "Tailwind CSS",
-        "Sanity CMS",
       ],
     },
   },
   // {
   //   id: "carsaaz",
-  //   name: "CarSaaz.pk — High-Performance E-commerce",
+  //   name: "CarSaaz.pk \u2014 High-Performance E-commerce",
   //   industry: "E-commerce / Automotive",
   //   summary:
   //     "A conversion-optimized storefront for the automotive market. Built to handle nationwide traffic with a custom checkout flow and seamless mobile experience.",
-  //   tags: ["Next.js", "MongoDB", "Stripe", "Performance Ops"],
+  //   tags: ["Next.js", "TypeScript", "Tailwind CSS", "Performance Ops"],
   //   image: "/carsaaz.png",
-  //   liveUrl: "https://carsaaz.pk",
+  //   // liveUrl: "https://carsaaz.pk",
   //   modal: {
   //     overview:
-  //       "A premium automotive accessory platform. The focus was on creating a high-end brand feel while optimizing for mobile users on varying network speeds in Pakistan.",
+  //       "A premium automotive accessory platform focused on creating a high-end brand feel while optimizing for mobile users on varying network speeds.",
   //     role: "Full-Stack Lead. I handled the end-to-end delivery, focusing on image optimization for slow connections and a frictionless checkout flow to maximize conversion rates.",
   //     keyDecisions: [
-  //       "Optimized product delivery with Next.js Image optimization and edge caching",
-  //       "Custom-built a series-based filtering system (Leather vs. Metal) for intuitive navigation",
-  //       "Architected a hybrid payment gateway supporting both Stripe and local Cash on Delivery flows",
-  //       "Developed a modular promotion engine for dynamic launch offers and percentage discounts",
+  //       "Built a fast, SEO-friendly storefront with Next.js for organic product discovery",
+  //       "Designed product catalog with series-based filtering (Leather, Metal) and brand categorization",
+  //       "Implemented a hybrid payment gateway supporting both Stripe and local Cash on Delivery flows",
+  //       "Optimized product images and page loads for performance on slower connections",
   //     ],
   //     results: [
-  //       "Nationwide delivery system live and processing orders",
-  //       "High mobile conversion rates due to optimized, low-latency storefront",
-  //       "Successfully scaled to handle launch-day traffic spikes",
+  //       "Store live and processing orders nationwide with zero downtime",
+  //       "Fast page loads with optimized product images driving conversion",
+  //       "Smooth mobile shopping experience driving majority of traffic",
   //     ],
   //     stack: [
   //       "Next.js",
   //       "TypeScript",
+  //       "Tailwind CSS",
   //       "Node.js",
   //       "MongoDB",
-  //       "Tailwind CSS",
   //       "Vercel",
   //     ],
   //   },
   // },
-  {
-    id: "mentorjunaid",
-    name: "MentorJunaid — Learning Management Platform",
-    industry: "EdTech",
-    summary:
-      "A structured mentorship ecosystem designed to guide developers from zero to job-ready. Features interactive roadmaps and automated progress tracking.",
-    tags: ["Next.js", "MongoDB", "Product Strategy"],
-    image: "/mentorjunaid.webp",
-    // liveUrl: "https://mentorjunaid.com",
-    modal: {
-      overview:
-        "An EdTech platform focused on structured career paths. It solves the 'tutorial hell' problem by providing clear milestones and project-based validation.",
-      role: "Product Founder & Architect. I designed the information architecture and the roadmap engine that powers the personalized learner experience.",
-      keyDecisions: [
-        "Developed a proprietary roadmap engine to visualize and track learning milestones",
-        "Integrated an automated badge and certification system for student validation",
-        "Engineered a scalable content structure allowing for rapid addition of new technology paths",
-      ],
-      results: [
-        "Successfully onboarding early learners with positive career placement outcomes",
-        "Scaled content delivery to support multiple career paths (Frontend, Backend, Fullstack)",
-      ],
-      stack: ["Next.js", "TypeScript", "MongoDB", "Node.js", "Tailwind CSS"],
-    },
-  },
+  // {
+  //   id: "asset-management-platform",
+  //   name: "Confidential Asset Management Platform",
+  //   industry: "FinTech / WealthTech",
+  //   summary:
+  //     "A production-grade asset management platform for tracking diversified portfolios, document workflows, and secure onboarding across multiple entities.",
+  //   tags: ["Next.js", "TypeScript", "TanStack Query", "WebAuthn"],
+  //   image: "/dedicate-cover.png",
+  //   modal: {
+  //     overview:
+  //       "A mobile-first web application built for organizations and families to track, manage, and report on valuable assets across categories such as real estate, equities, crypto, collectibles, and more. The product combines portfolio visibility, document management, and secure onboarding into a unified platform.",
+  //     role: "Frontend Lead. I led the customer-facing product UI, built scalable frontend architecture, and drove implementation of key user flows across portfolio views, onboarding, navigation, and document experiences.",
+  //     keyDecisions: [
+  //       "Built the application on Next.js App Router with a feature-based architecture for long-term scalability",
+  //       "Implemented a BFF-style API layer under /api to keep frontend integrations structured and secure",
+  //       "Designed mobile-first navigation and responsive screen patterns for tablet and desktop expansion",
+  //       "Integrated secure onboarding flows including email OTP, passkey setup, and entity-aware access patterns",
+  //     ],
+  //     results: [
+  //       "Delivered a production-ready frontend foundation for a complex asset management platform",
+  //       "Enabled rich portfolio, document vault, and onboarding experiences across breakpoints",
+  //       "Established a scalable component and feature structure to support future roadmap expansion",
+  //     ],
+  //     stack: [
+  //       "Next.js 16",
+  //       "React 19",
+  //       "TypeScript",
+  //       "Tailwind CSS v4",
+  //       "TanStack Query",
+  //       "React Hook Form",
+  //       "Zod",
+  //       "Framer Motion",
+  //       "Recharts",
+  //     ],
+  //   },
+  // },
 ];
 
 export const stats = [
