@@ -229,7 +229,7 @@ export const projects: ProjectItem[] = [
       "/ClinicSystem 4.png",
       { src: "/ClinicSystem mobile.png", mobile: true },
     ],
-    liveUrl: "https://mecare-three.vercel.app",
+    // liveUrl: "https://mecare-three.vercel.app",
     modal: {
       overview:
         "A comprehensive digitial transformation for clinical operations. The system manages sensitive medical records, real-time consultation queues, and automated prescription generation.",
