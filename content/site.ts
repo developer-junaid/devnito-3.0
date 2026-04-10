@@ -253,7 +253,7 @@ export const projects: ProjectItem[] = [
     summary:
       "A mission-critical clinic management system digitizing the patient lifecycle. Features real-time doctor-patient synchronization across web and mobile.",
     tags: ["Next.js", "NestJS", "PostgreSQL", "React Native"],
-    image: "/ClinicSystem.png",
+    image: "/clinic-management.png",
     gallery: [
       "/ClinicSystem.png",
       "/ClinicSystem 2.png",
