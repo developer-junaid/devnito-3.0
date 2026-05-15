@@ -458,92 +458,111 @@ export const testimonials: TestimonialItem[] = [
   {
     id: "t01",
     quote:
+      "Junaid was a key partner in rebuilding the tech stack for my company. His work encompassed front and back-end functionality, and he was an excellent thought partner in thinking through the operational implications based on technical decision points.",
+    name: "Jeremy Downs",
+    title: "CEO, Audio Media Grading (USA)",
+    avatar: "/testimonials/jeremy.jpeg",
+  },
+  {
+    id: "t02",
+    quote:
+      "Junaid is one of the most reliable and capable engineers I’ve worked with. He delivers high-quality work, communicates clearly, and takes real ownership of projects. He’s fast, detail-oriented, and great at turning ideas into scalable solutions. Highly recommended.",
+    name: "Vincent Higgins",
+    title: "CEO, Stay Gold (USA)",
+    avatar: "/testimonials/vincent.jpeg",
+  },
+  {
+    id: "t03",
+    quote:
       "Incredibly reliable team. Great communication, easy to work with, and everything is handled with precision and intention.",
     name: "Kelsey Glassman",
     title: "Owner, Graphic Design Agency (USA)",
     avatar: "/testimonials/kelsey.png",
   },
   {
-    id: "t2",
+    id: "t04",
+    quote:
+      "The communication was exceptional. Junaid is a real professional who deeply understands software engineering, far beyond others in the market. The final result exceeded all expectations.",
+    name: "Ayoub",
+    title: "CEO, Strategic Agency (Algeria)",
+    avatar: "/testimonials/ayoub.jpeg",
+  },
+
+  {
+    id: "t05",
     quote:
       "Very, very excited to have found Junaid. He is an incredible Developer and has so much talent — now trying to convince him to work full time for us. I seriously recommend him for any high-level project.",
     name: "Tayler",
     title: "Manager, Sandero Cloud (USA)",
   },
   // MOVED TO 2nd: Proves "Team + Complexity"
-  {
-    id: "t1",
-    quote:
-      "Junaid and his team are highly skilled, dedicated to the work, very responsive, and deliver on-time. Very satisfied and highly recommended.",
-    name: "Aman",
-    title: "Founder, Boloot LMS (Pakistan)",
-  },
+  // {
+  //   id: "t1",
+  //   quote:
+  //     "Junaid and his team are highly skilled, dedicated to the work, very responsive, and deliver on-time. Very satisfied and highly recommended.",
+  //   name: "Aman",
+  //   title: "Founder, Boloot LMS (Pakistan)",
+  // },
   // MOVED TO 3rd: Proves "Architecture + Strategy" (Supports Blueprint)
   {
-    id: "t3",
+    id: "t06",
     quote:
       "From my very first message to last, the communication was excellent. Junaid asked all the right questions, focusing on technical logic from the start. The code is clean, easy to maintain, and exactly what we needed to scale.",
     name: "Ahmed",
     title: "Founder, Agency (UK)",
   },
   // MOVED TO 4th: Proves "AI-Native MVP Build" capability
-  {
-    id: "t9",
-    quote:
-      "Junaid's team didn't just meet our deadlines; they architected an AI-native system that is 3x more efficient than our initial requirements. His technical leadership as a Fractional CTO gives us absolute confidence to scale. He is the partner we needed.",
-    name: "Micheal",
-    title: "CEO, Strategic Partner (Malta)",
-  },
-  {
-    id: "t4",
-    quote:
-      "This developer is one of a kind with great communication skills and architectural insight.",
-    name: "Denzel",
-    title: "CEO, Firefighting Solutions (Poland)",
-  },
-  {
-    id: "t5",
-    quote:
-      "Very professional and know what he is doing, will be working with you again in the future on complex builds.",
-    name: "Walid",
-    title: "Founder, POS System (Belgium)",
-  },
-  {
-    id: "t7",
-    quote:
-      "Junaid is a deeply professional, kind, and effective technical leader. His expertise in modern frameworks (React, Gatsby.js, Next.js) and architecture design allows him to deliver production-grade quality every time. Working with him is efficient, secure, and productive. Highly recommended.",
-    name: "Kuba",
-    title: "CEO, [Your Polish Partner]",
-  },
-  {
-    id: "t11",
-    quote:
-      "The communication was exceptional. Junaid is a real professional who deeply understands software engineering, far beyond others in the market. The final result exceeded all expectations.",
-    name: "Ayoub",
-    title: "CEO, Strategic Agency (France)",
-  },
+  // {
+  //   id: "t9",
+  //   quote:
+  //     "Junaid's team didn't just meet our deadlines; they architected an AI-native system that is 3x more efficient than our initial requirements. His technical leadership as a Fractional CTO gives us absolute confidence to scale. He is the partner we needed.",
+  //   name: "Micheal",
+  //   title: "CEO, Strategic Partner (Malta)",
+  // },
+  // {
+  //   id: "t4",
+  //   quote:
+  //     "This developer is one of a kind with great communication skills and architectural insight.",
+  //   name: "Denzel",
+  //   title: "CEO, Firefighting Solutions (Poland)",
+  // },
+  // {
+  //   id: "t5",
+  //   quote:
+  //     "Very professional and know what he is doing, will be working with you again in the future on complex builds.",
+  //   name: "Walid",
+  //   title: "Founder, POS System (Belgium)",
+  // },
+  // {
+  //   id: "t7",
+  //   quote:
+  //     "Junaid is a deeply professional, kind, and effective technical leader. His expertise in modern frameworks (React, Gatsby.js, Next.js) and architecture design allows him to deliver production-grade quality every time. Working with him is efficient, secure, and productive. Highly recommended.",
+  //   name: "Kuba",
+  //   title: "CEO, FireFighters",
+  // },
+
   // These last 3 keep them if you need more depth, but they are generic.
-  {
-    id: "t6",
-    quote:
-      "Great communication skills and very easy to work with! Thanks for the excellent engineering work and I hope we will work together again.",
-    name: "Leo Matter",
-    title: "Product Manager, E-commerce",
-  },
-  {
-    id: "t8",
-    quote:
-      "Deep technical insight combined with great attention and patience. An ideal engineering partner.",
-    name: "Luke",
-    title: "CEO, Agency (Argentina)",
-  },
-  {
-    id: "t10",
-    quote:
-      "Delivered our phased project on-time and with solid architecture. Our systems are now production-ready.",
-    name: "Sathya Moorthy V",
-    title: "CEO, Agency (Canada)",
-  },
+  // {
+  //   id: "t6",
+  //   quote:
+  //     "Great communication skills and very easy to work with! Thanks for the excellent engineering work and I hope we will work together again.",
+  //   name: "Leo Matter",
+  //   title: "Product Manager, E-commerce",
+  // },
+  // {
+  //   id: "t8",
+  //   quote:
+  //     "Deep technical insight combined with great attention and patience. An ideal engineering partner.",
+  //   name: "Luke",
+  //   title: "CEO, Agency (Argentina)",
+  // },
+  // {
+  //   id: "t10",
+  //   quote:
+  //     "Delivered our phased project on-time and with solid architecture. Our systems are now production-ready.",
+  //   name: "Sathya Moorthy V",
+  //   title: "CEO, Agency (Canada)",
+  // },
 ];
 
 export interface VideoTestimonialItem {
