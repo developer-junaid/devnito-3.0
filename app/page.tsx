@@ -11,6 +11,9 @@ import { ContactCTA } from "@/components/contact-cta";
 import { Footer } from "@/components/footer";
 import { fetchProjects, fetchTestimonials } from "@/sanity/lib/fetchers";
 
+/** Fetch Sanity at request time so Vercel runtime env vars apply (not only build-time). */
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const [projects, { testimonials, videoTestimonials }] = await Promise.all([
     fetchProjects(),

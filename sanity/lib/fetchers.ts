@@ -22,6 +22,10 @@ import type {
   Testimonial,
 } from "./types";
 
+function logSanityFallback(message: string) {
+  console.warn(`[sanity] ${message}`);
+}
+
 function imageUrl(source: SanityImage | undefined): string | undefined {
   const url = urlForImage(source ?? null);
   return url ?? undefined;
@@ -104,14 +108,24 @@ function testimonialToVideoItem(t: Testimonial): VideoTestimonialItem | null {
 }
 
 export async function fetchProjects(): Promise<ProjectItem[]> {
-  if (!sanityClient) return fallbackProjects;
+  if (!sanityClient) {
+    logSanityFallback(
+      "Using static projects — set NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET (Vercel → Environment Variables), then redeploy.",
+    );
+    return fallbackProjects;
+  }
   try {
     const data = await sanityClient.fetch<Project[]>(
       projectsForDevnitoSiteQuery,
       {},
       { next: { revalidate: 60 } },
     );
-    if (!data || data.length === 0) return fallbackProjects;
+    if (!data || data.length === 0) {
+      logSanityFallback(
+        "Using static projects — no published projects have “Show on Devnito site” enabled in Sanity.",
+      );
+      return fallbackProjects;
+    }
     return data.map(projectToItem);
   } catch (error) {
     console.error("[sanity] fetchProjects failed, using fallback:", error);
@@ -124,6 +138,9 @@ export async function fetchTestimonials(): Promise<{
   videoTestimonials: VideoTestimonialItem[];
 }> {
   if (!sanityClient) {
+    logSanityFallback(
+      "Using static testimonials — set NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET on Vercel.",
+    );
     return {
       testimonials: fallbackTestimonials,
       videoTestimonials: fallbackVideoTestimonials,
@@ -136,6 +153,9 @@ export async function fetchTestimonials(): Promise<{
       { next: { revalidate: 60 } },
     );
     if (!data || data.length === 0) {
+      logSanityFallback(
+        "Using static testimonials — none have “Show on Devnito site” enabled in Sanity.",
+      );
       return {
         testimonials: fallbackTestimonials,
         videoTestimonials: fallbackVideoTestimonials,
