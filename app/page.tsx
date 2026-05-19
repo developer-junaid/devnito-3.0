@@ -9,18 +9,27 @@ import { Testimonials } from "@/components/testimonials";
 import { NotFor } from "@/components/not-for";
 import { ContactCTA } from "@/components/contact-cta";
 import { Footer } from "@/components/footer";
+import { fetchProjects, fetchTestimonials } from "@/sanity/lib/fetchers";
 
-export default function Home() {
+export default async function Home() {
+  const [projects, { testimonials, videoTestimonials }] = await Promise.all([
+    fetchProjects(),
+    fetchTestimonials(),
+  ]);
+
   return (
     <ContactFormProvider>
       <Navbar />
       <main>
         <Hero />
         <Packages />
-        <Work />
+        <Work projects={projects} />
         <Founder />
         <ProofStrip />
-        <Testimonials />
+        <Testimonials
+          testimonials={testimonials}
+          videoTestimonials={videoTestimonials}
+        />
         <NotFor />
         <ContactCTA />
       </main>

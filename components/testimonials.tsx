@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import {
-  testimonials,
-  videoTestimonials,
+  testimonials as fallbackTestimonials,
+  videoTestimonials as fallbackVideoTestimonials,
   type VideoTestimonialItem,
   type TestimonialItem,
 } from "@/content/site";
@@ -195,7 +195,13 @@ function Marquee({
   );
 }
 
-export function Testimonials() {
+export function Testimonials({
+  testimonials = fallbackTestimonials,
+  videoTestimonials = fallbackVideoTestimonials,
+}: {
+  testimonials?: TestimonialItem[];
+  videoTestimonials?: VideoTestimonialItem[];
+} = {}) {
   const [activeTestimonial, setActiveTestimonial] =
     useState<TestimonialItem | null>(null);
 

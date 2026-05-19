@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { projects, type ProjectItem } from "@/content/site";
+import { projects as fallbackProjects, type ProjectItem } from "@/content/site";
 import { Modal } from "@/components/ui/modal";
 import { useContactForm } from "@/components/contact-form-provider";
 
@@ -353,7 +353,7 @@ function ProjectModalContent({
   );
 }
 
-export function Work() {
+export function Work({ projects = fallbackProjects }: { projects?: ProjectItem[] } = {}) {
   const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
   const { openContactForm } = useContactForm();
 
