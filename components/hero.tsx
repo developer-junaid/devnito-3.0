@@ -7,7 +7,7 @@ export function Hero() {
   const { openContactForm } = useContactForm();
 
   return (
-    <section className="relative overflow-hidden px-5 pt-32 pb-20 sm:px-8 sm:pt-40 sm:pb-28">
+    <section className="relative overflow-hidden px-5 pt-40 pb-20 sm:px-8 sm:pt-48 sm:pb-28">
       <div className="pointer-events-none absolute top-20 left-1/2 -z-10 h-[500px] w-[600px] -translate-x-1/2 gradient-blur rounded-full opacity-80" />
       <div className="pointer-events-none absolute top-16 right-[-5%] -z-10 hidden max-w-[480px] w-[420px] opacity-[0.07] select-none lg:block xl:right-[2%] xl:w-[480px]">
         <Image

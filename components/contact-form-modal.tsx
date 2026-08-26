@@ -26,9 +26,14 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 interface ContactFormModalProps {
   open: boolean;
   onClose: () => void;
+  source?: string;
 }
 
-export function ContactFormModal({ open, onClose }: ContactFormModalProps) {
+export function ContactFormModal({
+  open,
+  onClose,
+  source,
+}: ContactFormModalProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -111,6 +116,7 @@ export function ContactFormModal({ open, onClose }: ContactFormModalProps) {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            {source ? <input type="hidden" name="source" value={source} /> : null}
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="cf-name" className={labelClass}>

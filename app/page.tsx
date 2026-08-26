@@ -14,7 +14,14 @@ import { fetchProjects, fetchTestimonials } from "@/sanity/lib/fetchers";
 /** Fetch Sanity at request time so Vercel runtime env vars apply (not only build-time). */
 export const dynamic = "force-dynamic";
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ ref?: string }>;
+}) {
+  const { ref } = await searchParams;
+  const leapHref = `/leap?ref=${encodeURIComponent(ref || "home")}`;
+
   const [projects, { testimonials, videoTestimonials }] = await Promise.all([
     fetchProjects(),
     fetchTestimonials(),
@@ -22,7 +29,7 @@ export default async function Home() {
 
   return (
     <ContactFormProvider>
-      <Navbar />
+      <Navbar leapHref={leapHref} />
       <main>
         <Hero />
         <Packages />
