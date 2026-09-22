@@ -1,15 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { founder, siteConfig } from "@/content/site";
+import { useLocale, useTranslations } from "next-intl";
+import { founder as founderByLocale, siteConfig } from "@/content/site";
 import { useContactForm } from "@/components/contact-form-provider";
+import type { Locale } from "@/i18n/routing";
 
 export function Founder() {
   const { openContactForm } = useContactForm();
+  const t = useTranslations("founder");
+  const locale = useLocale() as Locale;
+  const founder = founderByLocale[locale];
 
   return (
     <section id="founder" className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28">
-      <div className="pointer-events-none absolute -top-8 -right-12 -z-10 max-w-[320px] w-[260px] rotate-6 opacity-[0.08] select-none sm:w-[320px]">
+      <div className="pointer-events-none absolute -top-8 -right-12 -z-10 max-w-[320px] w-[260px] rotate-6 opacity-[0.08] select-none rtl:right-auto rtl:-left-12 sm:w-[320px]">
         <Image src="/logo.svg" alt="" width={320} height={230} className="h-auto w-full" />
       </div>
 
@@ -34,7 +39,7 @@ export function Founder() {
             <div className="flex w-full flex-col justify-center p-8 sm:p-12 lg:w-[58%] lg:p-16">
               <p className="mb-4 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
                 <span className="section-dot" />
-                Meet the Founder & Team Lead
+                {t("eyebrow")}
               </p>
 
               <h2 className="mb-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
@@ -73,13 +78,13 @@ export function Founder() {
                   onClick={openContactForm}
                   className="btn-gradient inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-opacity hover:opacity-90"
                 >
-                  Book a Call
+                  {t("bookACall")}
                 </button>
                 <a
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn profile"
+                  aria-label={t("linkedinProfile")}
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-[#0A66C2] hover:text-[#0A66C2]"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

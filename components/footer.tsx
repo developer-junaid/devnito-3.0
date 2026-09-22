@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { siteConfig } from "@/content/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const t = useTranslations("footer");
 
   return (
     <footer className="border-t border-border px-5 py-14 sm:px-8">
@@ -24,10 +28,7 @@ export function Footer() {
           {siteConfig.name} &copy; {year}
         </p>
 
-        <p className="text-xs text-foreground/40">
-          Founder-led delivery&ensp;·&ensp;Modern stack&ensp;·&ensp;Long-term
-          partnership
-        </p>
+        <p className="text-xs text-foreground/40">{t("tagline")}</p>
       </div>
     </footer>
   );

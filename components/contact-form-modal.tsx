@@ -1,25 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useTranslations } from "next-intl";
 import { Modal } from "@/components/ui/modal";
 import { siteConfig } from "@/content/site";
-
-const SERVICE_OPTIONS = [
-  { value: "", label: "Select a service..." },
-  { value: "Architecture Blueprint", label: "Architecture Blueprint" },
-  { value: "Build / Rebuild", label: "Build / Rebuild" },
-  { value: "Engineering Partner", label: "Engineering Partner" },
-  { value: "Not sure yet", label: "Not sure yet" },
-];
-
-const BUDGET_OPTIONS = [
-  { value: "", label: "Select a range (optional)" },
-  { value: "Under $5k", label: "Under $5k" },
-  { value: "$5k – $15k", label: "$5k – $15k" },
-  { value: "$15k – $50k", label: "$15k – $50k" },
-  { value: "$50k+", label: "$50k+" },
-  { value: "Not sure", label: "Not sure" },
-];
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -36,6 +20,24 @@ export function ContactFormModal({
 }: ContactFormModalProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const t = useTranslations("contactForm");
+
+  const SERVICE_OPTIONS = [
+    { value: "", label: t("serviceOptions.placeholder") },
+    { value: "Architecture Blueprint", label: t("serviceOptions.blueprint") },
+    { value: "Build / Rebuild", label: t("serviceOptions.build") },
+    { value: "Engineering Partner", label: t("serviceOptions.partner") },
+    { value: "Not sure yet", label: t("serviceOptions.unsure") },
+  ];
+
+  const BUDGET_OPTIONS = [
+    { value: "", label: t("budgetOptions.placeholder") },
+    { value: "Under $5k", label: t("budgetOptions.under5k") },
+    { value: "$5k – $15k", label: t("budgetOptions.range5to15") },
+    { value: "$15k – $50k", label: t("budgetOptions.range15to50") },
+    { value: "$50k+", label: t("budgetOptions.over50k") },
+    { value: "Not sure", label: t("budgetOptions.unsure") },
+  ];
 
   function handleClose() {
     onClose();
@@ -67,14 +69,11 @@ export function ContactFormModal({
         form.reset();
       } else {
         const body = await res.json().catch(() => null);
-        setErrorMsg(
-          body?.errors?.[0]?.message ||
-            "Something went wrong. Please try again."
-        );
+        setErrorMsg(body?.errors?.[0]?.message || t("errorGeneric"));
         setStatus("error");
       }
     } catch {
-      setErrorMsg("Network error. Please check your connection and try again.");
+      setErrorMsg(t("errorNetwork"));
       setStatus("error");
     }
   }
@@ -84,7 +83,7 @@ export function ContactFormModal({
   const labelClass = "mb-1.5 block text-xs font-medium uppercase tracking-wider text-muted";
 
   return (
-    <Modal open={open} onClose={handleClose} title="Book a Call">
+    <Modal open={open} onClose={handleClose} title={t("title")}>
       {status === "success" ? (
         <div className="py-8 text-center">
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
@@ -93,54 +92,51 @@ export function ContactFormModal({
             </svg>
           </div>
           <h3 className="text-xl font-bold text-foreground">
-            Thanks! We&apos;ll be in touch.
+            {t("successTitle")}
           </h3>
           <p className="mx-auto mt-2 max-w-sm text-sm text-muted">
-            We&apos;ve received your details and will get back to you within 24
-            hours to set up a call.
+            {t("successBody")}
           </p>
           <button
             onClick={handleClose}
             className="btn-gradient mt-6 inline-flex rounded-full px-6 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
           >
-            Close
+            {t("close")}
           </button>
         </div>
       ) : (
         <div>
           <h2 className="mb-1 text-xl font-bold text-foreground">
-            Book a Call
+            {t("title")}
           </h2>
-          <p className="mb-6 text-sm text-muted">
-            Tell us a bit about your project and we&apos;ll set up a call.
-          </p>
+          <p className="mb-6 text-sm text-muted">{t("subtitle")}</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {source ? <input type="hidden" name="source" value={source} /> : null}
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="cf-name" className={labelClass}>
-                  Name *
+                  {t("name")}
                 </label>
                 <input
                   id="cf-name"
                   name="name"
                   type="text"
                   required
-                  placeholder="Your name"
+                  placeholder={t("namePlaceholder")}
                   className={inputClass}
                 />
               </div>
               <div>
                 <label htmlFor="cf-email" className={labelClass}>
-                  Email *
+                  {t("email")}
                 </label>
                 <input
                   id="cf-email"
                   name="email"
                   type="email"
                   required
-                  placeholder="you@company.com"
+                  placeholder={t("emailPlaceholder")}
                   className={inputClass}
                 />
               </div>
@@ -149,7 +145,7 @@ export function ContactFormModal({
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="cf-service" className={labelClass}>
-                  Service Interest
+                  {t("serviceInterest")}
                 </label>
                 <select id="cf-service" name="service" className={inputClass}>
                   {SERVICE_OPTIONS.map((o) => (
@@ -161,7 +157,7 @@ export function ContactFormModal({
               </div>
               <div>
                 <label htmlFor="cf-budget" className={labelClass}>
-                  Budget Range
+                  {t("budgetRange")}
                 </label>
                 <select id="cf-budget" name="budget" className={inputClass}>
                   {BUDGET_OPTIONS.map((o) => (
@@ -175,13 +171,13 @@ export function ContactFormModal({
 
             <div>
               <label htmlFor="cf-message" className={labelClass}>
-                Project Brief
+                {t("projectBrief")}
               </label>
               <textarea
                 id="cf-message"
                 name="message"
                 rows={3}
-                placeholder="Tell us a bit about what you're building..."
+                placeholder={t("messagePlaceholder")}
                 className={inputClass + " resize-none"}
               />
             </div>
@@ -203,15 +199,15 @@ export function ContactFormModal({
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-25" />
                     <path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="opacity-75" />
                   </svg>
-                  Sending...
+                  {t("sending")}
                 </span>
               ) : (
-                "Send & Book a Call"
+                t("submit")
               )}
             </button>
 
             <p className="text-center text-xs text-muted/60">
-              We&apos;ll respond within 24 hours.
+              {t("responseTime")}
             </p>
           </form>
         </div>

@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { projects as fallbackProjects, type ProjectItem } from "@/content/site";
+import { useLocale, useTranslations } from "next-intl";
+import { projects as fallbackProjectsByLocale, type ProjectItem } from "@/content/site";
 import { Modal } from "@/components/ui/modal";
 import { useContactForm } from "@/components/contact-form-provider";
+import type { Locale } from "@/i18n/routing";
 
 function ProjectShowcase({
   project,
@@ -15,10 +17,12 @@ function ProjectShowcase({
   onOpen: () => void;
   reverse: boolean;
 }) {
+  const t = useTranslations("work");
+
   return (
     <button
       onClick={onOpen}
-      className="group block w-full overflow-hidden rounded-3xl border border-card-border bg-card text-left shadow-[var(--card-shadow)] transition-all duration-300 hover:shadow-xl"
+      className="group block w-full overflow-hidden rounded-3xl border border-card-border bg-card text-start shadow-[var(--card-shadow)] transition-all duration-300 hover:shadow-xl"
     >
       <div
         className={`flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}
@@ -79,7 +83,7 @@ function ProjectShowcase({
           </div>
 
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--gradient-start)] transition-colors group-hover:text-[var(--gradient-mid)]">
-            View case study
+            {t("viewCaseStudy")}
             <svg
               width="16"
               height="16"
@@ -89,7 +93,7 @@ function ProjectShowcase({
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="transition-transform group-hover:translate-x-1"
+              className="rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
             >
               <path d="M6 4l4 4-4 4" />
             </svg>
@@ -115,6 +119,7 @@ function ImageGallery({
   name: string;
 }) {
   const [idx, setIdx] = useState(0);
+  const t = useTranslations("work");
 
   const current = resolveGalleryItem(images[idx]);
 
@@ -134,7 +139,7 @@ function ImageGallery({
         >
           <Image
             src={current.src}
-            alt={`${name} screenshot ${idx + 1}`}
+            alt={t("screenshotAlt", { name, n: idx + 1 })}
             fill
             className={
               current.mobile ? "object-contain" : "object-cover object-top"
@@ -147,9 +152,9 @@ function ImageGallery({
           <>
             <button
               onClick={() => go(-1)}
-              aria-label="Previous screenshot"
-              className={`absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 ${
-                current.mobile ? "left-0 sm:left-2" : ""
+              aria-label={t("prevScreenshot")}
+              className={`absolute start-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 rtl:rotate-180 ${
+                current.mobile ? "start-0 sm:start-2" : ""
               }`}
             >
               <svg
@@ -167,9 +172,9 @@ function ImageGallery({
             </button>
             <button
               onClick={() => go(1)}
-              aria-label="Next screenshot"
-              className={`absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 ${
-                current.mobile ? "right-0 sm:right-2" : ""
+              aria-label={t("nextScreenshot")}
+              className={`absolute end-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 rtl:rotate-180 ${
+                current.mobile ? "end-0 sm:end-2" : ""
               }`}
             >
               <svg
@@ -194,7 +199,7 @@ function ImageGallery({
               <button
                 key={i}
                 onClick={() => setIdx(i)}
-                aria-label={`Go to screenshot ${i + 1}`}
+                aria-label={t("goToScreenshot", { n: i + 1 })}
                 className={`h-1.5 rounded-full transition-all ${
                   i === idx
                     ? "w-6 bg-[var(--gradient-start)]"
@@ -216,6 +221,8 @@ function ProjectModalContent({
   project: ProjectItem;
   onBookCall: () => void;
 }) {
+  const t = useTranslations("work");
+  const tCommon = useTranslations("common");
   const galleryImages = project.gallery?.length
     ? project.gallery
     : project.image
@@ -223,7 +230,7 @@ function ProjectModalContent({
       : null;
 
   return (
-    <div className="sm:pr-4">
+    <div className="sm:pe-4">
       {galleryImages && (
         <ImageGallery images={galleryImages} name={project.name} />
       )}
@@ -260,7 +267,7 @@ function ProjectModalContent({
             onClick={(e) => e.stopPropagation()}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-            View Live
+            {t("viewLive")}
           </a>
         )}
       </div>
@@ -268,7 +275,7 @@ function ProjectModalContent({
       <div className="space-y-5 sm:space-y-6">
         <div>
           <h4 className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted sm:mb-2 sm:text-xs">
-            Overview
+            {t("overview")}
           </h4>
           <p className="text-[13px] leading-relaxed text-foreground sm:text-sm">
             {project.modal.overview}
@@ -277,7 +284,7 @@ function ProjectModalContent({
 
         <div>
           <h4 className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted sm:mb-2 sm:text-xs">
-            My Role
+            {t("myRole")}
           </h4>
           <p className="text-[13px] leading-relaxed text-foreground sm:text-sm">
             {project.modal.role}
@@ -286,7 +293,7 @@ function ProjectModalContent({
 
         <div>
           <h4 className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted sm:mb-2 sm:text-xs">
-            Key Decisions
+            {t("keyDecisions")}
           </h4>
           <ul className="space-y-1.5">
             {project.modal.keyDecisions.map((d) => (
@@ -306,7 +313,7 @@ function ProjectModalContent({
 
         <div>
           <h4 className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted sm:mb-2 sm:text-xs">
-            Results
+            {t("results")}
           </h4>
           <ul className="space-y-1.5">
             {project.modal.results.map((r) => (
@@ -323,7 +330,7 @@ function ProjectModalContent({
 
         <div>
           <h4 className="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-muted sm:mb-2 sm:text-xs">
-            Stack
+            {t("stack")}
           </h4>
           <div className="flex flex-wrap gap-1.5 sm:gap-2">
             {project.modal.stack.map((s) => (
@@ -339,13 +346,13 @@ function ProjectModalContent({
 
         <div className="rounded-2xl bg-gradient-to-br from-[var(--gradient-start)]/5 to-[var(--gradient-end)]/5 p-4 sm:p-5">
           <p className="text-[13px] text-muted sm:text-sm">
-            Interested in a similar engagement?
+            {t("similarEngagement")}
           </p>
           <button
             onClick={onBookCall}
             className="btn-gradient mt-3 inline-flex rounded-full px-5 py-2 text-[13px] font-medium transition-opacity hover:opacity-90 sm:px-6 sm:py-2.5 sm:text-sm"
           >
-            Book a Call
+            {tCommon("bookACall")}
           </button>
         </div>
       </div>
@@ -353,9 +360,12 @@ function ProjectModalContent({
   );
 }
 
-export function Work({ projects = fallbackProjects }: { projects?: ProjectItem[] } = {}) {
+export function Work({ projects }: { projects?: ProjectItem[] } = {}) {
   const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
   const { openContactForm } = useContactForm();
+  const t = useTranslations("work");
+  const locale = useLocale() as Locale;
+  const items = projects ?? fallbackProjectsByLocale[locale];
 
   function handleBookCall() {
     setActiveProject(null);
@@ -368,15 +378,15 @@ export function Work({ projects = fallbackProjects }: { projects?: ProjectItem[]
         <div className="mb-12">
           <p className="mb-3 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
             <span className="section-dot" />
-            Our Work
+            {t("eyebrow")}
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Selected work
+            {t("title")}
           </h2>
         </div>
 
         <div className="flex flex-col gap-8">
-          {projects.map((project, i) => (
+          {items.map((project, i) => (
             <ProjectShowcase
               key={project.id}
               project={project}

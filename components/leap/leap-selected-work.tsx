@@ -1,26 +1,31 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
 import { leapSelectedWork } from "@/content/leap";
 import { trackLeap } from "@/lib/leap-analytics";
+import type { Locale } from "@/i18n/routing";
 
 export function LeapSelectedWork() {
+  const t = useTranslations("leap.selectedWork");
+  const locale = useLocale() as Locale;
+  const items = leapSelectedWork[locale];
+
   return (
     <section className="px-5 py-12 sm:px-8 sm:py-16">
       <div className="mx-auto max-w-2xl">
         <p className="mb-3 flex items-center justify-center text-xs font-medium uppercase tracking-widest text-muted">
           <span className="section-dot" />
-          Selected Work
+          {t("eyebrow")}
         </p>
         <h2 className="mb-3 text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-          Instant proof of delivery
+          {t("title")}
         </h2>
         <p className="mx-auto mb-8 max-w-md text-center text-sm leading-relaxed text-muted">
-          Selected products I&apos;ve helped engineer and deliver through my
-          leadership roles and engineering partnerships.
+          {t("subtitle")}
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {leapSelectedWork.map((project) => {
+          {items.map((project) => {
             const content = (
               <>
                 {project.tag ? (
@@ -33,7 +38,7 @@ export function LeapSelectedWork() {
                     {project.name}
                   </h3>
                   {project.href ? (
-                    <span className="mt-0.5 text-muted" aria-hidden="true">
+                    <span className="mt-0.5 text-muted rtl:rotate-180" aria-hidden="true">
                       <ArrowIcon />
                     </span>
                   ) : null}

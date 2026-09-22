@@ -10,21 +10,28 @@ import { NotFor } from "@/components/not-for";
 import { ContactCTA } from "@/components/contact-cta";
 import { Footer } from "@/components/footer";
 import { fetchProjects, fetchTestimonials } from "@/sanity/lib/fetchers";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 /** Fetch Sanity at request time so Vercel runtime env vars apply (not only build-time). */
 export const dynamic = "force-dynamic";
 
 export default async function Home({
+  params,
   searchParams,
 }: {
+  params: Promise<{ locale: Locale }>;
   searchParams: Promise<{ ref?: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const { ref } = await searchParams;
   const leapHref = `/leap?ref=${encodeURIComponent(ref || "home")}`;
 
   const [projects, { testimonials, videoTestimonials }] = await Promise.all([
-    fetchProjects(),
-    fetchTestimonials(),
+    fetchProjects(locale),
+    fetchTestimonials(locale),
   ]);
 
   return (

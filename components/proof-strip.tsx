@@ -1,7 +1,11 @@
-import Image from "next/image";
-import { stats } from "@/content/site";
+import { getLocale } from "next-intl/server";
+import { stats as statsByLocale } from "@/content/site";
+import type { Locale } from "@/i18n/routing";
 
-export function ProofStrip() {
+export async function ProofStrip() {
+  const locale = (await getLocale()) as Locale;
+  const stats = statsByLocale[locale];
+
   return (
     <section
       id="proof"

@@ -2,17 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useLocale, useTranslations } from "next-intl";
 import {
-  testimonials as fallbackTestimonials,
-  videoTestimonials as fallbackVideoTestimonials,
+  testimonials as fallbackTestimonialsByLocale,
+  videoTestimonials as fallbackVideoTestimonialsByLocale,
   type VideoTestimonialItem,
   type TestimonialItem,
 } from "@/content/site";
 import { Modal } from "@/components/ui/modal";
+import type { Locale } from "@/i18n/routing";
 
 function VideoCard({ item }: { item: VideoTestimonialItem }) {
   const [playing, setPlaying] = useState(false);
   const thumbnail = `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`;
+  const t = useTranslations("testimonials");
 
   return (
     <div className="group w-full max-w-[560px]">
@@ -29,7 +32,7 @@ function VideoCard({ item }: { item: VideoTestimonialItem }) {
         ) : (
           <button
             onClick={() => setPlaying(true)}
-            aria-label={`Play: ${item.title}`}
+            aria-label={`${t("readMore")}: ${item.title}`}
             className="block h-full w-full"
           >
             <Image
@@ -52,7 +55,7 @@ function VideoCard({ item }: { item: VideoTestimonialItem }) {
                   height="20"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="translate-x-px"
+                  className="rtl:-scale-x-100"
                 >
                   <path d="M5 3v14l12-7z" />
                 </svg>
@@ -125,6 +128,7 @@ function QuoteCard({
   item: TestimonialItem;
   onReadMore?: () => void;
 }) {
+  const t = useTranslations("testimonials");
   const needsTruncation = item.quote.length > QUOTE_CHAR_LIMIT;
   const displayText = needsTruncation
     ? item.quote.slice(0, QUOTE_CHAR_LIMIT).trimEnd() + "..."
@@ -145,9 +149,9 @@ function QuoteCard({
                 e.stopPropagation();
                 onReadMore();
               }}
-              className="ml-1 inline text-[13px] font-medium text-[var(--gradient-start)] hover:text-[var(--gradient-mid)]"
+              className="ms-1 inline text-[13px] font-medium text-[var(--gradient-start)] hover:text-[var(--gradient-mid)]"
             >
-              Read more
+              {t("readMore")}
             </button>
           )}
         </p>
@@ -157,7 +161,7 @@ function QuoteCard({
         <div className="relative">
           <Avatar name={item.name} avatar={item.avatar} />
           <span
-            className="absolute -right-0.5 bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
+            className="absolute -end-0.5 bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
             style={{ background: "#4ade80" }}
           />
         </div>
@@ -196,21 +200,25 @@ function Marquee({
 }
 
 export function Testimonials({
-  testimonials = fallbackTestimonials,
-  videoTestimonials = fallbackVideoTestimonials,
+  testimonials,
+  videoTestimonials,
 }: {
   testimonials?: TestimonialItem[];
   videoTestimonials?: VideoTestimonialItem[];
 } = {}) {
   const [activeTestimonial, setActiveTestimonial] =
     useState<TestimonialItem | null>(null);
+  const t = useTranslations("testimonials");
+  const locale = useLocale() as Locale;
+  const items = testimonials ?? fallbackTestimonialsByLocale[locale];
+  const videoItems = videoTestimonials ?? fallbackVideoTestimonialsByLocale[locale];
 
   return (
     <section
       id="testimonials"
       className="relative overflow-hidden py-20 sm:py-28"
     >
-      <div className="pointer-events-none absolute -top-6 -left-10 -z-10 w-[240px] max-w-[300px] -rotate-12 opacity-[0.08] select-none sm:w-[300px]">
+      <div className="pointer-events-none absolute -top-6 -left-10 -z-10 w-[240px] max-w-[300px] -rotate-12 opacity-[0.08] select-none rtl:left-auto rtl:-right-10 sm:w-[300px]">
         <Image
           src="/logo.svg"
           alt=""
@@ -222,23 +230,23 @@ export function Testimonials({
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <p className="mb-3 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
           <span className="section-dot" />
-          Client Testimonials &amp; Reviews
+          {t("eyebrow")}
         </p>
         <h2 className="mb-12 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          What our clients say
+          {t("title")}
         </h2>
       </div>
 
       {/* Video testimonials */}
       <div className="mx-auto mb-16 grid max-w-[1200px] gap-5 px-5 sm:grid-cols-2 sm:gap-6 sm:px-8">
-        {videoTestimonials.map((vt) => (
+        {videoItems.map((vt) => (
           <VideoCard key={vt.id} item={vt} />
         ))}
       </div>
 
       {/* Written testimonials marquee */}
       <Marquee direction="right" duration={60}>
-        {testimonials.map((t) => (
+        {items.map((t) => (
           <QuoteCard
             key={t.id}
             item={t}
@@ -253,7 +261,7 @@ export function Testimonials({
         title={activeTestimonial?.name}
       >
         {activeTestimonial && (
-          <div className="sm:pr-4">
+          <div className="sm:pe-4">
             <div className="mb-6 text-5xl leading-none text-[var(--gradient-start)]/20 select-none">
               &ldquo;
             </div>
@@ -268,7 +276,7 @@ export function Testimonials({
                   size={48}
                 />
                 <span
-                  className="absolute -right-0.5 -bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
+                  className="absolute -end-0.5 -bottom-0.5 block h-2.5 w-2.5 rounded-full border-2 border-card"
                   style={{ background: "#4ade80" }}
                 />
               </div>

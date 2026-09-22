@@ -1,7 +1,14 @@
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
 import { leapConfig } from "@/content/leap";
+import type { Locale } from "@/i18n/routing";
 
 export function LeapFooter() {
   const year = new Date().getFullYear();
+  const t = useTranslations("leap.footer");
+  const locale = useLocale() as Locale;
+  const { event, person } = leapConfig[locale];
 
   return (
     <footer className="border-t border-border px-5 py-10 sm:px-8">
@@ -15,10 +22,10 @@ export function LeapFooter() {
             backgroundClip: "text",
           }}
         >
-          Met me at {leapConfig.event.name}, {leapConfig.event.city}
+          {t("metAt", { event: event.name, city: event.city })}
         </p>
         <p className="mt-3 text-xs text-foreground/40">
-          Devnito &copy; {year} · {leapConfig.person.name}
+          {t("copyright", { year, name: person.name })}
         </p>
       </div>
     </footer>

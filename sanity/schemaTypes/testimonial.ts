@@ -25,11 +25,25 @@ export const testimonialType = defineType({
       description: "e.g. CEO, Founder, Product Manager.",
     }),
     defineField({
+      name: "clientRoleAr",
+      title: "Client role / title (Arabic)",
+      type: "string",
+      group: "content",
+      description: "Arabic translation of the client role/title.",
+    }),
+    defineField({
       name: "company",
       title: "Company",
       type: "string",
       group: "content",
       description: "e.g. Stay Gold (USA).",
+    }),
+    defineField({
+      name: "companyAr",
+      title: "Company (Arabic)",
+      type: "string",
+      group: "content",
+      description: "Arabic translation of the company name/description.",
     }),
     defineField({
       name: "quote",
@@ -40,6 +54,14 @@ export const testimonialType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "quoteAr",
+      title: "Full quote (Arabic)",
+      type: "text",
+      rows: 6,
+      group: "content",
+      description: "Arabic translation of the full quote. Falls back to English when empty.",
+    }),
+    defineField({
       name: "shortQuote",
       title: "Short quote",
       type: "text",
@@ -47,6 +69,14 @@ export const testimonialType = defineType({
       group: "content",
       description:
         "Optional shorter version for compact spots (e.g. video card title).",
+    }),
+    defineField({
+      name: "shortQuoteAr",
+      title: "Short quote (Arabic)",
+      type: "text",
+      rows: 3,
+      group: "content",
+      description: "Arabic translation of the short quote.",
     }),
     defineField({
       name: "clientPhoto",

@@ -8,6 +8,7 @@ import {
   type TestimonialItem,
   type VideoTestimonialItem,
 } from "@/content/site";
+import type { Locale } from "@/i18n/routing";
 
 import { sanityClient } from "./client";
 import { urlForImage } from "./image";
@@ -24,6 +25,25 @@ import type {
 
 function logSanityFallback(message: string) {
   console.warn(`[sanity] ${message}`);
+}
+
+/** Prefers the Arabic field when the locale is "ar" and it has content, otherwise falls back to English. */
+function pick(
+  locale: Locale,
+  en: string,
+  ar: string | undefined | null,
+): string {
+  if (locale === "ar" && ar && ar.trim().length > 0) return ar;
+  return en;
+}
+
+function pickList(
+  locale: Locale,
+  en: string[],
+  ar: string[] | undefined | null,
+): string[] {
+  if (locale === "ar" && ar && ar.length > 0) return ar;
+  return en;
 }
 
 function imageUrl(source: SanityImage | undefined): string | undefined {
@@ -54,65 +74,81 @@ function extractYouTubeId(url: string | undefined): string | null {
   return null;
 }
 
-function projectToItem(project: Project): ProjectItem {
+const CONFIDENTIAL_PREFIX: Record<Locale, string> = {
+  en: "Confidential",
+  ar: "سري",
+};
+
+function projectToItem(project: Project, locale: Locale): ProjectItem {
   const coverImage = imageUrl(project.coverImage);
   const gallery = (project.galleryImages ?? [])
     .map(mapGalleryItem)
     .filter((g): g is { src: string; mobile?: boolean } => Boolean(g));
 
+  const title = pick(locale, project.title, project.titleAr);
+  const prefix = CONFIDENTIAL_PREFIX[locale];
   const displayName = project.isConfidential
-    ? project.title.toLowerCase().startsWith("confidential")
-      ? project.title
-      : `Confidential ${project.title}`
-    : project.title;
+    ? title.toLowerCase().startsWith(prefix.toLowerCase())
+      ? title
+      : `${prefix} ${title}`
+    : title;
 
   return {
     id: project.slug || project._id,
     name: displayName,
-    industry: project.category,
-    summary: project.shortDescription,
+    industry: pick(locale, project.category, project.categoryAr),
+    summary: pick(locale, project.shortDescription, project.shortDescriptionAr),
     tags: project.stack.slice(0, 4),
     image: coverImage,
     gallery: gallery.length > 0 ? gallery : undefined,
     modal: {
-      overview: project.overview,
-      role: project.role,
-      keyDecisions: project.keyDecisions,
-      results: project.results,
+      overview: pick(locale, project.overview, project.overviewAr),
+      role: pick(locale, project.role, project.roleAr),
+      keyDecisions: pickList(locale, project.keyDecisions, project.keyDecisionsAr),
+      results: pickList(locale, project.results, project.resultsAr),
       stack: project.stack,
     },
   };
 }
 
-function testimonialToQuoteItem(t: Testimonial): TestimonialItem {
-  const company = t.company ? `, ${t.company}` : "";
-  const role = t.clientRole ?? "";
+function testimonialToQuoteItem(t: Testimonial, locale: Locale): TestimonialItem {
+  const role = pick(locale, t.clientRole ?? "", t.clientRoleAr);
+  const company = pick(locale, t.company ?? "", t.companyAr);
+  const companySuffix = company ? `, ${company}` : "";
   return {
     id: t._id,
-    quote: t.quote,
+    quote: pick(locale, t.quote, t.quoteAr),
     name: t.clientName,
-    title: `${role}${company}`.trim().replace(/^,\s*/, ""),
+    title: `${role}${companySuffix}`.trim().replace(/^,\s*/, ""),
     avatar: imageUrl(t.clientPhoto),
   };
 }
 
-function testimonialToVideoItem(t: Testimonial): VideoTestimonialItem | null {
+const VIDEO_TESTIMONIAL_LABEL: Record<Locale, string> = {
+  en: "Client Testimonial",
+  ar: "شهادة عميل",
+};
+
+function testimonialToVideoItem(
+  t: Testimonial,
+  locale: Locale,
+): VideoTestimonialItem | null {
   const youtubeId = extractYouTubeId(t.videoUrl);
   if (!youtubeId) return null;
   return {
     id: t._id,
     youtubeId,
-    title: t.shortQuote || t.clientName,
-    label: "Client Testimonial",
+    title: pick(locale, t.shortQuote || t.clientName, t.shortQuoteAr),
+    label: VIDEO_TESTIMONIAL_LABEL[locale],
   };
 }
 
-export async function fetchProjects(): Promise<ProjectItem[]> {
+export async function fetchProjects(locale: Locale): Promise<ProjectItem[]> {
   if (!sanityClient) {
     logSanityFallback(
       "Using static projects — set NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET (Vercel → Environment Variables), then redeploy.",
     );
-    return fallbackProjects;
+    return fallbackProjects[locale];
   }
   try {
     const data = await sanityClient.fetch<Project[]>(
@@ -124,16 +160,16 @@ export async function fetchProjects(): Promise<ProjectItem[]> {
       logSanityFallback(
         "Using static projects — no published projects have “Show on Devnito site” enabled in Sanity.",
       );
-      return fallbackProjects;
+      return fallbackProjects[locale];
     }
-    return data.map(projectToItem);
+    return data.map((project) => projectToItem(project, locale));
   } catch (error) {
     console.error("[sanity] fetchProjects failed, using fallback:", error);
-    return fallbackProjects;
+    return fallbackProjects[locale];
   }
 }
 
-export async function fetchTestimonials(): Promise<{
+export async function fetchTestimonials(locale: Locale): Promise<{
   testimonials: TestimonialItem[];
   videoTestimonials: VideoTestimonialItem[];
 }> {
@@ -142,8 +178,8 @@ export async function fetchTestimonials(): Promise<{
       "Using static testimonials — set NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET on Vercel.",
     );
     return {
-      testimonials: fallbackTestimonials,
-      videoTestimonials: fallbackVideoTestimonials,
+      testimonials: fallbackTestimonials[locale],
+      videoTestimonials: fallbackVideoTestimonials[locale],
     };
   }
   try {
@@ -157,8 +193,8 @@ export async function fetchTestimonials(): Promise<{
         "Using static testimonials — none have “Show on Devnito site” enabled in Sanity.",
       );
       return {
-        testimonials: fallbackTestimonials,
-        videoTestimonials: fallbackVideoTestimonials,
+        testimonials: fallbackTestimonials[locale],
+        videoTestimonials: fallbackVideoTestimonials[locale],
       };
     }
 
@@ -167,28 +203,28 @@ export async function fetchTestimonials(): Promise<{
 
     for (const t of data) {
       if (t.source === "video") {
-        const v = testimonialToVideoItem(t);
+        const v = testimonialToVideoItem(t, locale);
         if (v) videoTestimonials.push(v);
         continue;
       }
-      writtenTestimonials.push(testimonialToQuoteItem(t));
+      writtenTestimonials.push(testimonialToQuoteItem(t, locale));
     }
 
     return {
       testimonials:
         writtenTestimonials.length > 0
           ? writtenTestimonials
-          : fallbackTestimonials,
+          : fallbackTestimonials[locale],
       videoTestimonials:
         videoTestimonials.length > 0
           ? videoTestimonials
-          : fallbackVideoTestimonials,
+          : fallbackVideoTestimonials[locale],
     };
   } catch (error) {
     console.error("[sanity] fetchTestimonials failed, using fallback:", error);
     return {
-      testimonials: fallbackTestimonials,
-      videoTestimonials: fallbackVideoTestimonials,
+      testimonials: fallbackTestimonials[locale],
+      videoTestimonials: fallbackVideoTestimonials[locale],
     };
   }
 }

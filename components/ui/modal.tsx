@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import clsx from "clsx";
 
 interface ModalProps {
@@ -11,6 +12,7 @@ interface ModalProps {
 }
 
 export function Modal({ open, onClose, children, title }: ModalProps) {
+  const t = useTranslations("modal");
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
@@ -88,8 +90,8 @@ export function Modal({ open, onClose, children, title }: ModalProps) {
       >
         <button
           onClick={onClose}
-          aria-label="Close modal"
-          className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-gray-100 hover:text-foreground"
+          aria-label={t("close")}
+          className="absolute top-4 end-4 flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-gray-100 hover:text-foreground"
         >
           <svg
             width="16"

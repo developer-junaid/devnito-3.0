@@ -1,15 +1,19 @@
 "use client";
 
 import type { MouseEvent } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { leapConfig } from "@/content/leap";
 import { useContactForm } from "@/components/contact-form-provider";
 import { trackLeap, type LeapEvent } from "@/lib/leap-analytics";
+import type { Locale } from "@/i18n/routing";
 
 const iconClass =
   "flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-[var(--gradient-start)]/40 hover:text-[var(--gradient-start)]";
 
 export function LeapSocialLinks() {
-  const { contact } = leapConfig;
+  const locale = useLocale() as Locale;
+  const t = useTranslations("leap.actions");
+  const { contact } = leapConfig[locale];
 
   return (
     <div className="flex items-center justify-center gap-3">
@@ -17,7 +21,7 @@ export function LeapSocialLinks() {
         href={contact.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="LinkedIn"
+        aria-label={t("linkedin")}
         className={iconClass}
         onClick={() => trackLeap("leap_linkedin_click")}
       >
@@ -25,7 +29,7 @@ export function LeapSocialLinks() {
       </a>
       <a
         href={`mailto:${contact.email}`}
-        aria-label="Email"
+        aria-label={t("email")}
         className={iconClass}
         onClick={() => trackLeap("leap_email_click")}
       >
@@ -35,7 +39,7 @@ export function LeapSocialLinks() {
         href={contact.companyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Devnito"
+        aria-label={t("devnito")}
         className={iconClass}
         onClick={() => trackLeap("leap_devnito_click")}
       >
@@ -45,7 +49,7 @@ export function LeapSocialLinks() {
         href={contact.portfolioUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Personal portfolio"
+        aria-label={t("personalPortfolio")}
         className={iconClass}
         onClick={() => trackLeap("leap_portfolio_click")}
       >
@@ -61,7 +65,9 @@ export function LeapCtaButtons({
   layout?: "save-first" | "book-first";
 }) {
   const { openContactForm } = useContactForm();
-  const bookingUrl = leapConfig.bookingUrl;
+  const locale = useLocale() as Locale;
+  const t = useTranslations("leap.actions");
+  const bookingUrl = leapConfig[locale].bookingUrl;
 
   function handleBook() {
     trackLeap("leap_book_meeting");
@@ -84,7 +90,7 @@ export function LeapCtaButtons({
 
     event.preventDefault();
     try {
-      const res = await fetch(leapConfig.vcardPath);
+      const res = await fetch(leapConfig[locale].vcardPath);
       if (!res.ok) throw new Error("Unable to download contact");
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
@@ -96,13 +102,13 @@ export function LeapCtaButtons({
       link.remove();
       URL.revokeObjectURL(url);
     } catch {
-      window.location.href = leapConfig.vcardPath;
+      window.location.href = leapConfig[locale].vcardPath;
     }
   }
 
-  const saveHref = leapConfig.vcardPath;
-  const saveLabel = layout === "book-first" ? "Save My Contact" : "Save Contact";
-  const bookLabel = layout === "book-first" ? "Book 15 Minutes" : "Book a Meeting";
+  const saveHref = leapConfig[locale].vcardPath;
+  const saveLabel = layout === "book-first" ? t("saveMyContact") : t("saveContact");
+  const bookLabel = layout === "book-first" ? t("book15Minutes") : t("bookAMeeting");
 
   const saveButton = (
     <a
@@ -158,7 +164,9 @@ export function LeapTextLinks({
 }: {
   events?: Partial<Record<"linkedin" | "email" | "devnito" | "portfolio", LeapEvent>>;
 }) {
-  const { contact } = leapConfig;
+  const locale = useLocale() as Locale;
+  const t = useTranslations("leap.actions");
+  const { contact } = leapConfig[locale];
   const linkClass =
     "text-sm font-medium text-muted transition-colors hover:text-[var(--gradient-start)]";
 
@@ -171,14 +179,14 @@ export function LeapTextLinks({
         className={linkClass}
         onClick={() => trackLeap(events?.linkedin ?? "leap_linkedin_click")}
       >
-        LinkedIn
+        {t("linkedin")}
       </a>
       <a
         href={`mailto:${contact.email}`}
         className={linkClass}
         onClick={() => trackLeap(events?.email ?? "leap_email_click")}
       >
-        Email
+        {t("email")}
       </a>
       <a
         href={contact.companyUrl}
@@ -187,7 +195,7 @@ export function LeapTextLinks({
         className={linkClass}
         onClick={() => trackLeap(events?.devnito ?? "leap_devnito_click")}
       >
-        Devnito
+        {t("devnito")}
       </a>
       <a
         href={contact.portfolioUrl}
@@ -196,7 +204,7 @@ export function LeapTextLinks({
         className={linkClass}
         onClick={() => trackLeap(events?.portfolio ?? "leap_portfolio_click")}
       >
-        Personal Portfolio
+        {t("personalPortfolio")}
       </a>
     </div>
   );

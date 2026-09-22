@@ -11,40 +11,50 @@ import { LeapShare } from "@/components/leap/leap-share";
 import { LeapFooter } from "@/components/leap/leap-footer";
 import { leapConfig } from "@/content/leap";
 import { siteConfig } from "@/content/site";
+import { resolveLeapLocale } from "@/lib/geo-locale";
 
-const title = "Junaid Qureshi at LEAP 2026";
-const description =
-  "Meet Junaid Qureshi, Founder & Head of Engineering at Devnito, at LEAP 2026 in Riyadh. Product engineering, technical leadership, AI, and strategic engineering partnerships.";
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await resolveLeapLocale();
+  const isAr = locale === "ar";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: {
-    canonical: "/leap",
-  },
-  openGraph: {
-    title: "Junaid Qureshi at LEAP 2026 | Devnito",
+  const title = isAr
+    ? "جنيد قريشي في LEAP 2026"
+    : "Junaid Qureshi at LEAP 2026";
+  const description = isAr
+    ? "تعرّف على جنيد قريشي، المؤسس ورئيس الهندسة في Devnito، في LEAP 2026 بالرياض. هندسة المنتجات، والقيادة التقنية، والذكاء الاصطناعي، والشراكات الهندسية الاستراتيجية."
+    : "Meet Junaid Qureshi, Founder & Head of Engineering at Devnito, at LEAP 2026 in Riyadh. Product engineering, technical leadership, AI, and strategic engineering partnerships.";
+  const ogTitle = isAr ? `${title} | Devnito` : "Junaid Qureshi at LEAP 2026 | Devnito";
+
+  return {
+    title,
     description,
-    url: leapConfig.contact.pageUrl,
-    siteName: siteConfig.name,
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Junaid Qureshi at LEAP 2026 — Devnito",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Junaid Qureshi at LEAP 2026 | Devnito",
-    description,
-    images: ["/og-image.png"],
-  },
-};
+    alternates: {
+      canonical: "/leap",
+    },
+    openGraph: {
+      title: ogTitle,
+      description,
+      url: leapConfig[locale].contact.pageUrl,
+      siteName: siteConfig.name,
+      locale: isAr ? "ar_AE" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Junaid Qureshi at LEAP 2026 — Devnito",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: ["/og-image.png"],
+    },
+  };
+}
 
 export default function LeapPage() {
   return (

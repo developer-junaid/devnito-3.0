@@ -1,23 +1,14 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-const notForItems = [
-  "MVPs with $1k budgets",
-  '"Quick fixes" or patchwork projects',
-  "Teams not ready to invest in scalable systems",
-  "Projects without a clear business goal",
-];
+export async function NotFor() {
+  const t = await getTranslations("notFor");
+  const notForItems = t.raw("notForItems") as string[] | undefined;
+  const forItems = t.raw("forItems") as string[] | undefined;
 
-const forItems = [
-  "Founders building products meant to scale",
-  "Teams replacing legacy systems with production-grade architecture",
-  "Companies that need senior engineering leadership — not just code",
-  "Businesses ready to invest in quality that compounds",
-];
-
-export function NotFor() {
   return (
     <section className="relative overflow-hidden px-5 py-20 sm:px-8 sm:py-28">
-      <div className="pointer-events-none absolute top-12 -left-10 -z-10 w-[260px] max-w-[320px] -rotate-12 opacity-[0.08] select-none sm:w-[320px]">
+      <div className="pointer-events-none absolute top-12 -left-10 -z-10 w-[260px] max-w-[320px] -rotate-12 opacity-[0.08] select-none rtl:left-auto rtl:-right-10 sm:w-[320px]">
         <Image
           src="/logo.svg"
           alt=""
@@ -31,25 +22,23 @@ export function NotFor() {
         <div className="mb-12 max-w-xl">
           <p className="mb-3 flex items-center text-xs font-medium uppercase tracking-widest text-muted">
             <span className="section-dot" />
-            Fit Check
+            {t("eyebrow")}
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Is this the right fit?
+            {t("title")}
           </h2>
-          <p className="mt-4 text-muted">
-            We do our best work with the right partners. Here&apos;s how to know
-            if we&apos;re aligned.
-          </p>
+          <p className="mt-4 text-muted">{t("subtitle")}</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-3xl border border-card-border bg-card p-7 shadow-[var(--card-shadow)] sm:p-8">
             <h3 className="mb-5 text-lg font-semibold text-foreground">
-              This is{" "}
-              <span className="text-red-500/80">not</span> for
+              {t("notForBefore")}{" "}
+              <span className="text-red-500/80">{t("notForHighlight")}</span>{" "}
+              {t("notForAfter")}
             </h3>
             <ul className="flex flex-col gap-3">
-              {notForItems.map((item) => (
+              {notForItems?.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-3 text-sm text-muted"
@@ -76,10 +65,10 @@ export function NotFor() {
 
           <div className="rounded-3xl border border-card-border bg-card p-7 shadow-[var(--card-shadow)] sm:p-8">
             <h3 className="mb-5 text-lg font-semibold text-foreground">
-              Built for
+              {t("builtFor")}
             </h3>
             <ul className="flex flex-col gap-3">
-              {forItems.map((item) => (
+              {forItems?.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-3 text-sm text-foreground"

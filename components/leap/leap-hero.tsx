@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import { leapConfig } from "@/content/leap";
 import { LeapCtaButtons, LeapSocialLinks } from "@/components/leap/leap-actions";
+import type { Locale } from "@/i18n/routing";
 
 export function LeapHero() {
-  const { person, event } = leapConfig;
+  const locale = useLocale() as Locale;
+  const { person, event } = leapConfig[locale];
 
   return (
     <section className="relative overflow-hidden px-5 pt-8 pb-14 sm:px-8 sm:pt-10 sm:pb-16">
