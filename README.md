@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="public/logo.svg" alt="Devnito" width="80" />
+  <img src="public/images/devnito-logo.png" alt="Devnito" width="80" />
 </p>
 
 <h1 align="center">Devnito</h1>
 
 <p align="center">
-  <strong>Founder-led engineering partner for product teams that need to scale.</strong>
+  <strong>We build products people use.</strong>
 </p>
 
 <p align="center">
@@ -16,82 +16,74 @@
 
 ## About
 
-Devnito - is a boutique engineering studio founded by **Junaid Qureshi** — senior full-stack engineer, solution architect, and Head of Engineering at Stay Gold (US). Every engagement is led personally by the founder — no hand-offs, no middlemen.
-
-This repository contains the source code for the Devnito website — a single-page, minimal, and premium landing page built to reflect the studio's engineering-first approach.
+Devnito is a founder-led product engineering studio run by **Junaid Qureshi**. This repository is the devnito.com website: four pages rebuilt from the design handoff in `design_handoff_devnito_site/`, plus an embedded Sanity Studio.
 
 <br />
 
 ## Tech Stack
 
-| Layer          | Technology                                     |
-| -------------- | ---------------------------------------------- |
-| **Framework**  | [Next.js 16](https://nextjs.org/) (App Router) |
-| **Language**   | TypeScript                                     |
-| **Styling**    | Tailwind CSS v4                                |
-| **Font**       | Inter via `next/font`                          |
-| **Forms**      | [Formspree](https://formspree.io/)             |
-| **Deployment** | Vercel                                         |
-
-**No heavy dependencies.** No animation libraries, no headless UI kits, no CMS. The entire site ships minimal JavaScript with zero client-side routing.
+| Layer          | Technology                                              |
+| -------------- | ------------------------------------------------------- |
+| **Framework**  | [Next.js 16](https://nextjs.org/) (App Router)          |
+| **Language**   | TypeScript                                              |
+| **Styling**    | Tailwind CSS v4 (design tokens in `app/(site)/site.css`) |
+| **Fonts**      | Manrope + Geist Mono via `next/font`                    |
+| **Forms**      | [Formspree](https://formspree.io/) via a server action  |
+| **Deployment** | Vercel                                                  |
 
 <br />
 
-## Features
+## Routes
 
-- **Single-page architecture** — everything above the fold or one scroll away
-- **Modal-driven detail** — packages and case studies expand into accessible modals (focus trap, keyboard nav, ARIA)
-- **CSS marquee testimonials** — smooth infinite scroll, pause on hover, zero JS animation overhead
-- **Dynamic OG image** — auto-generated at the edge via `opengraph-image.tsx`
-- **SEO hardened** — structured data (JSON-LD), auto-generated sitemap & robots.txt, canonical URLs, security headers
-- **Content-as-code** — all copy lives in a single `content/site.ts` file
-- **Responsive** — designed for all screen sizes with custom breakpoint grid system
-- **Lighthouse 90+** — optimized fonts, images, minimal bundle
+| Route              | What it is                                                      |
+| ------------------ | --------------------------------------------------------------- |
+| `/`                | Homepage (featured work, services, products, 3-step brief form) |
+| `/work`            | Portfolio by partner: `#stay-gold`, `#bnb`, `#direct`, `#products` |
+| `/work/amg`        | AMG case study                                                  |
+| `/products/sceneo` | Sceneo template sales page                                      |
+| `/studio`          | Sanity Studio                                                   |
+
+Old `/en/*` and `/ar/*` URLs permanently redirect to the matching new route, and the retired LEAP 2026 page (`/leap`, linked from printed QR codes) redirects to `/` (`next.config.ts`).
 
 <br />
 
 ## Project Structure
 
 ```
-devnito-3.0/
-├── app/
-│   ├── layout.tsx              # Root layout, metadata, SEO, JSON-LD
-│   ├── page.tsx                # Single-page composition
-│   ├── globals.css             # Design tokens, animations, custom grid
-│   ├── opengraph-image.tsx     # Dynamic OG image (edge)
-│   ├── sitemap.ts              # Auto-generated sitemap.xml
-│   └── robots.ts               # Auto-generated robots.txt
-├── components/
-│   ├── navbar.tsx              # Sticky nav with mobile menu
-│   ├── hero.tsx                # Hero with gradient text & scroll indicator
-│   ├── packages.tsx            # Service packages (3 cards → modals)
-│   ├── work.tsx                # Selected work showcase (alternating layout)
-│   ├── founder.tsx             # Meet the Founder section
-│   ├── proof-strip.tsx         # Stats strip (engagements, rate, delivery)
-│   ├── testimonials.tsx        # Marquee testimonial carousel
-│   ├── contact-cta.tsx         # Final CTA section
-│   ├── contact-form-modal.tsx  # Contact form (Formspree integration)
-│   ├── contact-form-provider.tsx # Global modal state (React Context)
-│   ├── footer.tsx              # Footer
-│   └── ui/
-│       └── modal.tsx           # Accessible modal primitive
-├── content/
-│   └── site.ts                 # All editable content in one place
-└── public/
-    ├── logo.svg                # Brand mark & favicon
-    ├── dp.png                  # Founder photo
-    └── ...                     # Project screenshots & assets
+app/
+├── (site)/                 # Main site: own root layout, English only
+│   ├── layout.tsx          # Fonts, metadata, JSON-LD, motion root
+│   ├── site.css            # Tokens (colours, radii, easing) + motion CSS
+│   ├── actions.ts          # submitBrief → Formspree
+│   ├── page.tsx            # /
+│   ├── work/page.tsx       # /work
+│   ├── work/amg/page.tsx   # /work/amg
+│   ├── products/sceneo/    # /products/sceneo
+│   └── **/opengraph-image.tsx
+├── studio/                 # Sanity Studio
+└── sitemap.ts, robots.ts
+components/
+├── site/                   # Shared: ui.tsx (buttons, H2, Shot…), nav.tsx, motion.tsx, contact-panel.tsx
+├── home/                   # Homepage sections
+└── amg/, sceneo/           # Page-specific client pieces
+hooks/
+├── use-devnito-motion.ts   # Reveals, H2 sweep, counters, magnetic, tilt (port of devnito-motion.js)
+└── use-parallax.ts         # [data-parallax] (port of devnito-parallax.js)
+lib/
+├── images.ts               # Image manifest (src + intrinsic size) for public/images
+├── site.ts                 # URLs, contact email, Sceneo checkout URL
+└── og/                     # Shared OG card + bundled Manrope
 ```
+
+All motion respects `prefers-reduced-motion`.
 
 <br />
 
 ## Getting Started
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
+cp .env.local.example .env.local   # fill in the Sanity IDs; SCENEO_CHECKOUT_URL once checkout is ready
 npm run dev
 ```
 
@@ -99,20 +91,19 @@ Open [http://localhost:3000](http://localhost:3000).
 
 <br />
 
+## Environment
+
+| Variable              | Used for                                                                 |
+| --------------------- | ------------------------------------------------------------------------ |
+| `FORMSPREE_ENDPOINT`  | Optional override for the homepage brief form. Defaults to `FORMSPREE_FORM_ID` in `lib/site.ts`. |
+| `SCENEO_CHECKOUT_URL` | Every Sceneo buy button. Read at build time. Until set, the buttons open a "request" form that goes to Formspree. |
+| `NEXT_PUBLIC_SANITY_*`, `SANITY_STUDIO_*` | Sanity Studio at `/studio`                          |
+
+<br />
+
 ## Editing Content
 
-All website copy is centralized in **`content/site.ts`**. Edit the exported objects and the site updates instantly:
-
-| Export              | Controls                                          |
-| ------------------- | ------------------------------------------------- |
-| `siteConfig`        | Site name, URL, email, social links, Formspree ID |
-| `founder`           | Founder name, title, bio, credentials, photo      |
-| `navLinks`          | Navigation items                                  |
-| `packages`          | Service packages — cards & modal details          |
-| `projects`          | Case studies — cards, galleries & modal details   |
-| `stats`             | Proof strip numbers (engagements, rate, etc.)     |
-| `testimonials`      | Client quotes with avatars                        |
-| `videoTestimonials` | Video testimonial entries                         |
+Copy lives next to the components that render it (arrays at the top of each section file in `components/home/` and the page files under `app/(site)/`). To add or replace an image, drop it in `public/images/` and add its entry (with width and height) to `lib/images.ts`.
 
 <br />
 
@@ -129,7 +120,9 @@ npm start       # Start production server
 
 - [ ] Submit sitemap to [Google Search Console](https://search.google.com/search-console) (`https://devnito.com/sitemap.xml`)
 - [ ] Test OG image at [opengraph.xyz](https://www.opengraph.xyz)
-- [ ] Verify Formspree form receives submissions
+- [ ] Set `SCENEO_CHECKOUT_URL` in Vercel and redeploy once checkout is ready
+- [ ] Add https://devnito.com as a CORS origin (with credentials) in sanity.io/manage so `/studio` can log in
+- [ ] Verify Formspree receives a test brief
 - [ ] Run [Lighthouse](https://pagespeed.web.dev/) audit
 
 <br />

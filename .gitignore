@@ -43,3 +43,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Design handoff (reference HTML + source PNGs); kept locally, not deployed
+/design_handoff_devnito_site/

@@ -1,7 +1,4 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
-
-const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const securityHeaders = [
   { key: "X-DNS-Prefetch-Control", value: "on" },
@@ -13,16 +10,27 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "img.youtube.com",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
-      },
-    ],
+    formats: ["image/avif", "image/webp"],
+  },
+  async redirects() {
+    return [
+      // The previous site lived under /en and /ar (locale prefixes).
+      { source: "/en", destination: "/", permanent: true },
+      { source: "/ar", destination: "/", permanent: true },
+      { source: "/en/:path*", destination: "/:path*", permanent: true },
+      { source: "/ar/:path*", destination: "/:path*", permanent: true },
+      // Section shortcuts that used to be single-page anchors.
+      { source: "/services", destination: "/#services", permanent: true },
+      { source: "/products", destination: "/#products", permanent: true },
+      { source: "/about", destination: "/#about", permanent: true },
+      { source: "/contact", destination: "/#contact", permanent: true },
+      { source: "/sceneo", destination: "/products/sceneo", permanent: true },
+      { source: "/amg", destination: "/work/amg", permanent: true },
+      // LEAP 2026 is over; printed QR codes and vCard links still point here. Temporary, in case
+      // an event page comes back.
+      { source: "/leap", destination: "/", permanent: false },
+      { source: "/leap/:path*", destination: "/", permanent: false },
+    ];
   },
   async headers() {
     return [
@@ -34,4 +42,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withNextIntl(nextConfig);
+export default nextConfig;

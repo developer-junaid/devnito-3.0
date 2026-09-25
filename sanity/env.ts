@@ -10,9 +10,24 @@
 const SANITY_PROJECT_ID_RE = /^[a-z0-9-]+$/;
 const SANITY_DATASET_RE = /^[a-z0-9-_]+$/;
 
+/*
+ * Every variable is referenced by its literal name: bundlers (Next.js for `/studio`, the Sanity
+ * CLI for hosted Studio) only inline `process.env.X` written out in full. A dynamic
+ * `process.env[key]` is undefined in the browser, which crashes the Studio with
+ * "Configuration must contain `projectId`".
+ */
+const ENV: Record<string, string | undefined> = {
+  NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  NEXT_PUBLIC_SANITY_API_VERSION: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+  SANITY_STUDIO_PROJECT_ID: process.env.SANITY_STUDIO_PROJECT_ID,
+  SANITY_STUDIO_DATASET: process.env.SANITY_STUDIO_DATASET,
+  SANITY_STUDIO_API_VERSION: process.env.SANITY_STUDIO_API_VERSION,
+};
+
 function readEnv(...keys: string[]): string {
   for (const key of keys) {
-    const value = process.env[key]?.trim();
+    const value = ENV[key]?.trim();
     if (value) return value;
   }
   return "";
