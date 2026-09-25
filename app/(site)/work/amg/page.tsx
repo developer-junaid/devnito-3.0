@@ -122,7 +122,11 @@ function OpsConsole() {
 export default function AmgCaseStudyPage() {
   return (
     <>
-      <FloatingNav items={INNER_NAV.map(({ label, href }) => ({ label, href }))} cta={{ label: "Let's talk", href: "#contact" }} />
+      <FloatingNav
+        items={INNER_NAV.map(({ label, href }) => ({ label, href }))}
+        cta={{ label: "Let's talk", href: "#contact" }}
+        page="Case study"
+      />
       <main>
         {/* Hero */}
         <section className="p-3.5">

@@ -73,7 +73,8 @@ export function BuyBar() {
   return (
     <div
       inert={!show}
-      className="fixed bottom-4 left-1/2 z-[80] flex max-w-[calc(100vw-24px)] items-center gap-3.5 rounded-full border border-white/10 bg-ink/86 py-1.5 pr-1.5 pl-[18px] text-white backdrop-blur-[18px] transition-transform duration-700 ease-expo"
+      // w-max: see FloatingNav; a fixed box at left:50% only gets half the viewport otherwise.
+      className="fixed bottom-4 left-1/2 z-[80] flex w-max max-w-[calc(100vw-24px)] items-center gap-3.5 rounded-full border border-white/10 bg-ink/86 py-1.5 pr-1.5 pl-[18px] text-white backdrop-blur-[18px] transition-transform duration-700 ease-expo"
       style={{ transform: `translate(-50%, ${show ? "0px" : "160%"})` }}
     >
       <Image src={img.devnitoLogo.src} alt="" width={18} height={18} className="block object-contain" />

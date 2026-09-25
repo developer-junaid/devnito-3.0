@@ -111,6 +111,7 @@ export default function WorkPage() {
           { label: "Products", href: "#products" },
         ]}
         cta={{ label: "Let's talk", href: "#contact" }}
+        page="Work"
       />
       <main>
         {/* Hero */}

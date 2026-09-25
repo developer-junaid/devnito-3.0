@@ -67,7 +67,6 @@ export function Hero() {
         <div className="relative flex min-h-[min(900px,calc(100vh-28px))] flex-col p-[clamp(20px,3vw,40px)]">
           <SiteHeader
             items={HOME_NAV}
-            homeHref="#top"
             cta={{ label: "Start a project", href: "#contact" }}
             right={<ArrowLink href="#contact" label="Start a project" circle="white" size="md" />}
           />
