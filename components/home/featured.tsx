@@ -14,7 +14,7 @@ const CREDITS = [
     href: "/work#stay-gold",
     label: "Via Stay Gold · since 2022",
     count: "10",
-    body: "HartBeat Ventures, Aoki Labs, Markham Valley, BYL Ventures, Destiny, Sanbo, AMG, Union AI",
+    body: "HartBeat Ventures, Aoki Labs, Markham Valley, BYL Ventures, Sanbo, AMG, a NYSE-listed tech fund, an AI introductions network",
     rest: "+ ventures of Will Smith & Keisuke Honda",
   },
   {
@@ -197,29 +197,43 @@ const CARDS: Card[] = [
     bg: "bg-panel text-white",
     counter: "Via Stay Gold",
     counterClass: "text-white/60",
-    eyebrow: "Founder & CEO, Destiny · Angel investor",
+    eyebrow: "Fund founder & CEO · Angel investor",
     name: (
       <>
-        Sohail
+        Fintech
         <br />
-        Prasad
+        founder
       </>
     ),
-    org: "Destiny (D/XYZ)",
-    body: "Sohail founded Forge (NYSE: FRGE) and now leads Destiny, whose Destiny Tech100 (NYSE: DXYZ) opens private tech to public investors. Through Stay Gold, Devnito engineers for Destiny.",
+    org: "NYSE-listed private tech fund",
+    body: "He founded Forge (NYSE: FRGE) and now leads a publicly traded fund that opens private tech to public investors. Through Stay Gold, Devnito engineers for the fund.",
     bodyClass: "text-white/72",
     stat: { count: 150, suffix: "+", label: "startups backed, including 10+ unicorns", labelClass: "text-white/72" },
     footTags: ["Founder, Forge (NYSE: FRGE)", "YC alum", "Thiel Fellow", "30 Under 30"],
-    portrait: { image: img.portraitSohail, alt: "Sohail Prasad" },
     mock: (
-      <a href="https://destiny.xyz/" target="_blank" rel="noopener" className={clsx(frame, "bg-night")}>
-        <Chrome url="destiny.xyz" />
-        <div className="relative flex-1 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center bg-[#F3F0EA]">
-            <Shot image={img.destinySite} alt="Destiny, destiny.xyz" radius={false} shadow={false} />
+      <div className={clsx(frame, "bg-night")}>
+        <Chrome url="Private tech · Public access" />
+        <div className="flex flex-1 flex-col justify-between gap-8 bg-[#F3F0EA] p-[clamp(22px,3.5vw,44px)] text-ink">
+          <span className="font-mono text-[11px] tracking-[0.12em] text-label uppercase">NYSE-listed fund</span>
+          <div className="text-[clamp(36px,4.6vw,68px)] leading-[0.95] font-bold tracking-[-0.05em]">
+            Private tech,
+            <br />
+            <span className="font-light italic">public markets.</span>
+          </div>
+          <div className="grid grid-cols-3 gap-4 border-t border-ink pt-4">
+            {[
+              ["150+", "startups backed"],
+              ["10+", "unicorns"],
+              ["YC", "alum · Thiel Fellow"],
+            ].map(([n, l]) => (
+              <span key={l}>
+                <span className="block text-[clamp(24px,2.6vw,36px)] leading-none font-bold tracking-[-0.04em]">{n}</span>
+                <span className="mt-1.5 block text-[12.5px] text-body">{l}</span>
+              </span>
+            ))}
           </div>
         </div>
-      </a>
+      </div>
     ),
   },
   {

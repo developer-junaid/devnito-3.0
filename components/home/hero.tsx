@@ -104,7 +104,7 @@ export function Hero() {
                 </span>
               </div>
               <div className="text-[clamp(22px,2.3vw,32px)] leading-[1.15] font-bold tracking-[-0.03em]">
-                Kevin Hart, Steve Aoki, Simu Liu <span className="font-light text-white/65">&amp; Sohail Prasad</span>
+                Kevin Hart, Steve Aoki, Simu Liu <span className="font-light text-white/65">&amp; a 10+ unicorn investor</span>
               </div>
               <span className="text-[13px] text-sky">See the work ↓</span>
             </a>

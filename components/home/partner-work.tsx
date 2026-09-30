@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { img } from "@/lib/images";
-import { ArrowLink, H2, SectionLabel, Shot } from "@/components/site/ui";
+import { ArrowLink, H2, IntroFlow, SectionLabel, Shot } from "@/components/site/ui";
 import { BNB_SHOWCASES, Showcase } from "@/components/site/showcase";
 
 const UNFEATURED = BNB_SHOWCASES.find((p) => p.name === "Unfeatured Films")!;
@@ -105,15 +105,15 @@ export function PartnerWork() {
             className="relative flex h-[clamp(400px,40vw,560px)] min-w-0 flex-[1_1_300px] flex-col overflow-hidden rounded-card bg-sage"
           >
             <div className="flex min-h-0 flex-1 items-center justify-center px-[18px] pt-[60px] pb-[18px]">
-              <Shot image={img.unionSite} alt="Union, from unionagency.co" shadow="shadow-[0_24px_50px_-20px_rgba(0,0,0,0.5)]" sizes="(max-width: 768px) 100vw, 35vw" />
+              <IntroFlow />
             </div>
             <div className="absolute top-[18px] left-[18px]">
               <span className={glass}>Via Stay Gold</span>
             </div>
             <div className="bg-white px-5 pt-[18px] pb-5">
-              <div className="text-xl font-bold tracking-[-0.02em]">Union AI</div>
+              <div className="text-xl font-bold tracking-[-0.02em]">AI introductions network</div>
               <div className="mt-1 text-[13.5px] text-body">
-                An introductions network. Tell Union who you need to meet; matchmakers helped by AI find and introduce them.
+                Tell it who you need to meet; matchmakers helped by AI find and introduce them.
               </div>
             </div>
           </div>

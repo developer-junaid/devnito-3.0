@@ -9,7 +9,7 @@ const ROWS = [
   { key: "2022", title: "Stay Gold", note: "Long-term engineering leadership" },
   { key: "10+", title: "Bread & Butter Design", note: "Engineering partner across a multi-year relationship" },
   { key: "AMG", title: "Audio Media Grading", note: "Platform modernization, ongoing" },
-  { key: "Talent", title: "Celebrity venture firms", note: "Via Stay Gold: HartBeat, Aoki Labs, Markham Valley, BYL, Destiny" },
+  { key: "Talent", title: "Celebrity venture firms", note: "Via Stay Gold: HartBeat, Aoki Labs, Markham Valley, BYL & more" },
 ];
 
 const panel = "absolute inset-0 flex flex-col justify-between p-[30px]";
@@ -43,7 +43,7 @@ const PANELS: ReactNode[] = [
       <span className="font-light text-white/55">Aoki Labs</span>
       <span>Markham Valley</span>
       <span className="font-light text-white/55">BYL Ventures</span>
-      <span>Destiny</span>
+      <span>&amp; more</span>
     </div>
     <a href="#featured" className="text-[13px] text-sky">
       See the featured work ↑

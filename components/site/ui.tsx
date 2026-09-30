@@ -317,3 +317,19 @@ export function BrowserDots({ tone = "dark" }: { tone?: "dark" | "light" }) {
     </>
   );
 }
+
+const INTRO_STEPS = ["Tell it who you need to meet", "Matchmakers, helped by AI, find them", "Both sides opt in, then the intro"];
+
+/** Text stand-in for the AI introductions network, whose screens are confidential. */
+export function IntroFlow() {
+  return (
+    <div className="flex w-full max-w-[340px] flex-col gap-2.5">
+      {INTRO_STEPS.map((step, i) => (
+        <div key={step} className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3.5 text-ink shadow-[0_18px_40px_-24px_rgba(0,0,0,0.45)]">
+          <span className="font-mono text-[11px] text-label">0{i + 1}</span>
+          <span className="text-[14.5px] leading-[1.3] font-semibold tracking-[-0.01em]">{step}</span>
+        </div>
+      ))}
+    </div>
+  );
+}

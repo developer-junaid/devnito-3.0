@@ -18,8 +18,6 @@ export const img = {
   cognitivEvents: { src: "/images/cognitiv-events.webp", width: 1758, height: 1183 },
   cognitivHero: { src: "/images/cognitiv-hero.webp", width: 1754, height: 1183 },
   cognitivTeam: { src: "/images/cognitiv-team.webp", width: 1760, height: 1177 },
-  destinyHoldings: { src: "/images/destiny-holdings.webp", width: 1607, height: 1224 },
-  destinySite: { src: "/images/destiny-site.webp", width: 1542, height: 1221 },
   devnitoLogo: { src: "/images/devnito-logo.png", width: 256, height: 256 },
   groveSite: { src: "/images/grove-site.webp", width: 1750, height: 1178 },
   hartbeatMission: { src: "/images/hartbeat-mission.webp", width: 1692, height: 1218 },
@@ -38,7 +36,6 @@ export const img = {
   portraitHart: { src: "/images/portrait-hart.webp", width: 716, height: 900 },
   portraitKelsey: { src: "/images/portrait-kelsey.webp", width: 344, height: 344 },
   portraitSimu: { src: "/images/portrait-simu.webp", width: 708, height: 900 },
-  portraitSohail: { src: "/images/portrait-sohail.webp", width: 416, height: 416 },
   portraitTashi: { src: "/images/portrait-tashi-nakanishi.webp", width: 900, height: 900 },
   portraitWill: { src: "/images/portrait-will.webp", width: 664, height: 462 },
   sanboSite: { src: "/images/sanbo-site.webp", width: 1423, height: 1229 },
@@ -70,6 +67,4 @@ export const img = {
   unfeaturedHero: { src: "/images/unfeatured-hero.webp", width: 1737, height: 1178 },
   unfeaturedNoHands: { src: "/images/unfeatured-no-hands.webp", width: 1746, height: 1185 },
   unfeaturedOriginal: { src: "/images/unfeatured-original.webp", width: 1745, height: 1183 },
-  unionNetwork: { src: "/images/union-network.webp", width: 1702, height: 1227 },
-  unionSite: { src: "/images/union-site.webp", width: 1533, height: 1218 },
 } satisfies Record<string, SiteImage>;

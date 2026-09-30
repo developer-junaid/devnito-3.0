@@ -10,7 +10,7 @@ const SERVICES: { title: string; desc: string; proof: string; panel: ReactNode; 
   {
     title: "Product engineering",
     desc: "Design to production for web platforms that hold real money and real data.",
-    proof: "Sanbo · Destiny · MenaJobs",
+    proof: "Sanbo · MenaJobs",
     bg: "bg-olive",
     panel: <Shot image={img.sanboSite} alt="Sanbo, from sanbo.io" shadow="shadow-[0_24px_50px_-20px_rgba(0,0,0,0.5)]" />,
   },
@@ -31,9 +31,9 @@ const SERVICES: { title: string; desc: string; proof: string; panel: ReactNode; 
   {
     title: "AI & mobile",
     desc: "React Native and Expo apps with practical AI built in.",
-    proof: "Union · MentorJunaid",
+    proof: "AI introductions network · MentorJunaid",
     bg: "bg-mist",
-    panel: <Shot image={img.unionNetwork} alt="Union network, from unionagency.co" shadow="shadow-[0_24px_50px_-20px_rgba(0,0,0,0.5)]" />,
+    panel: <Shot image={img.mentorjunaid} alt="MentorJunaid" shadow="shadow-[0_24px_50px_-20px_rgba(0,0,0,0.5)]" />,
   },
   {
     title: "Engineering leadership",
@@ -45,7 +45,7 @@ const SERVICES: { title: string; desc: string; proof: string; panel: ReactNode; 
 ];
 
 const RECORD = [
-  { year: "2022 →", name: "Stay Gold", note: "Architecture & delivery · AMG, Sanbo, Union" },
+  { year: "2022 →", name: "Stay Gold", note: "Architecture & delivery · AMG, Sanbo & more" },
   { year: "2025 →", name: "Bread & Butter Design", note: "Building to design · 10+ projects" },
   { year: "2023 →", name: "Devnito", note: "Founder-led delivery · 70+ projects" },
 ];

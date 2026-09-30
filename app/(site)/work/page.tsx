@@ -7,7 +7,7 @@ import { INNER_NAV, SCENEO_DEMO_URL } from "@/lib/site";
 import { Spotlight } from "@/components/site/motion";
 import { FloatingNav, SiteHeader } from "@/components/site/nav";
 import { ContactPanel } from "@/components/site/contact-panel";
-import { ArrowLink, Badge, Eyebrow, Headline, Shot } from "@/components/site/ui";
+import { ArrowLink, Badge, Eyebrow, Headline, IntroFlow, Shot } from "@/components/site/ui";
 import { DirectClients } from "@/components/home/partner-work";
 import { MentorJunaidCard, MhcScreens } from "@/components/home/products";
 import { BNB_SHOWCASES, Showcase } from "@/components/site/showcase";
@@ -215,7 +215,7 @@ export default function WorkPage() {
                 className="relative flex h-[clamp(440px,42vw,580px)] min-w-0 flex-[1_1_320px] flex-col overflow-hidden rounded-card bg-sage text-ink"
               >
                 <div className="flex min-h-0 flex-1 items-center justify-center px-[18px] pt-[60px] pb-[18px]">
-                  <Shot image={img.unionSite} alt="Union, from unionagency.co" shadow="shadow-[0_24px_50px_-20px_rgba(0,0,0,0.45)]" sizes="(max-width: 768px) 100vw, 35vw" />
+                  <IntroFlow />
                 </div>
                 <div className="absolute top-[18px] left-[18px]">
                   <span className="rounded-full bg-ink px-[13px] py-[7px] text-xs text-white">Via Stay Gold</span>
@@ -223,11 +223,10 @@ export default function WorkPage() {
                 <div className="bg-white px-5 pt-[18px] pb-5">
                   <div className="flex justify-between gap-2.5 text-[12.5px] text-label">
                     <span>AI · Introductions network</span>
-                    <span className="font-mono text-[10.5px]">unionagency.co</span>
                   </div>
-                  <div className="mt-1.5 text-xl font-bold tracking-[-0.02em]">Union AI</div>
+                  <div className="mt-1.5 text-xl font-bold tracking-[-0.02em]">AI introductions network</div>
                   <div className="mt-1 text-[13.5px] leading-[1.5] text-body">
-                    Tell Union who you need to meet. Matchmakers, helped by AI, find the right person, check both sides want
+                    Tell it who you need to meet. Matchmakers, helped by AI, find the right person, check both sides want
                     to meet, and introduce you.
                   </div>
                 </div>
@@ -302,27 +301,29 @@ export default function WorkPage() {
                   </div>
                 </a>
               ))}
-              <a
-                href="https://destiny.xyz/"
-                target="_blank"
-                rel="noopener"
+              <div
                 data-reveal="1"
                 data-tilt="1"
                 className="flex flex-col overflow-hidden rounded-tile bg-white"
               >
-                <div className="relative flex h-[210px] items-center justify-center bg-panel p-3">
-                  <Shot
-                    image={img.destinyHoldings}
-                    alt="Destiny top 10 holdings, destiny.xyz"
-                    sizes="(max-width: 768px) 100vw, 300px"
-                    shadow="shadow-[0_24px_50px_-20px_rgba(0,0,0,0.6)]"
-                  />
+                <div className="relative flex h-[210px] flex-col justify-between bg-panel p-5 text-white">
+                  <span className="font-mono text-[11px] tracking-[0.12em] text-white/60 uppercase">Private tech · Public access</span>
+                  <div className="flex items-end gap-6">
+                    <span>
+                      <span className="block text-[40px] leading-none font-bold tracking-[-0.04em]">150+</span>
+                      <span className="mt-1 block text-[12.5px] text-white/65">startups backed</span>
+                    </span>
+                    <span>
+                      <span className="block text-[40px] leading-none font-bold tracking-[-0.04em]">10+</span>
+                      <span className="mt-1 block text-[12.5px] text-white/65">unicorns</span>
+                    </span>
+                  </div>
                 </div>
                 <div className="px-[18px] pt-4 pb-[18px]">
-                  <div className="text-[12.5px] text-label">Sohail Prasad · Via Stay Gold</div>
-                  <div className="mt-1 text-lg font-bold tracking-[-0.02em]">Destiny · NYSE: DXYZ</div>
+                  <div className="text-[12.5px] text-label">Founder & CEO · Via Stay Gold</div>
+                  <div className="mt-1 text-lg font-bold tracking-[-0.02em]">NYSE-listed tech fund</div>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </section>
