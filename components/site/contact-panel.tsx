@@ -27,7 +27,7 @@ export function ContactPanel({
           <H2 dark className="flex-[1_1_600px] text-[clamp(38px,5.6vw,84px)] leading-[1.05] tracking-[-0.045em]">
             {heading}
           </H2>
-          <ArrowLink href={`mailto:${CONTACT_EMAIL}`} label={cta} size="xl" />
+          <ArrowLink href="/#contact" label={cta} size="xl" />
         </div>
         <div className="mt-[clamp(40px,5vw,64px)] [&>div]:mt-0">
           <FooterBar middle={middle} right={<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>} />
